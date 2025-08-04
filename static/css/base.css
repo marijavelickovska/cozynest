@@ -74,7 +74,20 @@ body {
   cursor: pointer;
 }
 
+/* Home */
+#hero-image {
+  height: 80vh;
+  background: url("/media/hero-image.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
 /* Media Queries */
+@media (max-width: 576px) {
+  /* Navbar */
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+}
 
 @media (max-width: 767.98px) {
   /* Navbar */
@@ -122,5 +135,12 @@ body {
   /* Navbar */
   .navbar-brand {
     font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Navbar */
+  .myaccount {
+    font-size: 1.2rem;
   }
 }
