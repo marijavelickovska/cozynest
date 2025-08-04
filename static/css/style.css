@@ -1,0 +1,126 @@
+/* Google fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* CSS Variables */
+:root {
+  --primary-font: "Playfair Display", serif;
+  --secondary-font: "Georgia", serif;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar-center-md {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#mobile-search-input {
+  display: none;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-family: var(--primary-font);
+  font-size: 3rem;
+}
+
+.icon-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.icon-link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 1.25rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* from Bulma */
+.icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.search-input {
+  border: 1px solid #000 !important;
+  box-shadow: none !important;
+}
+
+.search-span {
+  border: 1px solid #000 !important;
+  cursor: pointer;
+}
+
+/* Media Queries */
+
+@media (max-width: 767.98px) {
+  /* Navbar */
+  #desktop-search-form {
+    display: none !important;
+  }
+
+  #burger-toggler {
+    display: block;
+  }
+
+  #mobile-dropdown-menu .dropdown-toggle {
+    display: none;
+  }
+
+  #mobile-dropdown-menu .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  #mobile-dropdown-menu .dropdown-menu li {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Navbar */
+  .navbar-center-md {
+    display: flex;
+    align-items: center;
+  }
+
+  #mobile-search-section,
+  #mobile-dropdown-menu {
+    display: none !important;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Navbar */
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
