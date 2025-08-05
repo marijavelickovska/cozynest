@@ -87,6 +87,29 @@ body {
   .navbar-brand {
     font-size: 1rem !important;
   }
+
+  .navbar {
+    position: relative;
+    z-index: 1000;
+  }
+
+  #mobile-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 30%;
+    background-color: white;
+    z-index: 1100;
+    color: #000 !important;
+    text-align: start;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+  }
+
+  #hero-image {
+    position: relative;
+    z-index: -1;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -113,7 +136,7 @@ body {
     padding-left: 0;
   }
 
-  #mobile-dropdown-menu .dropdown-menu li {
+  #mobile-dropdown-menu .mobile-dropdown-menu li {
     display: block;
   }
 }
