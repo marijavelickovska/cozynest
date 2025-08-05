@@ -6,6 +6,8 @@
   --primary-font: "Playfair Display", serif;
   --secondary-font: "Georgia", serif;
   --darkgray-color: #424242;
+  --lightgray-color: #E6EBEE;
+  --orange-color: #D17F53;
   --gold-color: #b08336;
 }
 
@@ -23,6 +25,10 @@ body {
 
 .primary-font {
   font-family: var(--primary-font);
+}
+
+.gold-color {
+  color: var(--gold-color);
 }
 
 /* Navbar */
@@ -107,6 +113,47 @@ body {
   letter-spacing: 1px;
   font-weight: bolder;
 }
+
+/* Footer */
+footer {
+  background-color: var(--lightgray-color);
+}
+
+.social-icons .bi {
+  font-size: 1.5rem;
+  color: var(--darkgray-color);
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons .bi:hover {
+  color: var(--gold-color); 
+}
+
+footer a {
+  text-decoration: none;     
+  color: #212121;           
+  transition: color 0.3s;  
+}
+
+footer a:hover {
+  color: var(--gold-color);  
+}
+
+footer .subscribe {
+  background-color: var(--darkgray-color);
+  color: white;
+}
+
+footer .subscribe:hover {
+  background-color: var(--darkgray-color);
+  color: var(--gold-color);
+}
+
+footer .copyright:hover {
+  color: var(--gold-color);
+}
+
 
 /* Media Queries */
 @media (max-width: 576px) {
