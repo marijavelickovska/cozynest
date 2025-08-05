@@ -140,18 +140,30 @@ footer a:hover {
   color: var(--gold-color);  
 }
 
-footer .subscribe {
-  background-color: var(--darkgray-color);
-  color: white;
-}
-
-footer .subscribe:hover {
-  background-color: var(--darkgray-color);
-  color: var(--gold-color);
-}
-
 footer .copyright:hover {
   color: var(--gold-color);
+}
+
+/* Meilchimp form*/
+#mc_embed_signup {
+  background: var(--lightgray-color);
+  false;
+  clear: left;
+  width: 100%;
+}
+
+#mc-embedded-subscribe-form {
+  margin: 0 !important;
+}
+
+#mc-embedded-subscribe {
+  background-color: var(--darkgray-color) !important;
+  color: white !important;
+}
+
+#mc-embedded-subscribe:hover {
+  background-color: var(--darkgray-color) !important;
+  color: var(--gold-color) !important;
 }
 
 
