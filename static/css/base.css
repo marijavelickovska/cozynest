@@ -5,6 +5,8 @@
 :root {
   --primary-font: "Playfair Display", serif;
   --secondary-font: "Georgia", serif;
+  --darkgray-color: #424242;
+  --gold-color: #b08336;
 }
 
 /* Global styles */
@@ -84,6 +86,26 @@ body {
   background: url("/media/hero-image.jpg") no-repeat center center;
   background-size: cover;
   background-attachment: scroll;
+  position: relative;
+  color: white;
+}
+
+.shop-now-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 20vh;
+}
+
+.shop-now-button {
+  background-color: white;
+  color: #000;
+  font-family: var(--secondary-font);
+  border: 2px solid var(--gold-color);
+  padding: 0 2rem;
+  letter-spacing: 1px;
+  font-weight: bolder;
 }
 
 /* Media Queries */
@@ -144,6 +166,17 @@ body {
   #mobile-dropdown-menu .mobile-dropdown-menu li {
     display: block;
   }
+
+  /* Home */
+  .shop-now-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+
 }
 
 @media (min-width: 768px) {
