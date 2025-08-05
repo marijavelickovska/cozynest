@@ -1,7 +1,85 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
+<!-- Hero image -->
 <section class="container-fluid" id="hero-image">
+</section>
+
+<!-- Section Why CozyNest -->
+<section class="container my-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="primary-font">Why CozyNest?</h1>
+        </div>
+    </div>
+    <div class="row d-flex align-items-center mt-3">
+        <div class="col-12 col-md-4">
+            <div class="pt-4">
+                <h3 class="primary-font">Quality Comes First</h3>
+                <hr>
+                <p>We prioritize premium materials and meticulous craftsmanship to ensure that every CozyNest product
+                    brings comfort, durability, and timeless style to your home.
+                </p>
+            </div>
+            <div class="pt-4">
+                <h3 class="primary-font">Everything in One Place</h3>
+                <hr>
+                <p>From bedding and cushions to curtains and decorative touches - we offer all you need to create your
+                    dream bedroom in one easy-to-shop destination.
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/media/carousel/bedding-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/media/carousel/bedding-2.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/media/carousel/bedding-3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="pt-4">
+                <h3 class="primary-font text-md-end">Years of Experience</h3>
+                <hr>
+                <p class="text-md-end">With long-standing industry experience, we deeply understand our customers'
+                    needs and continually evolve to meet their expectations.
+                </p>
+            </div>
+            <div class="pt-4">
+                <h3 class="primary-font text-md-end">Thoughtful, Cozy Living</h3>
+                <hr>
+                <p class="text-md-end">Every product we offer is designed with care to help you create a peaceful,
+                    cozy space where you can truly relax and recharge.
+                </p>
+            </div>
+        </div>
+    </div>
 
 </section>
 {% endblock %}

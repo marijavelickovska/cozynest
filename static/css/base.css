@@ -19,6 +19,10 @@ body {
   box-sizing: border-box;
 }
 
+.primary-font {
+  font-family: var(--primary-font);
+}
+
 /* Navbar */
 .navbar-center-md {
   position: absolute;
@@ -77,8 +81,9 @@ body {
 /* Home */
 #hero-image {
   height: 80vh;
-  background: url("/media/hero-image.jpg") no-repeat center center fixed;
+  background: url("/media/hero-image.jpg") no-repeat center center;
   background-size: cover;
+  background-attachment: scroll;
 }
 
 /* Media Queries */
