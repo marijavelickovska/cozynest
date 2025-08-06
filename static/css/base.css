@@ -109,7 +109,8 @@ body {
   color: #000;
   font-family: var(--secondary-font);
   border: 2px solid var(--gold-color);
-  padding: 0 2rem;
+  box-shadow: 0 3px 10px var(--gold-color);
+  padding: 0.5 2.5rem;
   letter-spacing: 1px;
   font-weight: bolder;
 }
@@ -196,6 +197,10 @@ footer .copyright:hover {
     position: relative;
     z-index: -1;
   }
+
+  .footer-hr {
+    width: 60% !important;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -227,6 +232,11 @@ footer .copyright:hover {
   }
 
   /* Home */
+  #hero-image {
+    height: 70vh;
+    background-position: bottom bottom;
+  }
+
   .shop-now-overlay {
     position: absolute;
     bottom: 0;
@@ -235,7 +245,6 @@ footer .copyright:hover {
     width: 100%;
     padding: 1rem 1.5rem;
   }
-
 }
 
 @media (min-width: 768px) {
@@ -262,5 +271,9 @@ footer .copyright:hover {
   /* Navbar */
   .myaccount {
     font-size: 1.2rem;
+  }
+
+  .footer-links {
+    margin: 0 3rem;
   }
 }
