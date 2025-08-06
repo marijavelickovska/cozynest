@@ -19,9 +19,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from home import urls as home_urls
+from products import urls as products_urls
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(home_urls)),
+    path('products/', include(products_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
