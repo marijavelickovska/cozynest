@@ -1,0 +1,98 @@
+[
+  {
+    "model": "products.size",
+    "pk": 1,
+    "fields": {
+      "name": "180 x 200",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 2,
+    "fields": {
+      "name": "200 x 200",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 3,
+    "fields": {
+      "name": "220 x 240",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 4,
+    "fields": {
+      "name": "70 x 140",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 5,
+    "fields": {
+      "name": "100 x 160",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 6,
+    "fields": {
+      "name": "120 x 180",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 7,
+    "fields": {
+      "name": "S",
+      "category": 3
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 8,
+    "fields": {
+      "name": "M",
+      "category": 3
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 9,
+    "fields": {
+      "name": "L",
+      "category": 3
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 10,
+    "fields": {
+      "name": "XL",
+      "category": 3
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 11,
+    "fields": {
+      "name": "Small",
+      "category": 4
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 11,
+    "fields": {
+      "name": "Medium",
+      "category": 4
+    }
+  }
+]

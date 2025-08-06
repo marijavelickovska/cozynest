@@ -1,0 +1,41 @@
+[
+  {
+    "model": "products.productvariant",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "size": 1,
+      "color": 1,
+      "price": "59.99",
+      "stock": 10,
+      "sku": "CLASSIC-BED-140x200-WHITE",
+      "image": "variants/classic_bed_140x200_white.jpg"
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "size": 2,
+      "color": 2,
+      "price": "64.99",
+      "stock": 5,
+      "sku": "CLASSIC-BED-180x200-GRAY",
+      "image": "variants/classic_bed_180x200_gray.jpg"
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 3,
+    "fields": {
+      "product": 2,
+      "size": 3,
+      "color": 3,
+      "price": "39.99",
+      "stock": 20,
+      "sku": "COMFORT-PYJ-S-M-PINK",
+      "image": ""
+    }
+  }
+]

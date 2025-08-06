@@ -1,0 +1,58 @@
+[
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "name": "bedding",
+      "friendly_name": "Bedding"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+      "name": "kids_bedding",
+      "friendly_name": "Kids bedding"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "name": "Sheets",
+      "friendly_name": "Cotton&Silk Sheets"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+      "name": "pajamas",
+      "friendly_name": "Pajamas"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+      "name": "kids_pajamas",
+      "friendly_name": "Kids Pajamas"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+      "name": "pillows",
+      "friendly_name": "Pillows"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 7,
+    "fields": {
+      "name": "decor",
+      "friendly_name": "Decor"
+    }
+  }
+]

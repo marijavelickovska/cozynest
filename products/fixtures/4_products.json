@@ -1,0 +1,100 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Classic Bedding Set",
+      "category": 1,
+      "slug": "classic_bedding_set",
+      "description": "High_quality cotton bedding set in neutral colors.",
+      "base_price": "59.99",
+      "image": "products/classic_bedding_set.jpg",
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Luxury Satin Sheet Set",
+      "category": 1,
+      "slug": "luxury_satin_sheet_set",
+      "description": "Soft and smooth satin sheets for a luxurious sleep.",
+      "base_price": "79.99",
+      "image": "products/luxury_satin_sheet_set.jpg",
+      "created_on": "2025-08-02T11:00:00Z",
+      "updated_on": "2025-08-02T11:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "Floral Print Comforter",
+      "category": 1,
+      "slug": "floral_print_comforter",
+      "description": "Bright and colorful floral comforter to brighten your room.",
+      "base_price": "69.99",
+      "image": "products/floral_print_comforter.jpg",
+      "created_on": "2025-08-03T09:30:00Z",
+      "updated_on": "2025-08-03T09:30:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Pink Princess Bedding Set",
+      "category": 2,
+      "slug": "pink_princess_bedding_set",
+      "description": "Adorable pink bedding set perfect for little princesses.",
+      "base_price": "49.99",
+      "image": "products/pink_princess_bedding_set.jpg",
+      "created_on": "2025-08-04T10:00:00Z",
+      "updated_on": "2025-08-04T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Bunny Friends Bedding",
+      "category": 2,
+      "slug": "bunny_friends_bedding",
+      "description": "Soft bedding with cute bunny illustrations for cozy dreams.",
+      "base_price": "44.99",
+      "image": "products/bunny_friends_bedding.jpg",
+      "created_on": "2025-08-04T10:10:00Z",
+      "updated_on": "2025-08-04T10:10:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Classic Cotton Pajamas",
+      "category": 4,
+      "slug": "classic_cotton_pajamas",
+      "description": "Breathable and soft cotton pajamas for a comfortable night's sleep.",
+      "base_price": "29.99",
+      "image": "products/classic_cotton_pajamas.jpg",
+      "created_on": "2025-08-04T11:00:00Z",
+      "updated_on": "2025-08-04T11:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "name": "Silky Lounge Pajama Set",
+      "category": 4,
+      "slug": "silky_lounge_pajama_set",
+      "description": "Elegant and soft satin pajama set ideal for lounging or sleeping.",
+      "base_price": "39.99",
+      "image": "products/silk_pajamas.jpg",
+      "created_on": "2025-08-04T11:10:00Z",
+      "updated_on": "2025-08-04T11:10:00Z"
+    }
+  }
+]
