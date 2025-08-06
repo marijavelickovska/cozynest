@@ -7,11 +7,12 @@ from .models import Size, Color, Category, Product, ProductVariant
 class SizeAdmin(admin.ModelAdmin):
     """
     Admin configuration for the Size model.
-    Displays size name and allows search and filtering by name.
+    Displays size name and associated category.
+    Allows searching by size name and filtering by category.
     """
-    list_display = ('name',)
+    list_display = ('name', 'category')
     search_fields = ('name',)
-    list_filter = ('name',)
+    list_filter = ('category',)
 
 
 @admin.register(Color)
