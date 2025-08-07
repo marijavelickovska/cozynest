@@ -1,0 +1,284 @@
+/* Google fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* CSS Variables */
+:root {
+  --primary-font: "Playfair Display", serif;
+  --secondary-font: "Georgia", serif;
+  --darkgray-color: #424242;
+  --lightgray-color: #E6EBEE;
+  --orange-color: #D17F53;
+  --gold-color: #b08336;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.primary-font {
+  font-family: var(--primary-font);
+}
+
+.gold-color {
+  color: var(--gold-color);
+}
+
+/* Navbar */
+.navbar-center-md {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#mobile-search-input {
+  display: none;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-family: var(--primary-font);
+  font-size: 3rem;
+}
+
+.icon-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.icon-link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 1.25rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* from Bulma */
+.icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.search-input {
+  border: 1px solid #000 !important;
+  box-shadow: none !important;
+}
+
+.search-span {
+  border: 1px solid #000 !important;
+  cursor: pointer;
+}
+
+/* Home */
+#hero-image {
+  height: 80vh;
+  background: url("/media/hero-image.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  position: relative;
+  color: white;
+}
+
+.shop-now-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 20vh;
+}
+
+.shop-now-button {
+  background-color: white;
+  color: #000;
+  font-family: var(--secondary-font);
+  border: 2px solid var(--gold-color);
+  box-shadow: 0 3px 10px var(--gold-color);
+  padding: 0.5 2.5rem;
+  letter-spacing: 1px;
+  font-weight: bolder;
+}
+
+/* Footer */
+footer {
+  background-color: var(--lightgray-color);
+}
+
+.social-icons .bi {
+  font-size: 1.5rem;
+  color: var(--darkgray-color);
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons .bi:hover {
+  color: var(--gold-color); 
+}
+
+footer a {
+  text-decoration: none;     
+  color: #212121;           
+  transition: color 0.3s;  
+}
+
+footer a:hover {
+  color: var(--gold-color);  
+}
+
+footer .copyright:hover {
+  color: var(--gold-color);
+}
+
+/* Meilchimp form*/
+#mc_embed_signup {
+  background: var(--lightgray-color);
+  false;
+  clear: left;
+  width: 100%;
+}
+
+#mc-embedded-subscribe-form {
+  margin: 0 !important;
+}
+
+#mc-embedded-subscribe {
+  background-color: var(--darkgray-color) !important;
+  color: white !important;
+}
+
+#mc-embedded-subscribe:hover {
+  background-color: var(--darkgray-color) !important;
+  color: var(--gold-color) !important;
+}
+
+/* Products */
+.card {
+  width: 18rem;
+}
+
+
+/* Media Queries */
+@media (max-width: 576px) {
+  /* Navbar */
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+
+  .navbar {
+    position: relative;
+    z-index: 1000;
+  }
+
+  #mobile-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 30%;
+    background-color: white;
+    z-index: 1100;
+    color: #000 !important;
+    text-align: start;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+  }
+
+  #hero-image {
+    position: relative;
+    z-index: -1;
+  }
+
+  .footer-hr {
+    width: 60% !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Navbar */
+  #desktop-search-form {
+    display: none !important;
+  }
+
+  #burger-toggler {
+    display: block;
+  }
+
+  #mobile-dropdown-menu .dropdown-toggle {
+    display: none;
+  }
+
+  #mobile-dropdown-menu .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  #mobile-dropdown-menu .mobile-dropdown-menu li {
+    display: block;
+  }
+
+  /* Home */
+  #hero-image {
+    height: 70vh;
+    background-position: bottom bottom;
+  }
+
+  .shop-now-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Navbar */
+  .navbar-center-md {
+    display: flex;
+    align-items: center;
+  }
+
+  #mobile-search-section,
+  #mobile-dropdown-menu {
+    display: none !important;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Navbar */
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Navbar */
+  .myaccount {
+    font-size: 1.2rem;
+  }
+
+  .footer-links {
+    margin: 0 3rem;
+  }
+}

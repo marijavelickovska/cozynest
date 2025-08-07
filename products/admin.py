@@ -54,7 +54,6 @@ class ProductAdmin(admin.ModelAdmin):
     )
     search_fields = ('name', 'category__name', 'description')
     list_filter = ('category', 'created_on')
-    prepopulated_fields = {'slug': ('name',)}
 
 
 @admin.register(ProductVariant)
@@ -62,9 +61,9 @@ class ProductVariantAdmin(admin.ModelAdmin):
     """
     Admin configuration for the ProductVariant model.
     Displays product, size, color, price, stock and sku.
-    Enables search by product name, sku, size and color.
+    Enables search by product name, size and color.
     Allows filtering by product, size and color.
     """
-    list_display = ('product', 'size', 'color', 'price', 'stock', 'sku')
-    search_fields = ('product__name', 'sku', 'size__name', 'color__name')
+    list_display = ('product', 'size', 'color', 'price', 'stock')
+    search_fields = ('product__name', 'size__name', 'color__name')
     list_filter = ('product', 'size', 'color')

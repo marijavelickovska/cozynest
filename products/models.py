@@ -1,24 +1,9 @@
 from django.db import models
-
-
-class Size(models.Model):
-    name = models.CharField(max_length=20, unique=True)
-    categories = models.ManyToManyField('Category', related_name='sizes')
-
-    def __str__(self):
-        return self.name
-
-
-class Color(models.Model):
-    name = models.CharField(max_length=20, unique=True)
-    hex_code = models.CharField(max_length=7, blank=True, null=True) 
-
-    def __str__(self):
-        return self.name
+from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 class Category(models.Model):
-
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -32,13 +17,28 @@ class Category(models.Model):
         return self.friendly_name
 
 
+class Size(models.Model):
+    name = models.CharField(max_length=20, unique=True)
+    categories = models.ManyToManyField('Category', related_name='sizes')
+
+    def __str__(self):
+        return self.name
+
+
+class Color(models.Model):
+    name = models.CharField(max_length=20, unique=True)
+    hex_code = models.CharField(max_length=7, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     name = models.CharField(max_length=255)
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
-    slug = models.SlugField(unique=True, blank=True)
     description = models.TextField(blank=True)
     base_price = models.DecimalField(max_digits=8, decimal_places=2)
-    image = models.ImageField(upload_to='products/', blank=True, null=True)
+    image = CloudinaryField('image')
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -56,12 +56,11 @@ class ProductVariant(models.Model):
     color = models.ForeignKey(Color, on_delete=models.PROTECT)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     stock = models.PositiveIntegerField(default=0)
-    sku = models.CharField(max_length=100, unique=True)
-    image = models.ImageField(upload_to='variants/', blank=True, null=True)  # optional: if variant has specific image
+    image = CloudinaryField('image', blank=True, null=True)
 
     class Meta:
         ordering = ["-product__created_on"]
-        unique_together = ('product', 'size', 'color')  # ensures only one variant with same size & color
+        unique_together = ('product', 'size', 'color')
 
     def __str__(self):
-        return f"{self.product.name} - {self.size.name} - {self.color.name} - (SKU: {self.sku})"
+        return f"{self.product.name} - {self.size.name} - {self.color.name}"
