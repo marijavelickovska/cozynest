@@ -167,6 +167,11 @@ footer .copyright:hover {
   color: var(--gold-color) !important;
 }
 
+/* Products */
+.card {
+  width: 18rem;
+}
+
 
 /* Media Queries */
 @media (max-width: 576px) {
