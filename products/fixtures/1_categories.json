@@ -3,45 +3,29 @@
     "model": "products.category",
     "pk": 1,
     "fields": {
-      "name": "bedding",
-      "friendly_name": "Bedding"
+      "name": "bedding_sets",
+      "friendly_name": "Bedding Sets"
     }
   },
   {
     "model": "products.category",
     "pk": 2,
     "fields": {
-      "name": "kids_bedding",
-      "friendly_name": "Kids bedding"
+      "name": "kids_bedding_sets",
+      "friendly_name": "Kids Bedding Sets"
     }
   },
   {
     "model": "products.category",
     "pk": 3,
     "fields": {
-      "name": "Sheets",
-      "friendly_name": "Cotton&Silk Sheets"
+      "name": "sheets",
+      "friendly_name": "Sheets"
     }
   },
   {
     "model": "products.category",
     "pk": 4,
-    "fields": {
-      "name": "pajamas",
-      "friendly_name": "Pajamas"
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 5,
-    "fields": {
-      "name": "kids_pajamas",
-      "friendly_name": "Kids Pajamas"
-    }
-  },
-  {
-    "model": "products.category",
-    "pk": 6,
     "fields": {
       "name": "pillows",
       "friendly_name": "Pillows"
@@ -49,10 +33,50 @@
   },
   {
     "model": "products.category",
+    "pk": 5,
+    "fields": {
+      "name": "pillow_cases",
+      "friendly_name": "Pillow Cases"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+      "name": "pajamas",
+      "friendly_name": "Pajamas"
+    }
+  },
+  {
+    "model": "products.category",
     "pk": 7,
     "fields": {
-      "name": "decor",
-      "friendly_name": "Decor"
+      "name": "kids_pajamas",
+      "friendly_name": "Kids Pajamas"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 8,
+    "fields": {
+      "name": "decor_lamps",
+      "friendly_name": "Decor Lamps"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 9,
+    "fields": {
+      "name": "decor_items",
+      "friendly_name": "Decor Items"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 10,
+    "fields": {
+      "name": "decor_pictures",
+      "friendly_name": "Decor Pictures"
     }
   }
 ]

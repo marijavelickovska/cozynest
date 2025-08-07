@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "name": "180 x 200",
-      "category": 1
+      "categories": [1, 3]
     }
   },
   {
@@ -12,7 +12,7 @@
     "pk": 2,
     "fields": {
       "name": "200 x 200",
-      "category": 1
+      "categories": [1, 3]
     }
   },
   {
@@ -20,15 +20,15 @@
     "pk": 3,
     "fields": {
       "name": "220 x 240",
-      "category": 1
+      "categories": [1, 3]
     }
   },
-  {
+   {
     "model": "products.size",
     "pk": 4,
     "fields": {
       "name": "70 x 140",
-      "category": 2
+      "categories": [2]
     }
   },
   {
@@ -36,7 +36,7 @@
     "pk": 5,
     "fields": {
       "name": "100 x 160",
-      "category": 2
+      "categories": [2]
     }
   },
   {
@@ -44,55 +44,95 @@
     "pk": 6,
     "fields": {
       "name": "120 x 180",
-      "category": 2
+      "categories": [2]
     }
   },
   {
     "model": "products.size",
     "pk": 7,
     "fields": {
-      "name": "S",
-      "category": 3
+      "name": " 40 x 60",
+      "categories": [4, 5]
     }
   },
   {
     "model": "products.size",
     "pk": 8,
     "fields": {
-      "name": "M",
-      "category": 3
+      "name": "60 x 60",
+      "categories": [4, 5]
     }
   },
   {
     "model": "products.size",
     "pk": 9,
     "fields": {
-      "name": "L",
-      "category": 3
+      "name": "80 x 80",
+      "categories": [4, 5]
     }
   },
   {
     "model": "products.size",
     "pk": 10,
     "fields": {
+      "name": "S",
+      "categories": [6, 8, 9, 10]
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 11,
+    "fields": {
+      "name": "M",
+      "categories": [6, 8, 9, 10]
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 12,
+    "fields": {
+      "name": "L",
+      "categories": [6, 8, 9, 10]
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 13,
+    "fields": {
       "name": "XL",
-      "category": 3
+      "categories": [6]
     }
   },
   {
     "model": "products.size",
-    "pk": 11,
+    "pk": 14,
     "fields": {
-      "name": "Small",
-      "category": 4
+      "name": "98 - 104",
+      "categories": [7]
     }
   },
   {
     "model": "products.size",
-    "pk": 11,
+    "pk": 15,
     "fields": {
-      "name": "Medium",
-      "category": 4
+      "name": "104 - 110",
+      "categories": [7]
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 16,
+    "fields": {
+      "name": "110 - 116",
+      "categories": [7]
+    }
+  },
+  {
+    "model": "products.size",
+    "pk": 17,
+    "fields": {
+      "name": "116 - 122",
+      "categories": [7]
     }
   }
 ]

@@ -8,7 +8,8 @@
       "slug": "classic_bedding_set",
       "description": "High_quality cotton bedding set in neutral colors.",
       "base_price": "59.99",
-      "image": "products/classic_bedding_set.jpg",
+      "image": "products/classic_bedding_set.jpeg",
+      "rating": 4.6,
       "created_on": "2025-08-01T10:00:00Z",
       "updated_on": "2025-08-01T10:00:00Z"
     }
@@ -22,7 +23,8 @@
       "slug": "luxury_satin_sheet_set",
       "description": "Soft and smooth satin sheets for a luxurious sleep.",
       "base_price": "79.99",
-      "image": "products/luxury_satin_sheet_set.jpg",
+      "image": "products/luxury_satin_sheet_set.jpeg",
+      "rating": 5.0,
       "created_on": "2025-08-02T11:00:00Z",
       "updated_on": "2025-08-02T11:00:00Z"
     }
@@ -31,12 +33,13 @@
     "model": "products.product",
     "pk": 3,
     "fields": {
-      "name": "Floral Print Comforter",
+      "name": "Floral_Pattern_Sheet",
       "category": 1,
-      "slug": "floral_print_comforter",
+      "slug": "floral_pattern_sheet",
       "description": "Bright and colorful floral comforter to brighten your room.",
       "base_price": "69.99",
-      "image": "products/floral_print_comforter.jpg",
+      "image": "products/floral_pattern_sheet.jpg",
+      "rating": 4.9,
       "created_on": "2025-08-03T09:30:00Z",
       "updated_on": "2025-08-03T09:30:00Z"
     }
@@ -51,6 +54,7 @@
       "description": "Adorable pink bedding set perfect for little princesses.",
       "base_price": "49.99",
       "image": "products/pink_princess_bedding_set.jpg",
+      "rating": 4.3,
       "created_on": "2025-08-04T10:00:00Z",
       "updated_on": "2025-08-04T10:00:00Z"
     }
@@ -65,6 +69,7 @@
       "description": "Soft bedding with cute bunny illustrations for cozy dreams.",
       "base_price": "44.99",
       "image": "products/bunny_friends_bedding.jpg",
+      "rating": 4.6,
       "created_on": "2025-08-04T10:10:00Z",
       "updated_on": "2025-08-04T10:10:00Z"
     }
@@ -78,7 +83,8 @@
       "slug": "classic_cotton_pajamas",
       "description": "Breathable and soft cotton pajamas for a comfortable night's sleep.",
       "base_price": "29.99",
-      "image": "products/classic_cotton_pajamas.jpg",
+      "image": "products/classic_cotton_pajamas.jpeg",
+      "rating": 4.7,
       "created_on": "2025-08-04T11:00:00Z",
       "updated_on": "2025-08-04T11:00:00Z"
     }
@@ -92,7 +98,8 @@
       "slug": "silky_lounge_pajama_set",
       "description": "Elegant and soft satin pajama set ideal for lounging or sleeping.",
       "base_price": "39.99",
-      "image": "products/silk_pajamas.jpg",
+      "image": "products/silky_lounge_pajama_set.jpeg",
+      "rating": 5.0,
       "created_on": "2025-08-04T11:10:00Z",
       "updated_on": "2025-08-04T11:10:00Z"
     }
