@@ -3,7 +3,7 @@ from django.db import models
 
 class Size(models.Model):
     name = models.CharField(max_length=20, unique=True)
-    category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='sizes')
+    categories = models.ManyToManyField('Category', related_name='sizes')
 
     def __str__(self):
         return self.name
@@ -39,6 +39,7 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     base_price = models.DecimalField(max_digits=8, decimal_places=2)
     image = models.ImageField(upload_to='products/', blank=True, null=True)
+    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
