@@ -69,7 +69,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'CozyNest.urls'
+ROOT_URLCONF = 'cozynest.urls'
 
 TEMPLATES = [
     {
@@ -87,7 +87,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'CozyNest.wsgi.application'
+WSGI_APPLICATION = 'cozynest.wsgi.application'
 
 
 # Database

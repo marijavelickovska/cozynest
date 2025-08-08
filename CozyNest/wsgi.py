@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CozyNest.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cozynest.settings')
 
 application = get_wsgi_application()
