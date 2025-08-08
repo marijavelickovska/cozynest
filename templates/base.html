@@ -38,6 +38,7 @@
 
 <body>
     <header>
+        <!-- Top navbar -->
         <nav class="navbar navbar-expand-md bg-light px-0 py-2 px-lg-3 position-relative">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">CozyNest 🪶</a>
@@ -84,8 +85,8 @@
                     </li>
                 </ul>
 
-                <!-- Mobile navbar -->
-                <div class="d-md-none d-flex align-items-center ms-auto gap-2">
+                <!-- Mobile navbar and subnavbar -->
+                <div class="d-md-none d-flex align-items-center ms-auto gap-2 position-relative">
                     <button class="icon-button" id="mobile-search-toggle" aria-label="Search">
                         <span class="icon"><i class="fa-solid fa-search"></i></span>
                     </button>
@@ -96,6 +97,12 @@
                         data-bs-target="#mobile-dropdown-menu" aria-controls="mobile-dropdown-menu"
                         aria-expanded="false" aria-label="Toggle navigation" id="burger-toggler">
                         <i class="fas fa-user fa-lg icon"></i></span>
+                    </button>
+                    <!-- Burger toggle for subnavbar -->
+                    <button class="navbar-toggler d-md-none border-0 p-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mobile-subnavbar" aria-controls="mobile-subnavbar" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars icon"></i>
                     </button>
                 </div>
 
@@ -116,6 +123,130 @@
                 </form>
             </div>
         </nav>
+
+        <!-- Subnavbar -->
+        <!-- Desktop subnavbar -->
+        <nav class="navbar navbar-expand-md pt-0 d-none d-md-flex">
+            <div class="container-fluid" id="mobile-subnavbar">
+                <ul class="navbar-nav d-flex justify-content-center gap-3 w-100">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">All
+                            Products</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">By Price</a></li>
+                            <li><a class="dropdown-item" href="#">By Rating</a></li>
+                            <li><a class="dropdown-item" href="#">By Category</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Beddings</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Beddings</a></li>
+                            <li><a class="dropdown-item" href="#">Kids Bedding</a></li>
+                            <li><a class="dropdown-item" href="#">Sheets</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pillows</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Pillows</a></li>
+                            <li><a class="dropdown-item" href="#">Pillowcases </a></li>
+                            <li><a class="dropdown-item" href="#">Newest</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pajamas</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Women's Pajamas</a></li>
+                            <li><a class="dropdown-item" href="#">Men's Pajamas</a></li>
+                            <li><a class="dropdown-item" href="#">Kids' Pajamas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Decor</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Decor Lamps</a></li>
+                            <li><a class="dropdown-item" href="#">Decor Items</a></li>
+                            <li><a class="dropdown-item" href="#">Decor Pictures</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Special
+                            Offers</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+                            <li><a class="dropdown-item" href="#">Deals</a></li>
+                            <li><a class="dropdown-item" href="#">Clearance</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile subnavbar -->
+        <div class="collapse d-md-none position-relative" id="mobile-subnavbar">
+            <nav class="navbar pt-0 mobile-subnavbar">
+                <div class="container-fluid">
+                    <ul class="navbar-nav d-flex flex-column w-100">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">All
+                                Products</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">By Price</a></li>
+                                <li><a class="dropdown-item" href="#">By Rating</a></li>
+                                <li><a class="dropdown-item" href="#">By Category</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Beddings</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Beddings</a></li>
+                                <li><a class="dropdown-item" href="#">Kids Bedding</a></li>
+                                <li><a class="dropdown-item" href="#">Sheets</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Pillows</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Pillows</a></li>
+                                <li><a class="dropdown-item" href="#">Pillowcases </a></li>
+                                <li><a class="dropdown-item" href="#">Newest</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Pajamas</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Women's Pajamas</a></li>
+                                <li><a class="dropdown-item" href="#">Men's Pajamas</a></li>
+                                <li><a class="dropdown-item" href="#">Kids' Pajamas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Decor</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Decor Lamps</a></li>
+                                <li><a class="dropdown-item" href="#">Decor Items</a></li>
+                                <li><a class="dropdown-item" href="#">Decor Pictures</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Special
+                                Offers</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+                                <li><a class="dropdown-item" href="#">Deals</a></li>
+                                <li><a class="dropdown-item" href="#">Clearance</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
         <div class="container-fluid">
             <div id="delivery-banner" class="row text-center">
