@@ -89,7 +89,7 @@ body {
 /* Home */
 #hero-image {
   height: 80vh;
-  background: url("/media/hero-image.jpg") no-repeat center center;
+  background: url("../images/hero-image.jpg") no-repeat center center;
   background-size: cover;
   background-attachment: scroll;
   position: relative;

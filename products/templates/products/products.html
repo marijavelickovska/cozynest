@@ -1,17 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block content %}
 <div class="container">
     <div class="row g-4 my-5">
         {% for product in products %}
         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-5">
             <div class="card h-100 border-0 rounded-0">
-                {% if product.image %}
                 <img src="{{ product.image.url }}" class="card-img-top rounded-0" alt="{{ product.name }}">
-                {% else %}
-                <img src="{% static 'images/placeholder.png' %}" class="card-img-top rounded-0" alt="No image available">
-                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">{{ product.description|truncatewords:20 }}</p>

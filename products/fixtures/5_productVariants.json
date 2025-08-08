@@ -4,37 +4,598 @@
     "pk": 1,
     "fields": {
       "product": 1,
-      "size": 1,
-      "color": 1,
-      "price": "59.99",
+      "size": 3,
+      "color": 4,
+      "price": "79.99",
       "stock": 10,
-      "sku": "CLASSIC-BED-140x200-WHITE",
-      "image": "variants/classic_bed_140x200_white.jpg"
+      "image": ""
     }
   },
   {
     "model": "products.productvariant",
     "pk": 2,
     "fields": {
-      "product": 1,
-      "size": 2,
+      "product": 21,
+      "size": 4,
       "color": 2,
-      "price": "64.99",
-      "stock": 5,
-      "sku": "CLASSIC-BED-180x200-GRAY",
-      "image": "variants/classic_bed_180x200_gray.jpg"
+      "price": "45.99",
+      "stock": 10,
+      "image": ""
     }
   },
   {
     "model": "products.productvariant",
     "pk": 3,
     "fields": {
-      "product": 2,
-      "size": 3,
-      "color": 3,
+      "product": 5,
+      "size": 12,
+      "color": 1,
       "price": "39.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 4,
+    "fields": {
+      "product": 3,
+      "size": 1,
+      "color": 6,
+      "price": "19.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 5,
+    "fields": {
+      "product": 30,
+      "size": 6,
+      "color": 3,
+      "price": "29.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 6,
+    "fields": {
+      "product": 13,
+      "size": 9,
+      "color": 7,
+      "price": "25.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 7,
+    "fields": {
+      "product": 22,
+      "size": 16,
+      "color": 8,
+      "price": "44.90",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 8,
+    "fields": {
+      "product": 12,
+      "size": 8,
+      "color": 2,
+      "price": "52.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 9,
+    "fields": {
+      "product": 2,
+      "size": 2,
+      "color": 5,
+      "price": "24.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 10,
+    "fields": {
+      "product": 32,
+      "size": 13,
+      "color": 2,
+      "price": "43.90",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 11,
+    "fields": {
+      "product": 23,
+      "size": 8,
+      "color": 1,
+      "price": "42.90",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 12,
+    "fields": {
+      "product": 7,
+      "size": 3,
+      "color": 6,
+      "price": "24.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 13,
+    "fields": {
+      "product": 14,
+      "size": 11,
+      "color": 3,
+      "price": "36.90",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 14,
+    "fields": {
+      "product": 10,
+      "size": 9,
+      "color": 2,
+      "price": "68.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 15,
+    "fields": {
+      "product": 31,
+      "size": 3,
+      "color": 7,
+      "price": "32.59",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 16,
+    "fields": {
+      "product": 37,
+      "size": 4,
+      "color": 6,
+      "price": "27.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 17,
+    "fields": {
+      "product": 24,
+      "size": 7,
+      "color": 5,
+      "price": "43.90",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 18,
+    "fields": {
+      "product": 11,
+      "size": 7,
+      "color": 8,
+      "price": "28.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 19,
+    "fields": {
+      "product": 15,
+      "size": 1,
+      "color": 3,
+      "price": "36.59",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 20,
+    "fields": {
+      "product": 36,
+      "size": 1,
+      "color": 2,
+      "price": "28.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 21,
+    "fields": {
+      "product": 6,
+      "size": 8,
+      "color": 7,
+      "price": "75.90",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 22,
+    "fields": {
+      "product": 18,
+      "size": 3,
+      "color": 1,
+      "price": "55.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 23,
+    "fields": {
+      "product": 38,
+      "size": 10,
+      "color": 4,
+      "price": "59.49",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 24,
+    "fields": {
+      "product": 26,
+      "size": 2,
+      "color": 2,
+      "price": "29.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 25,
+    "fields": {
+      "product": 9,
+      "size": 2,
+      "color": 6,
+      "price": "25.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 26,
+    "fields": {
+      "product": 4,
+      "size": 1,
+      "color": 3,
+      "price": "54.99",
+      "stock": 15,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 27,
+    "fields": {
+      "product": 17,
+      "size": 6,
+      "color": 1,
+      "price": "45.00",
+      "stock": 8,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 28,
+    "fields": {
+      "product": 19,
+      "size": 10,
+      "color": 4,
+      "price": "39.99",
+      "stock": 12,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 29,
+    "fields": {
+      "product": 29,
+      "size": 2,
+      "color": 2,
+      "price": "65.50",
+      "stock": 7,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 30,
+    "fields": {
+      "product": 8,
+      "size": 9,
+      "color": 5,
+      "price": "70.00",
       "stock": 20,
-      "sku": "COMFORT-PYJ-S-M-PINK",
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 31,
+    "fields": {
+      "product": 25,
+      "size": 13,
+      "color": 1,
+      "price": "50.00",
+      "stock": 5,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 32,
+    "fields": {
+      "product": 35,
+      "size": 5,
+      "color": 6,
+      "price": "42.99",
+      "stock": 14,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 33,
+    "fields": {
+      "product": 16,
+      "size": 14,
+      "color": 7,
+      "price": "59.00",
+      "stock": 9,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 34,
+    "fields": {
+      "product": 20,
+      "size": 11,
+      "color": 3,
+      "price": "47.50",
+      "stock": 6,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 35,
+    "fields": {
+      "product": 28,
+      "size": 15,
+      "color": 5,
+      "price": "51.25",
+      "stock": 13,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 36,
+    "fields": {
+      "product": 27,
+      "size": 6,
+      "color": 2,
+      "price": "55.00",
+      "stock": 11,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 37,
+    "fields": {
+      "product": 33,
+      "size": 7,
+      "color": 8,
+      "price": "60.00",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 38,
+    "fields": {
+      "product": 34,
+      "size": 12,
+      "color": 6,
+      "price": "49.90",
+      "stock": 4,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 39,
+    "fields": {
+      "product": 40,
+      "size": 17,
+      "color": 4,
+      "price": "44.99",
+      "stock": 6,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 40,
+    "fields": {
+      "product": 39,
+      "size": 5,
+      "color": 1,
+      "price": "38.00",
+      "stock": 3,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 41,
+    "fields": {
+      "product": 6,
+      "size": 8,
+      "color": 3,
+      "price": "64.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 42,
+    "fields": {
+      "product": 3,
+      "size": 2,
+      "color": 3,
+      "price": "55.55",
+      "stock": 7,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 43,
+    "fields": {
+      "product": 22,
+      "size": 10,
+      "color": 7,
+      "price": "43.00",
+      "stock": 8,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 44,
+    "fields": {
+      "product": 10,
+      "size": 6,
+      "color": 4,
+      "price": "67.00",
+      "stock": 15,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 45,
+    "fields": {
+      "product": 5,
+      "size": 3,
+      "color": 6,
+      "price": "59.90",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 46,
+    "fields": {
+      "product": 13,
+      "size": 7,
+      "color": 2,
+      "price": "61.00",
+      "stock": 6,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 47,
+    "fields": {
+      "product": 11,
+      "size": 4,
+      "color": 7,
+      "price": "56.00",
+      "stock": 4,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 48,
+    "fields": {
+      "product": 18,
+      "size": 1,
+      "color": 8,
+      "price": "62.00",
+      "stock": 5,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 49,
+    "fields": {
+      "product": 21,
+      "size": 11,
+      "color": 5,
+      "price": "48.00",
+      "stock": 9,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 50,
+    "fields": {
+      "product": 14,
+      "size": 16,
+      "color": 3,
+      "price": "52.00",
+      "stock": 10,
       "image": ""
     }
   }

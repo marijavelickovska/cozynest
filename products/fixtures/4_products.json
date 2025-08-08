@@ -3,13 +3,12 @@
     "model": "products.product",
     "pk": 1,
     "fields": {
-      "name": "Classic Bedding Set",
+      "name": "Bedding Set",
       "category": 1,
-      "slug": "classic_bedding_set",
-      "description": "High_quality cotton bedding set in neutral colors.",
-      "base_price": "59.99",
-      "image": "products/classic_bedding_set.jpeg",
-      "rating": 4.6,
+      "description": "Description for bedding set.",
+      "base_price": "39.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645383/bedding_set_rmu46g.jpg",
+      "rating": 4.3,
       "created_on": "2025-08-01T10:00:00Z",
       "updated_on": "2025-08-01T10:00:00Z"
     }
@@ -18,90 +17,602 @@
     "model": "products.product",
     "pk": 2,
     "fields": {
-      "name": "Luxury Satin Sheet Set",
-      "category": 1,
-      "slug": "luxury_satin_sheet_set",
-      "description": "Soft and smooth satin sheets for a luxurious sleep.",
-      "base_price": "79.99",
-      "image": "products/luxury_satin_sheet_set.jpeg",
-      "rating": 5.0,
-      "created_on": "2025-08-02T11:00:00Z",
-      "updated_on": "2025-08-02T11:00:00Z"
+      "name": "Bunny Friends Bedding",
+      "category": 3,
+      "description": "Description for bunny friends bedding.",
+      "base_price": "55.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645495/bunny_friends_bedding_ylvpyz.jpg",
+      "rating": 4.9,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 3,
     "fields": {
-      "name": "Floral_Pattern_Sheet",
+      "name": "Classic Bed Set",
       "category": 1,
-      "slug": "floral_pattern_sheet",
-      "description": "Bright and colorful floral comforter to brighten your room.",
-      "base_price": "69.99",
-      "image": "products/floral_pattern_sheet.jpg",
-      "rating": 4.9,
-      "created_on": "2025-08-03T09:30:00Z",
-      "updated_on": "2025-08-03T09:30:00Z"
+      "description": "Description for classic bed set.",
+      "base_price": "42.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645495/classic_bedding_set_eciup0.jpg",
+      "rating": 5.0,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 4,
     "fields": {
-      "name": "Pink Princess Bedding Set",
-      "category": 2,
-      "slug": "pink_princess_bedding_set",
-      "description": "Adorable pink bedding set perfect for little princesses.",
-      "base_price": "49.99",
-      "image": "products/pink_princess_bedding_set.jpg",
-      "rating": 4.3,
-      "created_on": "2025-08-04T10:00:00Z",
-      "updated_on": "2025-08-04T10:00:00Z"
+      "name": "Classic Bedding Set",
+      "category": 3,
+      "description": "Description for classic bedding set.",
+      "base_price": "49.90",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645495/classic_bed_set_qu2cwz.jpg",
+      "rating": 4.2,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 5,
     "fields": {
-      "name": "Bunny Friends Bedding",
-      "category": 2,
-      "slug": "bunny_friends_bedding",
-      "description": "Soft bedding with cute bunny illustrations for cozy dreams.",
-      "base_price": "44.99",
-      "image": "products/bunny_friends_bedding.jpg",
-      "rating": 4.6,
-      "created_on": "2025-08-04T10:10:00Z",
-      "updated_on": "2025-08-04T10:10:00Z"
+      "name": "Classic Cotton Pajamas",
+      "category": 6,
+      "description": "Description for classic cotton pajamas.",
+      "base_price": "78.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645496/classic_cotton_pajamas_c76po4.jpg",
+      "rating": 3.8,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 6,
     "fields": {
-      "name": "Classic Cotton Pajamas",
+      "name": "Classic Cotton Pillow",
       "category": 4,
-      "slug": "classic_cotton_pajamas",
-      "description": "Breathable and soft cotton pajamas for a comfortable night's sleep.",
-      "base_price": "29.99",
-      "image": "products/classic_cotton_pajamas.jpeg",
-      "rating": 4.7,
-      "created_on": "2025-08-04T11:00:00Z",
-      "updated_on": "2025-08-04T11:00:00Z"
+      "description": "Description for classic cotton pillow.",
+      "base_price": "56.90",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645496/classic_cotton_pillow_ma1nju.jpg",
+      "rating": 4.6,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 7,
     "fields": {
-      "name": "Silky Lounge Pajama Set",
-      "category": 4,
-      "slug": "silky_lounge_pajama_set",
-      "description": "Elegant and soft satin pajama set ideal for lounging or sleeping.",
-      "base_price": "39.99",
-      "image": "products/silky_lounge_pajama_set.jpeg",
+      "name": "Classic Cotton Set",
+      "category": 1,
+      "description": "Description for classic cotton set.",
+      "base_price": "52.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645496/classic_cotton_set_kuxoty.jpg",
+      "rating": 3.9,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "name": "Classic Cotton-Bedding",
+      "category": 1,
+      "description": "Description for classic cotton-bedding.",
+      "base_price": "34.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645496/classic_cotton-bedding_dnaouu.jpg",
+      "rating": 4.5,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "name": "Classic Plaid Sheet",
+      "category": 3,
+      "description": "Description for classic plaid sheet.",
+      "base_price": "46.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645496/classic_plaid_sheet_jwimau.jpg",
+      "rating": 4.7,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "name": "Colorful Cushion",
+      "category": 5,
+      "description": "Description for colorful cushion.",
+      "base_price": "22.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645499/colorful_patchwork_cushion_zsmre3.jpg",
       "rating": 5.0,
-      "created_on": "2025-08-04T11:10:00Z",
-      "updated_on": "2025-08-04T11:10:00Z"
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "name": "Colorful Pillow",
+      "category": 4,
+      "description": "Description for colorful pillow.",
+      "base_price": "43.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645499/colorful_cushion_xbxgig.jpg",
+      "rating": 4.1,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "name": "Colorful Patchwork Cushion",
+      "category": 5,
+      "description": "Description for colorful patchwork cushion.",
+      "base_price": "43.90",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645499/colorful_patchwork_cushion_zsmre3.jpg",
+      "rating": 4.3,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+      "name": "Colorful Patchwork Pillow",
+      "category": 4,
+      "description": "Description for colorful patchwork pillow.",
+      "base_price": "49.90",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645499/colorful_cushion_xbxgig.jpg",
+      "rating": 4.8,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+      "name": "Elegant Silk Pajama",
+      "category": 6,
+      "description": "Description for elegant silk pajama.",
+      "base_price": "69.90",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645502/elegant_silk_pyjama_leczzf.jpg",
+      "rating": 3.7,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+      "name": "Cooling Bamboo Set",
+      "category": 1,
+      "description": "Description for cooling bamboo set.",
+      "base_price": "49.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645500/cooling_bamboo_set_etr6pe.jpg",
+      "rating": 4.7,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+      "name": "Cotton Sheet",
+      "category": 3,
+      "description": "Description for cotton sheet.",
+      "base_price": "55.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645500/cotton_sheet_vpaepv.jpg",
+      "rating": 5.0,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+      "name": "Cozy Cotton Bedding",
+      "category": 1,
+      "description": "Description for cozy cotton bedding.",
+      "base_price": "24.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645502/cozy_cotton_bedding_qwtdsd.jpg",
+      "rating": 4.7,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+      "name": "Crisp Linen Sheet",
+      "category": 3,
+      "description": "Description for crisp linen sheet.",
+      "base_price": "33.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645502/crisp_linen_sheet_ixxpdk.jpg",
+      "rating": 4.3,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+      "name": "Elegant Stripe Duvet Cover",
+      "category": 1,
+      "description": "Description for elegant stripe duvet cover.",
+      "base_price": "77.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645503/elegant_stripe_duvet_cover_mvx2px.jpg",
+      "rating": 4.2,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+      "name": "Floral Pattern Sheet",
+      "category": 3,
+      "description": "Description for floral pattern sheet.",
+      "base_price": "35.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645503/floral_pattern_sheet_xvsrgg.jpg",
+      "rating": 4.7,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 21,
+    "fields": {
+      "name": "Kids Cotton Bedding",
+      "category": 2,
+      "description": "Description for kids cotton bedding.",
+      "base_price": "42.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645506/kids_cotton_bedding_t0ziqk.jpg",
+      "rating": 3.6,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 22,
+    "fields": {
+      "name": "Kids Animal Pyjamas",
+      "category": 7,
+      "description": "Description for kids animal pyjamas.",
+      "base_price": "38.90",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645505/kids_animal_pyjamas_gcawlv.jpg",
+      "rating": 5.0,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 23,
+    "fields": {
+      "name": "Linen Decorative Pillow",
+      "category": 4,
+      "description": "Description for linen decorative pillow.",
+      "base_price": "26.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645507/linen_decorative_pillow_fxrqsk.jpg",
+      "rating": 4.5,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 24,
+    "fields": {
+      "name": "Linen Decorative Cushion",
+      "category": 5,
+      "description": "Description for linen decorative cushion.",
+      "base_price": "35.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645507/linen_decorative_cushion_nijtyh.jpg",
+      "rating": 5.0,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 25,
+    "fields": {
+      "name": "Luxury Egyptian Cotton",
+      "category": 1,
+      "description": "Description for luxury egyptian cotton.",
+      "base_price": "55.90",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645507/luxury_egyptian_cotton_nesoxi.jpg",
+      "rating": 4.5,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 26,
+    "fields": {
+      "name": "Luxury Satin Sheet Set",
+      "category": 1,
+      "description": "Description for luxury satin sheet set.",
+      "base_price": "48.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754640447/gnrib63jn8x84kgrmael.jpg",
+      "rating": 5.0,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 27,
+    "fields": {
+      "name": "Memory Foam Pillow",
+      "category": 4,
+      "description": "Description for memory foam pillow.",
+      "base_price": "49.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645500/colorful_patchwork_pillow_sortel.jpg",
+      "rating": 4.5,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 28,
+    "fields": {
+      "name": "Modern Bedding",
+      "category": 1,
+      "description": "Description for modern bedding.",
+      "base_price": "33.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645503/elegant_stripe_duvet_cover_mvx2px.jpg",
+      "rating": 4.5,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 29,
+    "fields": {
+      "name": "Modern Geometric Bedding",
+      "category": 1,
+      "description": "Description for modern geometric bedding.",
+      "base_price": "46.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645510/modern_geometric_bedding_hkp6df.jpg",
+      "rating": 4.5,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 30,
+    "fields": {
+      "name": "Princess Bedding Set",
+      "category": 2,
+      "description": "Description for princess bedding set.",
+      "base_price": "49.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645512/princess_bedding_set_eedx6s.jpg",
+      "rating": 5.0,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 31,
+    "fields": {
+      "name": "Satin Bedding Set",
+      "category": 1,
+      "description": "Description for satin bedding set.",
+      "base_price": "55.90",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645512/satin_bedding_set_clkyoy.jpg",
+      "rating": 4.6,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 32,
+    "fields": {
+      "name": "Silky Pajama Set",
+      "category": 6,
+      "description": "Description for silky pajama set.",
+      "base_price": "38.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645512/silky_pajama_set_ocwjr0.jpg",
+      "rating": 4.5,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 33,
+    "fields": {
+      "name": "Soft Bedding Set",
+      "category": 1,
+      "description": "Description for soft bedding set.",
+      "base_price": "45.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645513/soft_bedding_set_rnasfp.jpg",
+      "rating": 4.3,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 34,
+    "fields": {
+      "name": "Soft Faux Pillow",
+      "category": 4,
+      "description": "Description for soft faux pillow.",
+      "base_price": "28.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645515/soft_faux_pillow_qxmb9t.jpg",
+      "rating": 4.4,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 35,
+    "fields": {
+      "name": "Soft Faux Cushion",
+      "category": 5,
+      "description": "Description for soft faux cushion.",
+      "base_price": "75.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645514/soft_faux_cushion_otihzk.jpg",
+      "rating": 4.9,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 36,
+    "fields": {
+      "name": "Soft Flannel Bedding",
+      "category": 1,
+      "description": "Description for soft flannel bedding.",
+      "base_price": "63.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645516/soft_flannel_bedding_mc1uci.jpg",
+      "rating": 4.8,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 37,
+    "fields": {
+      "name": "Striped Sheet Set",
+      "category": 2,
+      "description": "Description for striped sheet set.",
+      "base_price": "45.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645516/striped_sheet_set_kwzlgl.jpg",
+      "rating": 4.4,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 38,
+    "fields": {
+      "name": "Summer Breeze Pyjama",
+      "category": 6,
+      "description": "Description for summer breeze pyjama.",
+      "base_price": "43.90",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645516/summer_breeze_pyjama_spkcdc.jpg",
+      "rating": 4.9,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 39,
+    "fields": {
+      "name": "Summer Breeze Sheet",
+      "category": 2,
+      "description": "Description for summer breeze sheet.",
+      "base_price": "48.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645516/summer_breeze_sheet_gtejrv.jpg",
+      "rating": 4.3,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 40,
+    "fields": {
+      "name": "Tropical Leaf Cushion",
+      "category": 5,
+      "description": "Description for tropical leaf cushion.",
+      "base_price": "65.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645519/tropical_leaf_cushion_kjntfx.jpg",
+      "rating": 3.9,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 41,
+    "fields": {
+      "name": "Tropical Leaf Pillow",
+      "category": 4,
+      "description": "Description for tropical leaf pillow.",
+      "base_price": "29.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645519/tropical_leaf_pillow_qj29xx.jpg",
+      "rating": 4.5,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 42,
+    "fields": {
+      "name": "Warm Fleece Sheet",
+      "category": 2,
+      "description": "Description for warm fleece sheet.",
+      "base_price": "29.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645519/warm_fleece_sheet_ywbov8.jpg",
+      "rating": 4.6,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 43,
+    "fields": {
+      "name": "Warm Wool Set",
+      "category": 1,
+      "description": "Description for warm wool set.",
+      "base_price": "49.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645519/warm_wool_set_nd8ccr.jpg",
+      "rating": 4.7,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 44,
+    "fields": {
+      "name": "Wool Blanket Set",
+      "category": 1,
+      "description": "Description for wool blanket set.",
+      "base_price": "39.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645520/wool_blanket_set_mq4nkx.jpg",
+      "rating": 4.2,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
     }
   }
 ]
