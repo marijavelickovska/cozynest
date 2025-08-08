@@ -74,6 +74,7 @@ body {
   justify-content: center;
   height: 1.5rem;
   width: 1.5rem;
+  color: #000;
 }
 
 .search-input {
@@ -84,6 +85,11 @@ body {
 .search-span {
   border: 1px solid #000 !important;
   cursor: pointer;
+}
+
+/* Main nav */
+.dropdown-toggle::after {
+    display: none !important;
 }
 
 /* Home */
@@ -274,8 +280,9 @@ footer .copyright:hover {
 
 @media (min-width: 1200px) {
   /* Navbar */
-  .myaccount {
-    font-size: 1.2rem;
+  .navbar-nav a {
+    font-size: 1rem;
+    color: #000;
   }
 
   .footer-links {

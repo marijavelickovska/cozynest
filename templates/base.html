@@ -41,6 +41,8 @@
         <nav class="navbar navbar-expand-md bg-light px-0 py-2 px-lg-3 position-relative">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">CozyNest 🪶</a>
+
+                <!-- Desktop navbar -->
                 <form id="desktop-search-form" class="d-none d-md-flex navbar-center-md" role="search"
                     style="width: 300px;">
                     <div class="input-group">
@@ -52,16 +54,29 @@
                     </div>
                 </form>
 
-                <!-- Desktop menu -->
                 <ul class="navbar-nav d-none d-md-flex ms-auto align-items-center gap-3">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">
-                            <span class="icon"><i class="fa-solid fa-shopping-bag"></i></span>
+                            <div class="text-center">
+                                <div><i class="fa-solid fa-shopping-bag"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                    $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
                         </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle myaccount" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">My Account</a>
+                            aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#">Login</a></li>
                             <li><a class="dropdown-item" href="#">Register</a></li>
@@ -69,7 +84,7 @@
                     </li>
                 </ul>
 
-                <!-- Mobile controls -->
+                <!-- Mobile navbar -->
                 <div class="d-md-none d-flex align-items-center ms-auto gap-2">
                     <button class="icon-button" id="mobile-search-toggle" aria-label="Search">
                         <span class="icon"><i class="fa-solid fa-search"></i></span>
@@ -77,14 +92,14 @@
                     <a class="icon-link" href="#">
                         <span class="icon"><i class="fa-solid fa-shopping-bag"></i></span>
                     </a>
-                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#mobile-dropdown-menu" aria-controls="mobile-dropdown-menu"
                         aria-expanded="false" aria-label="Toggle navigation" id="burger-toggler">
-                        <span class="navbar-toggler-icon"></span>
+                        <i class="fas fa-user fa-lg icon"></i></span>
                     </button>
                 </div>
 
-                <!-- Mobile menu -->
+                <!-- Mobile account dropdown -->
                 <div class="collapse navbar-collapse d-md-none" id="mobile-dropdown-menu">
                     <ul class="mobile-dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item pt-2" href="#">Login</a></li>
