@@ -97,7 +97,6 @@ body {
   font-size: larger;
 }
 
-
 /* Home */
 #hero-image {
   height: 80vh;
@@ -192,16 +191,6 @@ footer .copyright:hover {
     font-size: 1rem !important;
   }
 
-  .navbar {
-    position: relative;
-    z-index: 1000;
-  }
-
-  #hero-image {
-    position: relative;
-    z-index: -1;
-  }
-
   .footer-hr {
     width: 60% !important;
   }
@@ -213,21 +202,33 @@ footer .copyright:hover {
     display: none !important;
   }
 
-  #mobile-dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 30%;
-    background-color: white;
-    z-index: 1100;
-    color: #000 !important;
-    text-align: start;
-    border: 1px solid gainsboro;
-    border-radius: 5px;
+  .navbar {
+    position: relative;
+    z-index: 1000;
   }
 
-  #mobile-dropdown-menu .mobile-dropdown-menu li {
-    display: block;
+  #hero-image {
+    position: relative;
+    z-index: -1;
+  }
+
+  #mobile-dropdown-menu,
+  #mobile-subnavbar {
+    position: absolute;
+    top: 50px; 
+    right: 0;
+    width: 60vw;
+    background-color: white;
+    z-index: 1200;
+    border: 1px solid gainsboro;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  #mobile-dropdown-menu ul {
+    list-style-type: none;
+    padding-left: 1rem;
   }
 
   /* Home */
