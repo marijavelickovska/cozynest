@@ -212,10 +212,23 @@ footer .copyright:hover {
     z-index: -1;
   }
 
+  #mobile-search-section {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50px; 
+    right: 0;
+    width: 100vw;
+    padding-bottom: 5px;
+    background-color: white;
+    z-index: 1200;
+    transition: height 0.3s ease;
+  }
+
   #mobile-dropdown-menu,
   #mobile-subnavbar {
     position: absolute;
-    top: 50px; 
+    top: 55px; 
     right: 0;
     width: 60vw;
     background-color: white;
