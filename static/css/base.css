@@ -183,6 +183,9 @@ footer .copyright:hover {
   width: 18rem;
 }
 
+#sort-selector {
+  border-color: black !important;
+}
 
 /* Media Queries */
 @media (max-width: 576px) {
