@@ -35,16 +35,16 @@
     "model": "products.category",
     "pk": 5,
     "fields": {
-      "name": "pillow_cases",
-      "friendly_name": "Pillow Cases"
+      "name": "pillowcases",
+      "friendly_name": "Pillowcases"
     }
   },
   {
     "model": "products.category",
     "pk": 6,
     "fields": {
-      "name": "pajamas",
-      "friendly_name": "Pajamas"
+      "name": "womens_pajamas",
+      "friendly_name": "Woman Pajamas"
     }
   },
   {
@@ -59,24 +59,32 @@
     "model": "products.category",
     "pk": 8,
     "fields": {
-      "name": "decor_lamps",
-      "friendly_name": "Decor Lamps"
+      "name": "mens_pajamas",
+      "friendly_name": "Men's Pajamas"
     }
   },
   {
     "model": "products.category",
     "pk": 9,
     "fields": {
-      "name": "decor_items",
-      "friendly_name": "Decor Items"
+      "name": "new_arrivals",
+      "friendly_name": "New Arrivals"
     }
   },
   {
     "model": "products.category",
     "pk": 10,
     "fields": {
-      "name": "decor_pictures",
-      "friendly_name": "Decor Pictures"
+      "name": "deals",
+      "friendly_name": "Deals"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 11,
+    "fields": {
+      "name": "clearance",
+      "friendly_name": "Clearance"
     }
   }
 ]

@@ -2,49 +2,41 @@
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">All
         Products</a>
     <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">By Price</a></li>
-        <li><a class="dropdown-item" href="#">By Rating</a></li>
-        <li><a class="dropdown-item" href="#">By Category</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?sort=base_price&direction=asc">By Price</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">By Category</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
     </ul>
 </li>
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Beddings</a>
     <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Beddings</a></li>
-        <li><a class="dropdown-item" href="#">Kids Bedding</a></li>
-        <li><a class="dropdown-item" href="#">Sheets</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=bedding_sets">Beddings</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=kids_bedding_sets">Kids Bedding</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=sheets">Sheets</a></li>
     </ul>
 </li>
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pillows</a>
     <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Pillows</a></li>
-        <li><a class="dropdown-item" href="#">Pillowcases </a></li>
-        <li><a class="dropdown-item" href="#">Newest</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=pillows">Pillows</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=pillowcases">Pillowcases </a></li>
     </ul>
 </li>
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pajamas</a>
     <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Women's Pajamas</a></li>
-        <li><a class="dropdown-item" href="#">Men's Pajamas</a></li>
-        <li><a class="dropdown-item" href="#">Kids' Pajamas</a></li>
-    </ul>
-</li>
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Decor</a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Decor Lamps</a></li>
-        <li><a class="dropdown-item" href="#">Decor Items</a></li>
-        <li><a class="dropdown-item" href="#">Decor Pictures</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=womens_pajamas">Women's Pajamas</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=mens_pajamas">Men's Pajamas</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=kids_pajamas">Kids' Pajamas</a></li>
     </ul>
 </li>
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Special
         Offers</a>
     <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">New Arrivals</a></li>
-        <li><a class="dropdown-item" href="#">Deals</a></li>
-        <li><a class="dropdown-item" href="#">Clearance</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=new_arrivals">New Arrivals</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=deals">Deals</a></li>
+        <li><a class="dropdown-item" href="{% url 'products' %}?category=clearance">Clearance</a></li>
     </ul>
 </li>

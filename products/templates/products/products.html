@@ -4,6 +4,7 @@
 
 {% block content %}
 <div class="container">
+    {% if products %}
     <div class="row g-4 my-5">
         {% for product in products %}
         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-5">
@@ -35,5 +36,8 @@
         </div>
         {% endfor %}
     </div>
+    {% else %}
+    <p class="mt-5 text-muted fs-5">No products available at the moment.</p>
+    {% endif %}
 </div>
 {% endblock %}

@@ -76,7 +76,7 @@
     "pk": 10,
     "fields": {
       "name": "S",
-      "categories": [6, 8, 9, 10]
+      "categories": [6, 8]
     }
   },
   {
@@ -84,7 +84,7 @@
     "pk": 11,
     "fields": {
       "name": "M",
-      "categories": [6, 8, 9, 10]
+      "categories": [6, 8]
     }
   },
   {
@@ -92,7 +92,7 @@
     "pk": 12,
     "fields": {
       "name": "L",
-      "categories": [6, 8, 9, 10]
+      "categories": [6, 8]
     }
   },
   {
