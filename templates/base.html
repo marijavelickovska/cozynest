@@ -1,5 +1,10 @@
 {% load static %}
 
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
+
 <!doctype html>
 <html lang="en">
 
@@ -39,7 +44,7 @@
 <body>
     <header>
         <!-- Top navbar -->
-        <nav class="navbar navbar-expand-md bg-light px-0 py-2 px-lg-3 position-relative">
+        <nav class="navbar navbar-expand-md bg-light px-0 px-lg-3 position-relative">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">CozyNest 🪶</a>
 
@@ -71,16 +76,19 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle myaccount" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
+                                {% if user.is_authenticated %}
+                                <p class="my-0">Hello, {{ user.username }}!</p>
+                                {% else %}
                                 <p class="my-0">My Account</p>
+                                {% endif %}
                             </div>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Login</a></li>
-                            <li><a class="dropdown-item" href="#">Register</a></li>
+                        <ul class="dropdown-menu desktop-dropdown-menu">
+                            {% include 'includes/account_dropdown.html' %}
                         </ul>
                     </li>
                 </ul>
@@ -112,8 +120,7 @@
                 <!-- Mobile account dropdown -->
                 <div class="collapse navbar-collapse d-md-none" id="mobile-dropdown-menu">
                     <ul class="mobile-dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item pt-2" href="#">Login</a></li>
-                        <li><a class="dropdown-item pt-2" href="#">Register</a></li>
+                        {% include 'includes/account_dropdown.html' %}
                     </ul>
                 </div>
             </div>

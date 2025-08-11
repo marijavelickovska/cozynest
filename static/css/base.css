@@ -178,6 +178,27 @@ footer .copyright:hover {
   color: var(--gold-color) !important;
 }
 
+/* Allauth */
+.signup-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signup-container form button.btn-primary {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
 /* Products */
 .card {
   width: 18rem;
@@ -274,6 +295,7 @@ footer .copyright:hover {
   #mobile-dropdown-menu {
     display: none !important;
   }
+
 }
 
 @media (max-width: 992px) {
