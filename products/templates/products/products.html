@@ -18,8 +18,8 @@
     <div class="row my-4 my-md-5">
         <div class="col-12 col-md-8 col-lg-9 order-last order-md-1 d-flex justify-content-start my-2">
             <p class="text-muted">
-                {% if search_term or current_category or current_sorting != 'None_None' %}
-                <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                {% if search_term or current_categories or current_sorting != 'None_None' %}
+                <span class="small"><a href="{% url 'products' %}" class="text-decoration-none">Products Home</a> | </span>
                 {% endif %}
                 {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
             </p>
@@ -49,7 +49,9 @@
         {% for product in products %}
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-md-4 d-flex justify-content-center">
             <div class="card h-100 border-0 rounded-0">
-                <img src="{{ product.image.url }}" class="card-img-top rounded-0" alt="{{ product.name }}">
+                <a href="{% url 'product_detail' product.id %}">
+                    <img src="{{ product.image.url }}" class="card-img-top rounded-0" alt="{{ product.name }}">
+                </a>
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">{{ product.description|truncatewords:20 }}</p>
