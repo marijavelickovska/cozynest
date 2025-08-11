@@ -1,0 +1,33 @@
+img.custom-size {
+  width: 100%; 
+  max-width: 300px; 
+}
+
+select.form-select {
+  width: 100%; 
+}
+
+button.btn-dark {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  img.custom-size {
+    max-width: 500px; 
+  }
+
+  select.form-select {
+    width: 70%;
+  }
+
+  button.btn-dark {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  button.btn-dark {
+    width: 30%;
+}
+}
+
