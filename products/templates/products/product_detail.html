@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'products/css/product.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/products_detail.css' %}">
 {% endblock %}
 
 
@@ -52,7 +52,31 @@
                         {% endfor %}
                     </select>
 
-                    <button type="submit" class="btn btn-dark">Add to Bag</button>
+                    <div class="input-group mb-3" style="max-width: 140px;">
+                        <button class="btn btn-secondary rounded-0" type="button" id="button-minus">-</button>
+                        <input type="number" name="quantity" class="form-control text-center" value="1" min="1"
+                            id="quantity-input" required>
+                        <button class="btn btn-secondary rounded-0" type="button" id="button-plus">+</button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <button type="submit" class="btn btn-dark rounded-0 btn-add-to-bag">Add to Bag</button>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 btn-keep-shopping">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
                 </form>
 
             </div>
@@ -60,4 +84,9 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'products/js/product_detail.js' %}"></script>
 {% endblock %}
