@@ -1,39 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+
+
 {% block content %}
-<h2>Your Shopping Bag</h2>
+<div class="container my-5">
+    <h2 class="mb-4">Your Shopping Bag</h2>
 
-{% if bag_items %}
-<table class="table">
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Size</th>
-            <th>Color</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in bag_items %}
-        <tr>
-            <td>{{ item.product_variant.product.name }}</td>
-            <td>{{ item.product_variant.size.name }}</td>
-            <td>{{ item.product_variant.color.name }}</td>
-            <td>{{ item.product_variant.price }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.total_price }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    {% if bag_items %}
+        <div class="d-none d-md-block">
+            <!-- Large screens: horizontal table layout -->
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in bag_items %}
+                        <tr>
+                            <td>
+                                <img src="{{ item.product_variant.product.image.url }}" alt="{{ item.product_variant.product.name }}" class="img-fluid" style="max-width: 100px;">
+                            </td>
+                            <td>
+                                <strong>{{ item.product_variant.product.name }}</strong><br>
+                                Size: {{ item.product_variant.size.name }}<br>
+                                Color: {{ item.product_variant.color.name }}
+                            </td>
+                            <td>{{ item.quantity }}</td>
+                            <td>€{{ item.product_variant.price }}</td>
+                            <td>€{{ item.quantity|multiply:item.product_variant.price }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
-<p>Total quantity: {{ bag_total_quantity }}</p>
-<p>Subtotal: {{ bag_total_price }}</p>
-<p>Delivery: {{ delivery }}</p>
-<p><strong>Grand Total: {{ grand_total }}</strong></p>
+        <div class="d-md-none">
+            <!-- Small screens: stacked layout -->
+            {% for item in bag_items %}
+                <div class="d-flex mb-3 border-bottom pb-2">
+                    <div class="flex-shrink-0 me-3">
+                        <img src="{{ item.product_variant.product.image.url }}" alt="{{ item.product_variant.product.name }}" class="img-fluid" style="max-width: 80px;">
+                    </div>
+                    <div class="flex-grow-1">
+                        <strong>{{ item.product_variant.product.name }}</strong><br>
+                        Size: {{ item.product_variant.size.name }}<br>
+                        Color: {{ item.product_variant.color.name }}<br>
+                        Qty: {{ item.quantity }}<br>
+                        Price: €{{ item.product_variant.price }}<br>
+                        Total: €{{ item.quantity|multiply:item.product_variant.price }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
 
-{% else %}
-<p>Your bag is empty.</p>
-{% endif %}
+        <!-- Totals -->
+        <div class="mt-4 text-md-end">
+            <p>Subtotal: €{{ bag_total_price }}</p>
+            <p>Delivery: €{{ delivery }}</p>
+            <h4>Grand Total: €{{ grand_total }}</h4>
+        </div>
+    {% else %}
+        <p>Your bag is empty.</p>
+    {% endif %}
+</div>
 
 {% endblock %}
