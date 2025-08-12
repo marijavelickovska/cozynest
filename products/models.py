@@ -64,3 +64,15 @@ class ProductVariant(models.Model):
 
     def __str__(self):
         return f"{self.product.name} - {self.size.name} - {self.color.name}"
+
+    def reduce_stock(self, quantity):
+        """Reduce stock when item is purchased."""
+        if quantity > self.stock:
+            return False  # Not enough stock available.
+        self.stock -= quantity
+        self.save()
+
+    def restore_stock(self, quantity):
+        """Restore stock if order is canceled or item is removed."""
+        self.stock += quantity
+        self.save()
