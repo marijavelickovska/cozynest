@@ -41,14 +41,22 @@
                     <select name="size" id="size-select" class="form-select mb-3" required>
                         <option value="" disabled selected>Select size</option>
                         {% for size in sizes %}
+                        {% if size.id not in available_sizes %}
+                        <option value="{{ size.id }}" disabled>{{ size.name }} (Out of stock)</option>
+                        {% else %}
                         <option value="{{ size.id }}">{{ size.name }}</option>
+                        {% endif %}
                         {% endfor %}
                     </select>
 
                     <select name="color" id="color-select" class="form-select mb-3" required>
                         <option value="" disabled selected>Select color</option>
                         {% for color in colors %}
+                        {% if color.id not in available_colors %}
+                        <option value="{{ color.id }}" disabled>{{ color.name }} (Out of stock)</option>
+                        {% else %}
                         <option value="{{ color.id }}">{{ color.name }}</option>
+                        {% endif %}
                         {% endfor %}
                     </select>
 

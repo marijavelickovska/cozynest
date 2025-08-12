@@ -61,13 +61,21 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    variants = product.variants.all()
     sizes = product.category.sizes.all() if product.category else Size.objects.none()
     colors = Color.objects.filter(productvariant__product=product).distinct()
 
+    available_sizes = set(v.size_id for v in variants if v.stock > 0)
+    
+    available_colors = set(v.color_id for v in variants if v.stock > 0)
+
     context = {
         'product': product,
+        'variants': variants,
         'sizes': sizes,
         'colors': colors,
+        'available_sizes': available_sizes,
+        'available_colors': available_colors,
     }
 
     return render(request, 'products/product_detail.html', context)
