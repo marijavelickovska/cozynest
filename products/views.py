@@ -15,22 +15,17 @@ def all_products(request):
         if 'category' in request.GET:
             category = request.GET.get('category')
             products = products.filter(category__name__iexact=category)
-
             category_obj = get_object_or_404(Category, name__iexact=category)
 
         if 'sort' in request.GET:
-            sort_full = request.GET.get('sort')
-            if '_' in sort_full:
-                sort, direction = sort_full.rsplit('_', 1)
-            else:
-                sort = sort_full
-                direction = 'asc'
+            sort = request.GET.get('sort')
+            direction = request.GET.get('direction')
 
             if sort == 'category':
                 sortkey = 'category__name'
             elif sort == 'rating':
                 sortkey = 'rating'
-            elif sort == 'base_price':
+            elif sort == 'price':
                 sortkey = 'base_price'
             elif sort == 'name':
                 sortkey = 'name'
