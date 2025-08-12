@@ -1,1 +1,39 @@
-<p>Bag</p>
+{% block content %}
+<h2>Your Shopping Bag</h2>
+
+{% if bag_items %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Size</th>
+            <th>Color</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in bag_items %}
+        <tr>
+            <td>{{ item.product_variant.product.name }}</td>
+            <td>{{ item.product_variant.size.name }}</td>
+            <td>{{ item.product_variant.color.name }}</td>
+            <td>{{ item.product_variant.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.total_price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p>Total quantity: {{ bag_total_quantity }}</p>
+<p>Subtotal: {{ bag_total_price }}</p>
+<p>Delivery: {{ delivery }}</p>
+<p><strong>Grand Total: {{ grand_total }}</strong></p>
+
+{% else %}
+<p>Your bag is empty.</p>
+{% endif %}
+
+{% endblock %}

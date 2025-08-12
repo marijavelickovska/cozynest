@@ -62,14 +62,14 @@
 
                 <ul class="navbar-nav d-none d-md-flex ms-auto align-items-center gap-3">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="{% url 'view_bag' %}">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-shopping-bag"></i></div>
                                 <p class="my-0">
-                                    {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
+                                    {% if bag_total_quantity %}
+                                    {{ bag_total_quantity }}
                                     {% else %}
-                                    $0.00
+                                    No items
                                     {% endif %}
                                 </p>
                             </div>
@@ -158,7 +158,7 @@
         <div class="container-fluid">
             <div id="delivery-banner" class="row text-center">
                 <div class="col bg-black text-white">
-                    <p class="fs-6 my-1">Free delivery on orders over 50 €<!--${{ free_delivery_threshold }}-->!</p>
+                    <p class="fs-6 my-1">Free delivery on orders over €{{ free_delivery_threshold }}</p>
                 </div>
             </div>
         </div>
