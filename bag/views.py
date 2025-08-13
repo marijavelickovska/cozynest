@@ -50,7 +50,18 @@ def add_to_bag(request, product_id):
 
 def delete_product_variant(request, variant_id):
     variant = get_object_or_404(ProductVariant, pk=variant_id)
+
     if request.method == 'POST':
-        variant.delete()
-        messages.success(request, f'Variant "{variant}" was deleted successfully.')
+        if request.user.is_authenticated:
+            bag_item = BagLineItem.objects.get(user=request.user, product_variant=variant)
+            bag_item.delete()
+            messages.success(request, f'Product "{variant.product.name}" has been removed from your bag.')
+        else:
+            bag = request.session.get('bag', {})
+            variant_key = str(variant.id)
+            if variant_key in bag:
+                del bag[variant_key]
+                request.session['bag'] = bag
+                messages.success(request, f'Product "{variant.product.name}" has been removed from your bag.')
+
         return redirect('view_bag')
