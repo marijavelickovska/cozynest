@@ -66,8 +66,8 @@
                             <div class="text-center">
                                 <div><i class="fa-solid fa-shopping-bag"></i></div>
                                 <p class="my-0">
-                                    {% if bag_total_quantity %}
-                                    {{ bag_total_quantity }}
+                                    {% if total_quantity %}
+                                    {{ total_quantity }}
                                     {% else %}
                                     No items
                                     {% endif %}
@@ -164,6 +164,24 @@
         </div>
     </header>
 
+    {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
     {% block content %}
     {% endblock %}
 
@@ -180,6 +198,14 @@
             const input = document.getElementById('mobile-search-input');
             input.style.display = (input.style.display === 'block') ? 'none' : 'block';
             if (input.style.display === 'block') input.focus();
+        });
+
+
+        // Toasts
+        const toastElList = document.querySelectorAll('.toast');
+        toastElList.forEach(toastEl => {
+            const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
+            toast.show();
         });
     </script>
     {% endblock %}

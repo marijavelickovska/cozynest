@@ -36,7 +36,7 @@ def add_to_bag(request, product_id):
         if not created:
             bag_item.quantity += quantity
             bag_item.save()
-        
+            
         messages.success(request, f'Product "{variant.product.name}" has been added to your bag.')
     else:
         bag = request.session.get('bag', {})

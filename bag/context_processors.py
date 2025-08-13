@@ -39,8 +39,8 @@ def bag_contents(request):
 
     context = {
         'bag_items': bag_items,
-        'bag_total_quantity': total_quantity,
-        'bag_total_price': total_price,
+        'total_quantity': total_quantity,
+        'total_price': total_price,
         'delivery': delivery,
         'amount_remaining_for_free_delivery': amount_remaining_for_free_delivery,
         'grand_total': grand_total,
