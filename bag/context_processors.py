@@ -29,7 +29,7 @@ def bag_contents(request):
             })
 
     if total_price < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total_price * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+        delivery = (total_price * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE)) / Decimal('100')
         amount_remaining_for_free_delivery = settings.FREE_DELIVERY_THRESHOLD - total_price
     else:
         delivery = 0
