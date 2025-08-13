@@ -2,72 +2,118 @@
 {% load static %}
 {% load bag_tools %}
 
-
 {% block content %}
 <div class="container my-5">
     <h2 class="mb-4">Your Shopping Bag</h2>
 
     {% if bag_items %}
-        <div class="d-none d-md-block">
-            <!-- Large screens: horizontal table layout -->
-            <table class="table align-middle">
-                <thead>
-                    <tr>
-                        <th scope="col">Product</th>
-                        <th scope="col">Details</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in bag_items %}
-                        <tr>
-                            <td>
-                                <img src="{{ item.product_variant.product.image.url }}" alt="{{ item.product_variant.product.name }}" class="img-fluid" style="max-width: 100px;">
-                            </td>
-                            <td>
-                                <strong>{{ item.product_variant.product.name }}</strong><br>
-                                Size: {{ item.product_variant.size.name }}<br>
-                                Color: {{ item.product_variant.color.name }}
-                            </td>
-                            <td>{{ item.quantity }}</td>
-                            <td>€{{ item.product_variant.price }}</td>
-                            <td>€{{ item.quantity|multiply:item.product_variant.price }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-
-        <div class="d-md-none">
-            <!-- Small screens: stacked layout -->
-            {% for item in bag_items %}
-                <div class="d-flex mb-3 border-bottom pb-2">
-                    <div class="flex-shrink-0 me-3">
-                        <img src="{{ item.product_variant.product.image.url }}" alt="{{ item.product_variant.product.name }}" class="img-fluid" style="max-width: 80px;">
-                    </div>
-                    <div class="flex-grow-1">
+    <!-- Large screens: horizontal table -->
+    <div class="d-none d-md-block">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in bag_items %}
+                <tr>
+                    <td>
+                        <img src="{{ item.product_variant.product.image.url }}"
+                             alt="{{ item.product_variant.product.name }}" class="img-fluid" style="max-width: 100px;">
+                    </td>
+                    <td>
                         <strong>{{ item.product_variant.product.name }}</strong><br>
                         Size: {{ item.product_variant.size.name }}<br>
-                        Color: {{ item.product_variant.color.name }}<br>
-                        Qty: {{ item.quantity }}<br>
-                        Price: €{{ item.product_variant.price }}<br>
-                        Total: €{{ item.quantity|multiply:item.product_variant.price }}
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+                        Color: {{ item.product_variant.color.name }}
+                    </td>
+                    <td>{{ item.quantity }}</td>
+                    <td>€{{ item.product_variant.price }}</td>
+                    <td>€{{ item.quantity|multiply:item.product_variant.price }}</td>
+                    <td>
+                        <a href="#" class="btn btn-md me-1">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <button type="button" class="btn btn-md" data-bs-toggle="modal"
+                                data-bs-target="#deleteModal{{ item.product_variant.id }}">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-        <!-- Totals -->
-        <div class="mt-4 text-md-end">
-            <p>Subtotal: €{{ bag_total_price }}</p>
-            <p>Delivery: €{{ delivery }}</p>
-            <h4>Grand Total: €{{ grand_total }}</h4>
+    <!-- Small screens: stacked layout -->
+    <div class="d-md-none">
+        {% for item in bag_items %}
+        <div class="d-flex mb-3 border-bottom pb-2">
+            <div class="flex-shrink-0 me-3">
+                <img src="{{ item.product_variant.product.image.url }}"
+                     alt="{{ item.product_variant.product.name }}" class="img-fluid" style="max-width: 80px;">
+            </div>
+            <div class="flex-grow-1">
+                <strong>{{ item.product_variant.product.name }}</strong><br>
+                Size: {{ item.product_variant.size.name }}<br>
+                Color: {{ item.product_variant.color.name }}<br>
+                Qty: {{ item.quantity }}<br>
+                Price: €{{ item.product_variant.price }}<br>
+                Total: €{{ item.quantity|multiply:item.product_variant.price }}<br>
+
+                <div class="mt-2 text-end">
+                    <a href="#" class="btn btn-md me-1">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                    <button type="button" class="btn btn-md " data-bs-toggle="modal"
+                            data-bs-target="#deleteModal{{ item.product_variant.id }}">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
         </div>
+        {% endfor %}
+    </div>
+
+    <!-- Totals -->
+    <div class="mt-4 text-md-end">
+        <p>Subtotal: €{{ bag_total_price }}</p>
+        <p>Delivery: €{{ delivery }}</p>
+        <h4>Grand Total: €{{ grand_total }}</h4>
+    </div>
+
+    <!-- Modals (outside d-none/d-md-block so visible on all screens) -->
+    {% for item in bag_items %}
+    <div class="modal fade" id="deleteModal{{ item.product_variant.id }}" tabindex="-1"
+         aria-labelledby="deleteModalLabel{{ item.product_variant.id }}" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel{{ item.product_variant.id }}">Confirm Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete <strong>{{ item.product_variant.product.name }}</strong>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <form action="{% url 'delete_product_variant' item.product_variant.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
     {% else %}
-        <p>Your bag is empty.</p>
+    <p>Your bag is empty.</p>
     {% endif %}
 </div>
-
 {% endblock %}
