@@ -15,12 +15,17 @@ def add_to_bag(request, product_id):
         size_id = request.POST.get('size')
         color_id = request.POST.get('color')
         quantity = int(request.POST.get('quantity', 1))
-        variant = get_object_or_404(
-            ProductVariant,
-            product_id=product_id,
-            size_id=size_id,
-            color_id=color_id
-        )
+
+        try:
+            variant = get_object_or_404(
+                ProductVariant,
+                product_id=product_id,
+                size_id=size_id,
+                color_id=color_id
+            )
+        except ProductVariant.DoesNotExist:
+            messages.error(request, "Selected size/color combination is not available.")
+            return redirect("product_detail", product_id=product_id)
 
     if request.user.is_authenticated:
         bag_item, created = BagLineItem.objects.get_or_create(
@@ -31,12 +36,21 @@ def add_to_bag(request, product_id):
         if not created:
             bag_item.quantity += quantity
             bag_item.save()
+        
+        messages.success(request, f'Product "{variant.product.name}" has been added to your bag.')
     else:
         bag = request.session.get('bag', {})
         bag[str(variant.id)] = bag.get(str(variant.id), 0) + quantity
         request.session['bag'] = bag
 
         messages.success(request, f'Product "{variant.product.name}" has been added to your bag.')
-        return redirect('view_bag')
 
     return redirect('product_detail', product_id=product_id)
+
+
+def delete_product_variant(request, variant_id):
+    variant = get_object_or_404(ProductVariant, pk=variant_id)
+    if request.method == 'POST':
+        variant.delete()
+        messages.success(request, f'Variant "{variant}" was deleted successfully.')
+        return redirect('view_bag')
