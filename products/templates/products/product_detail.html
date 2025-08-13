@@ -38,6 +38,7 @@
 
                 <form method="post" action="{% url 'add_to_bag' product.id %}">
                     {% csrf_token %}
+                    <!-- Size select -->
                     <select name="size" id="size-select" class="form-select mb-3" required>
                         <option value="" disabled selected>Select size</option>
                         {% for size in sizes %}
@@ -49,16 +50,11 @@
                         {% endfor %}
                     </select>
 
-                    <select name="color" id="color-select" class="form-select mb-3" required>
+                    <!-- Color select (почетно празен) -->
+                    <select name="color" id="color-select" class="form-select mb-3" required disabled>
                         <option value="" disabled selected>Select color</option>
-                        {% for color in colors %}
-                        {% if color.id not in available_colors %}
-                        <option value="{{ color.id }}" disabled>{{ color.name }} (Out of stock)</option>
-                        {% else %}
-                        <option value="{{ color.id }}">{{ color.name }}</option>
-                        {% endif %}
-                        {% endfor %}
                     </select>
+
 
                     <div class="input-group mb-3" style="max-width: 140px;">
                         <button class="btn btn-secondary rounded-0" type="button" id="button-minus">-</button>
@@ -92,4 +88,38 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript" src="{% static 'products/js/product_detail.js' %}"></script>
+<script>
+/**
+ * Dynamically updates the available colors when a size is selected,
+ * based on the size-to-color mapping passed from the backend.
+ * Disables the color dropdown until a valid size is chosen.
+ */
+document.addEventListener("DOMContentLoaded", function() {
+    const sizeSelect = document.getElementById("size-select");
+    const colorSelect = document.getElementById("color-select");
+
+    const sizeColorMap = JSON.parse(`{{ size_color_map_json|escapejs }}`);
+    console.log("Loaded map:", sizeColorMap);
+
+    colorSelect.disabled = true;
+
+    sizeSelect.addEventListener("change", function() {
+        const selectedSize = String(this.value);
+        colorSelect.innerHTML = '<option value="" disabled selected>Select color</option>';
+
+        if (sizeColorMap[selectedSize]) {
+            sizeColorMap[selectedSize].forEach(color => {
+                const opt = document.createElement("option");
+                opt.value = color.id;
+                opt.textContent = color.name;
+                colorSelect.appendChild(opt);
+            });
+            colorSelect.disabled = false;
+        } else {
+            colorSelect.disabled = true;
+        }
+    });
+});
+</script>
+
 {% endblock %}

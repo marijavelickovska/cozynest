@@ -13,3 +13,4 @@ plusBtn.addEventListener('click', function () {
     let currentValue = parseInt(quantityInput.value);
     quantityInput.value = currentValue + 1;
 });
+

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category, Size, Color
+import json
 
 
 def all_products(request):
@@ -66,8 +67,16 @@ def product_detail(request, product_id):
     colors = Color.objects.filter(productvariant__product=product).distinct()
 
     available_sizes = set(v.size_id for v in variants if v.stock > 0)
-    
     available_colors = set(v.color_id for v in variants if v.stock > 0)
+
+    size_color_map = {}
+    for variant in variants:
+        if variant.stock > 0:
+            key = str(variant.size_id)
+            size_color_map.setdefault(key, []).append({
+                "id": variant.color.id,
+                "name": variant.color.name
+            })
 
     context = {
         'product': product,
@@ -76,6 +85,7 @@ def product_detail(request, product_id):
         'colors': colors,
         'available_sizes': available_sizes,
         'available_colors': available_colors,
+        'size_color_map_json': json.dumps(size_color_map),
     }
 
     return render(request, 'products/product_detail.html', context)
