@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from home import urls as home_urls
 from products import urls as products_urls
 from bag import urls as bag_urls
+from profile import urls as profile_urls
 from checkout import urls as checkout_urls
 
 
@@ -30,6 +31,7 @@ urlpatterns = [
     path('bag/', include(bag_urls)),
     path('checkout/', include(checkout_urls)),
     path('summernote/', include('django_summernote.urls')),
-    path('', include(home_urls)),
     path('products/', include(products_urls)),
+    path('profile/', include(profile_urls)),
+    path('', include(home_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
