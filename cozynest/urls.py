@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from home import urls as home_urls
 from products import urls as products_urls
 from bag import urls as bag_urls
-from profile import urls as profile_urls
+from profiles import urls as profile_urls
 from checkout import urls as checkout_urls
 
 
