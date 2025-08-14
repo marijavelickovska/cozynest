@@ -9,6 +9,7 @@ from .forms import UserProfileForm, UserUpdateForm
 def profile(request):
     """Display the user's profile with tabs."""
     profile = get_object_or_404(UserProfile, user=request.user)
+    user = request.user
     tab = request.resolver_match.url_name
 
     form = None
@@ -33,7 +34,7 @@ def profile(request):
             else:
                 messages.error(request, "Update failed. Please ensure the form is valid.")
         else:  # GET request
-            form = UserUpdateForm(instance=profile)
+            form = UserUpdateForm(instance=user)
 
     context = {"form": form, "tab": tab, "on_profile_page": True}
     return render(request, "profiles/profile_base.html", context)
