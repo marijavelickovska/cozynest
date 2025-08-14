@@ -2,7 +2,7 @@
 {% if request.user.is_superuser %}
 <li><a class="dropdown-item pt-2" href="#">Product Management</a></li>
 {% endif %}
-<li><a class="dropdown-item pt-2" href="#">My Profile</a></li>
+<li><a class="dropdown-item pt-2" href="{% url 'profile' %}">My Profile</a></li>
 <li><a class="dropdown-item pt-2 {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                 href="{% url 'account_logout' %}">Log Out</a></li>
 {% else %}
