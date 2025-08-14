@@ -27,7 +27,7 @@ def profile(request):
 
     if tab == "profile":
         if request.method == "POST":
-            form = UserUpdateForm(request.POST, instance=profile)
+            form = UserUpdateForm(request.POST, instance=request.user)
             if form.is_valid():
                 form.save()
                 messages.success(request, "Profile updated successfully")
