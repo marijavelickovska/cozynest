@@ -7,23 +7,21 @@ from .forms import UserProfileForm
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
+    """Display the user's profile with tabs."""
     profile = get_object_or_404(UserProfile, user=request.user)
+    tab = request.resolver_match.url_name
 
-    if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=profile)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Profile updated successfully')
-        else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
-    else:
-        form = UserProfileForm(instance=profile)
+    form = None
+    if tab == "delivery_information":
+        if request.method == "POST":
+            form = UserProfileForm(request.POST, instance=profile)
+            if form.is_valid():
+                form.save()
+                messages.success(request, "Profile updated successfully")
+            else:
+                messages.error(request, "Update failed. Please ensure the form is valid.")
+        else:  # GET request
+            form = UserProfileForm(instance=profile)
 
-    template = 'profiles/profile.html'
-    context = {
-        'form': form,
-        'on_profile_page': True,
-    }
-
-    return render(request, template, context)
+    context = {"form": form, "tab": tab, "on_profile_page": True}
+    return render(request, "profiles/profile_base.html", context)
