@@ -50,7 +50,7 @@
                         {% endfor %}
                     </select>
 
-                    <!-- Color select (почетно празен) -->
+                    <!-- Color select -->
                     <select name="color" id="color-select" class="form-select mb-3" required disabled>
                         <option value="" disabled selected>Select color</option>
                     </select>
@@ -99,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const colorSelect = document.getElementById("color-select");
 
     const sizeColorMap = JSON.parse(`{{ size_color_map_json|escapejs }}`);
-    console.log("Loaded map:", sizeColorMap);
 
     colorSelect.disabled = true;
 

@@ -21,12 +21,14 @@ from django.conf.urls.static import static
 from home import urls as home_urls
 from products import urls as products_urls
 from bag import urls as bag_urls
+from checkout import urls as checkout_urls
 
 
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('bag/', include(bag_urls)),
+    path('checkout/', include(checkout_urls)),
     path('summernote/', include('django_summernote.urls')),
     path('', include(home_urls)),
     path('products/', include(products_urls)),
