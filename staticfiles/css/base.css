@@ -74,6 +74,7 @@ body {
   justify-content: center;
   height: 1.5rem;
   width: 1.5rem;
+  color: #000;
 }
 
 .search-input {
@@ -84,6 +85,16 @@ body {
 .search-span {
   border: 1px solid #000 !important;
   cursor: pointer;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+/* Subnavbar */
+#subnavbar .nav-link {
+  font-weight: 500;
+  font-size: larger;
 }
 
 /* Home */
@@ -114,6 +125,74 @@ body {
   letter-spacing: 1px;
   font-weight: bolder;
 }
+
+/* Bootstrap toasts */
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 
 /* Footer */
 footer {
@@ -172,6 +251,9 @@ footer .copyright:hover {
   width: 18rem;
 }
 
+#sort-selector {
+  border-color: black !important;
+}
 
 /* Media Queries */
 @media (max-width: 576px) {
@@ -180,31 +262,12 @@ footer .copyright:hover {
     font-size: 1rem !important;
   }
 
-  .navbar {
-    position: relative;
-    z-index: 1000;
-  }
-
-  #mobile-dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 30%;
-    background-color: white;
-    z-index: 1100;
-    color: #000 !important;
-    text-align: start;
-    border: 1px solid gainsboro;
-    border-radius: 5px;
-  }
-
-  #hero-image {
-    position: relative;
-    z-index: -1;
-  }
-
   .footer-hr {
     width: 60% !important;
+  }
+
+  .custom-toast {
+    --bs-toast-max-width: 100%;
   }
 }
 
@@ -214,26 +277,46 @@ footer .copyright:hover {
     display: none !important;
   }
 
-  #burger-toggler {
-    display: block;
+  .navbar {
+    position: relative;
+    z-index: 1000;
   }
 
-  #mobile-dropdown-menu .dropdown-toggle {
-    display: none;
+  #hero-image {
+    position: relative;
+    z-index: -1;
   }
 
-  #mobile-dropdown-menu .dropdown-menu {
-    position: static !important;
-    float: none !important;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    margin: 0;
-    padding-left: 0;
+  #mobile-search-section {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50px; 
+    right: 0;
+    width: 100vw;
+    padding-bottom: 5px;
+    background-color: white;
+    z-index: 1200;
+    transition: height 0.3s ease;
   }
 
-  #mobile-dropdown-menu .mobile-dropdown-menu li {
-    display: block;
+  #mobile-dropdown-menu,
+  #mobile-subnavbar {
+    position: absolute;
+    top: 55px; 
+    right: 0;
+    width: 60vw;
+    background-color: white;
+    z-index: 1200;
+    border: 1px solid gainsboro;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  #mobile-dropdown-menu ul {
+    list-style-type: none;
+    padding-left: 1rem;
   }
 
   /* Home */
@@ -274,8 +357,9 @@ footer .copyright:hover {
 
 @media (min-width: 1200px) {
   /* Navbar */
-  .myaccount {
-    font-size: 1.2rem;
+  .navbar-nav a {
+    font-size: 1rem;
+    color: #000;
   }
 
   .footer-links {
