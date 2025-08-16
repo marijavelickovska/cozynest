@@ -46,7 +46,7 @@
                 <fieldset class="px-3">
                     <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                     <!-- A Stripe card element will go here -->
-                    <div class="mb-3" id="card-element"></div>
+                    <div class="mb-3" id="payment-element"></div>
 
                     <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
@@ -60,7 +60,7 @@
                         </span>
                         <span>Adjust Bag</span>
                     </a>
-                    <button id="submit-button" class="btn btn-dark rounded-0">
+                    <button id="submit-payment" class="btn btn-dark rounded-0">
                         <span class="text-uppercase">Complete Order</span>
                         <span class="icon">
                             <i class="fas fa-lock text-white"></i>
@@ -122,4 +122,50 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    //Stripe elements
+    const stripe = Stripe("{{ STRIPE_PUBLISHABLE_KEY }}");
+
+    async function initStripe() {
+        // Fetch client secret од backend
+        const response = await fetch("{% url 'create_payment_intent' %}", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": "{{ csrf_token }}",
+                "Content-Type": "application/json",
+            },
+        });
+
+        const data = await response.json();
+        const clientSecret = data.clientSecret;
+
+        // Иницијализација на elements
+        const elements = stripe.elements({ clientSecret });
+        const paymentElement = elements.create("payment");
+        paymentElement.mount("#payment-element");
+
+        const form = document.getElementById("payment-form");
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const { error } = await stripe.confirmPayment({
+                elements,
+                confirmParams: {
+                    return_url: window.location.origin + "/checkout/success/",
+                },
+            });
+
+            if (error) {
+                document.getElementById("card-errors").textContent = error.message;
+            }
+        });
+    }
+
+    initStripe();
+</script>
 {% endblock %}
