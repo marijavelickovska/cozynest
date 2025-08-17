@@ -46,7 +46,7 @@
                 <fieldset class="px-3">
                     <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                     <!-- A Stripe card element will go here -->
-                    <div class="mb-3" id="payment-element"></div>
+                    <div class="mb-3" id="card-element"></div>
 
                     <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
@@ -128,44 +128,77 @@
 {{ block.super }}
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-    //Stripe elements
-    const stripe = Stripe("{{ STRIPE_PUBLISHABLE_KEY }}");
+    document.addEventListener("DOMContentLoaded", function () {
+        const stripe = Stripe("{{ STRIPE_PUBLISHABLE_KEY }}");
+        const clientSecret = "{{ client_secret }}";
 
-    async function initStripe() {
-        // Fetch client secret од backend
-        const response = await fetch("{% url 'create_payment_intent' %}", {
-            method: "POST",
-            headers: {
-                "X-CSRFToken": "{{ csrf_token }}",
-                "Content-Type": "application/json",
+        // Elements style
+        const elements = stripe.elements();
+        const style = {
+            base: {
+                color: "#32325d",
+                fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                fontSmoothing: "antialiased",
+                fontSize: "16px",
+                "::placeholder": {
+                    color: "#aab7c4"
+                }
             },
-        });
+            invalid: {
+                color: "#fa755a",
+                iconColor: "#fa755a"
+            }
+        };
 
-        const data = await response.json();
-        const clientSecret = data.clientSecret;
+        // Card element
+        const card = elements.create("card", { style: style });
+        card.mount("#card-element");
 
-        // Иницијализација на elements
-        const elements = stripe.elements({ clientSecret });
-        const paymentElement = elements.create("payment");
-        paymentElement.mount("#payment-element");
-
-        const form = document.getElementById("payment-form");
-        form.addEventListener("submit", async (event) => {
-            event.preventDefault();
-
-            const { error } = await stripe.confirmPayment({
-                elements,
-                confirmParams: {
-                    return_url: window.location.origin + "/checkout/success/",
-                },
-            });
-
-            if (error) {
-                document.getElementById("card-errors").textContent = error.message;
+        // Handle real-time validation errors
+        card.on("change", function (event) {
+            const displayError = document.getElementById("card-errors");
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = "";
             }
         });
-    }
 
-    initStripe();
+        // Handle form submit
+        const form = document.getElementById("payment-form");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        name: form.full_name.value,
+                        email: form.email.value,
+                        phone: form.phone_number.value,
+                        address: {
+                            line1: form.street_address1.value,
+                            line2: form.street_address2.value,
+                            city: form.town_or_city.value,
+                            state: form.county.value,
+                            postal_code: form.postcode.value,
+                            country: form.country.value,
+                        },
+                    },
+                },
+            }).then(function (result) {
+                if (result.error) {
+                    // Show error to customer
+                    const errorElement = document.getElementById("card-errors");
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Payment succeeded -> submit form to Django
+                    if (result.paymentIntent.status === "succeeded") {
+                        form.submit();
+                    }
+                }
+            });
+        });
+    });
 </script>
 {% endblock %}

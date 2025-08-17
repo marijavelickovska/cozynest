@@ -3,33 +3,14 @@ from django.views.decorators.http import require_POST
 from decimal import Decimal
 from django.contrib import messages
 from django.conf import settings
-from django.http import JsonResponse
 import stripe
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from products.models import Product, ProductVariant
-from profiles.forms import UserProfileForm
-from profiles.models import UserProfile
 from bag.context_processors import bag_contents
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
-
-
-@require_POST
-def create_payment_intent(request):
-    try:
-        context = bag_contents(request)
-        grand_total = context.get('grand_total', 0)
-        intent = stripe.PaymentIntent.create(
-            amount=int(Decimal(grand_total) * 100),
-            currency="eur",
-            automatic_payment_methods={"enabled": True},
-        )
-        return JsonResponse({"clientSecret": intent.client_secret})
-    except Exception as e:
-        return JsonResponse({"error": str(e)}, status=400)
 
 
 def checkout(request):
@@ -69,26 +50,39 @@ def checkout(request):
                     quantity=quantity
                 )
                 line_item.save()
-            
+
             # Update totals
             order.update_totals()
 
-            messages.success(request, "Order created! Proceed to payment.")
-            return redirect('checkout_success')
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, "There was an error with your form. \
                 Please double check your information.")
     else:
         order_form = OrderForm()
 
+        context = bag_contents(request)
+        grand_total = context.get('grand_total', 0)
+        intent = stripe.PaymentIntent.create(
+            amount=int(Decimal(grand_total) * 100),
+            currency=settings.STRIPE_CURRENCY,
+        )
+
     context = {
         'order_form': order_form,
+        'client_secret': intent.client_secret,
         "STRIPE_PUBLISHABLE_KEY": settings.STRIPE_PUBLISHABLE_KEY,
     }
 
     return render(request, 'checkout/checkout.html', context)
 
 
-def checkout_success(request):
+def checkout_success(request, order_number):
+    order = get_object_or_404(Order, order_number=order_number)
 
-    return render(request, 'checkout/checkout_success.html')
+    context = {
+        'order': order,
+    }
+
+    return render(request, 'checkout/checkout_success.html', context)
