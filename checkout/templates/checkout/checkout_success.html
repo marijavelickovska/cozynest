@@ -1,1 +1,14 @@
-<p>Thank you for your order!</p>
+<h1>Thank you for your order!</h1>
+<p>Your order number is: {{ order.order_number }}</p>
+<p>We've sent a confirmation email to: {{ order.email }}</p>
+
+<ul>
+{% for item in order.lineitems.all %}
+  <li>
+  <img src="{{ item.product_variant.product.image.url }}" alt="{{ item.product_variant.product.name }}" width="100">
+  {{ item.product_variant.product.name }} (x{{ item.quantity }})
+</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'products' %}">Continue Shopping</a>
