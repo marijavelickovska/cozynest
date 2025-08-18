@@ -4,7 +4,6 @@
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 
-
 <!doctype html>
 <html lang="en">
 
@@ -104,7 +103,6 @@
                     <button class="icon-button" id="mobile-search-toggle" aria-label="Search">
                         <span class="icon"><i class="fa-solid fa-search"></i></span>
                     </button> 
-
                     <!-- Sopping bag -->
                     <a class="icon-link" href="{% url 'view_bag' %}">
                         <span class="icon"><i class="fa-solid fa-shopping-bag"></i></span>
@@ -116,7 +114,6 @@
                                     {% endif %}
                         </span>
                     </a>
-
                     <!-- User account -->
                     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#mobile-dropdown-menu" aria-controls="mobile-dropdown-menu"
@@ -168,7 +165,6 @@
                 </div>
             </nav>
         </div>
-
         <div class="container-fluid">
             <div id="delivery-banner" class="row text-center">
                 <div class="col bg-black text-white">
@@ -213,7 +209,6 @@
             input.style.display = (input.style.display === 'block') ? 'none' : 'block';
             if (input.style.display === 'block') input.focus();
         });
-
 
         // Toasts
         const toastElList = document.querySelectorAll('.toast');
