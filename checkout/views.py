@@ -7,6 +7,7 @@ import stripe
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
+from bag.models import BagLineItem
 from bag.context_processors import bag_contents
 
 
@@ -80,6 +81,13 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        BagLineItem.objects.filter(user=request.user).delete()
+    else:
+        if 'bag' in request.session:
+            del request.session['bag']
+            request.session.modified = True
 
     context = {
         'order': order,
