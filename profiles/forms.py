@@ -4,9 +4,27 @@ from django.contrib.auth.models import User
 
 
 class UserUpdateForm(forms.ModelForm):
+    full_name = forms.CharField(max_length=150, required=False)
+
     class Meta:
         model = User
         fields = ['username', 'email']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.instance:
+            self.fields['full_name'].initial = f"{self.instance.first_name} {self.instance.last_name}"
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        full_name = self.cleaned_data.get('full_name', '')
+        if full_name:
+            parts = full_name.split(' ', 1)
+            user.first_name = parts[0]
+            user.last_name = parts[1] if len(parts) > 1 else ''
+        if commit:
+            user.save()
+        return user
 
 
 class UserProfileForm(forms.ModelForm):
