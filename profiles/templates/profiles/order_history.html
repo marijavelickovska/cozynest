@@ -43,12 +43,13 @@
     </div>
 
     <!-- Small screens: cards -->
-    <div class="d-flex justify-content-center d-sm-none ">
+    <div class="d-sm-none d-flex flex-column align-items-center">
         {% for order in orders %}
-        <div class="card mb-2">
+        <div class="card mb-2" style="width: 90%;">
             <div class="card-body">
                 <h6 class="card-title">
-                    <a href="{% url 'order_detail' order.order_number %}" class="order-detail-link text-decoration-none">
+                    <a href="{% url 'order_detail' order.order_number %}"
+                        class="order-detail-link text-decoration-none">
                         Order: {{ order.order_number|truncatechars:10 }}
                     </a>
                 </h6>
