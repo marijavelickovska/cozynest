@@ -8,6 +8,8 @@ import stripe
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 from bag.models import BagLineItem
 from bag.context_processors import bag_contents
 
@@ -16,7 +18,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 def checkout(request):
-    context = bag_contents(request)
+    bag = bag_contents(request)
 
     if request.method == 'POST':
         form_data = {
@@ -32,13 +34,10 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save(commit=False)
-            if request.user.is_authenticated:
-                order.user_profile = request.user.userprofile
-            order.save()
+            order = order_form.save()
 
             # Add order line items
-            for item in context['bag_items']:
+            for item in bag['bag_items']:
                 if request.user.is_authenticated:
                     variant = item.product_variant
                     quantity = item.quantity
@@ -62,14 +61,35 @@ def checkout(request):
             messages.error(request, "There was an error with your form. \
                 Please double check your information.")
     else:
-        order_form = OrderForm()
+        bag = bag_contents(request)
+        if not bag:
+            messages.error(request, "There's nothing in your bag at the moment")
+            return redirect(reverse('products'))
 
-        context = bag_contents(request)
-        grand_total = context.get('grand_total', 0)
+        grand_total = bag.get('grand_total', 0)
         intent = stripe.PaymentIntent.create(
             amount=int(Decimal(grand_total) * 100),
             currency=settings.STRIPE_CURRENCY,
         )
+
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'town_or_city': profile.default_town_or_city,
+                    'postcode': profile.default_postcode,
+                    'county': profile.default_county,
+                    'country': profile.default_country,    
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     context = {
         'order_form': order_form,
@@ -81,14 +101,39 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
+    """
+    Handle successful checkouts
+    """
     order = get_object_or_404(Order, order_number=order_number)
+    save_info = request.session.get('save_info')
 
     if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
         BagLineItem.objects.filter(user=request.user).delete()
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_town_or_city': order.town_or_city,
+                'default_postcode': order.postcode,
+                'default_county': order.county,
+                'default_country': order.country,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
     else:
         if 'bag' in request.session:
             del request.session['bag']
-            request.session.modified = True
+
+    messages.success(request, f'Order successfully processed! \
+        Your order number is {order_number}. A confirmation \
+        email will be sent to {order.email}.')
 
     context = {
         'order': order,
