@@ -48,6 +48,27 @@ def add_to_bag(request, product_id):
     return redirect('product_detail', product_id=product_id)
 
 
+def edit_product(request, variant_id):
+    if request.method == "POST":
+        quantity = int(request.POST.get("quantity", 1))
+        variant = get_object_or_404(ProductVariant, pk=variant_id)
+
+        if request.user.is_authenticated:
+            # Update for logged in user
+            bag_item = BagLineItem.objects.filter(user=request.user, product_variant=variant).first()
+            if bag_item:
+                bag_item.quantity = quantity
+                bag_item.save()
+        else:
+            # Update in session
+            bag = request.session.get("bag", {})
+            if str(variant_id) in bag:
+                bag[str(variant_id)] = quantity
+                request.session["bag"] = bag
+
+    return redirect("view_bag")
+
+
 def delete_product_variant(request, variant_id):
     variant = get_object_or_404(ProductVariant, pk=variant_id)
 
