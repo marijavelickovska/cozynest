@@ -1,0 +1,82 @@
+{% extends "profiles/profile_base.html" %}
+{% load static %}
+{% load bag_tools %}
+
+{% block profile_content %}
+<div class="container">
+    <div class="row">
+        <div class="col my-5">
+            <h2>Order Details</h2>
+            <small class="my-4 muted">Order Number {{ order.order_number }}</small>
+        </div>
+    </div>
+    <!-- Large screens: horizontal table -->
+    <div class="d-none d-md-block">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in order.lineitems.all %}
+                <tr>
+                    <td>
+                        <img src="{{ item.product_variant.product.image.url }}" alt="{{ item.product_variant.product.name }}"
+                            style="max-width: 100px;">
+                    </td>
+                    <td>
+                        <strong>{{ item.product_variant.product.name }}</strong><br>
+                        Size: {{ item.product_variant.size.name }}<br>
+                        Color: {{ item.product_variant.color.name }}
+                    </td>
+                    <td>{{ item.quantity }}</td>
+                    <td>€{{ item.product_variant.price }}</td>
+                    <td>€{{ item.quantity|multiply:item.product_variant.price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Small screens: stacked layout -->
+    <div class="d-md-none">
+        <div class="d-flex mb-3 border-bottom pb-2">
+            {% for item in order.lineitems.all %}
+            <div class="flex-shrink-0 me-3">
+                <img src="{{ item.product_variant.product.image.url }}" alt="{{ order.product_variant.product.name }}"
+                    class="img-fluid" style="max-width: 80px;">
+            </div>
+            <div class="flex-grow-1">
+                <strong>{{ item.product_variant.product.name }}</strong><br>
+                Size: {{ item.product_variant.size.name }}<br>
+                Color: {{ item.product_variant.color.name }}<br>
+                Qty: {{ item.quantity }}<br>
+                Price: €{{ item.product_variant.price }}<br>
+                Total: €{{ item.quantity|multiply:item.product_variant.price }}<br>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Totals -->
+    <div class="mt-4 text-md-end">
+        <p>Subtotal: €{{ order.order_total }}</p>
+        <p>Delivery: €{{ order.delivery_cost }}</p>
+        <h4>Grand Total: €{{ order.grand_total }}</h4>
+    </div>
+
+    <div class="mt-4 d-flex flex-column flex-md-row justify-content-md-end gap-2">
+        <a href="{% url 'order_history' %}" class="btn btn-dark rounded-0 text-uppercase px-3">
+             <span class="icon">
+                <i class="fas fa-chevron-left text-white"></i>
+            </span>
+            <span class="text-uppercase">Return to Order History</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
