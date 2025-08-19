@@ -1,2 +1,67 @@
+{% load bag_tools %}
+
 {% block profile_content %}
+<div class="container" id="profileContent">
+    <div class="row my-5">
+        <div class="col">
+            <h2 class="text-muted text-center">Order History</h2>
+        </div>
+    </div>
+    <div class="row d-sm-block d-none">
+        <div class="col-12">
+            <div class="order-history table-responsive">
+                <table class="table table-sm align-middle">
+                    <thead>
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>OrderTotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'order_detail' order.order_number %}" class="order-detail-link">
+                                    {{ order.order_number|truncatechars:6 }}
+                                </a>
+                            </td>
+                            <td>{{ order.date|date:"Y-m-d" }}</td>
+                            <td>
+                                {% for item in order.lineitems.all %}
+                                {{ item.product_variant.product.name }}
+                                {% endfor %}
+                            </td>
+                            <td>${{ order.grand_total }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Small screens: cards -->
+    <div class="d-flex justify-content-center d-sm-none ">
+        {% for order in orders %}
+        <div class="card mb-2">
+            <div class="card-body">
+                <h6 class="card-title">
+                    <a href="{% url 'order_detail' order.order_number %}" class="order-detail-link text-decoration-none">
+                        Order: {{ order.order_number|truncatechars:10 }}
+                    </a>
+                </h6>
+                <p class="card-text">Date: {{ order.date|date:"Y-m-d" }}</p>
+                <p class="card-text">
+                    {% for item in order.lineitems.all %}
+                    Items: {{ item.product_variant.product.name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                <p class="card-text">Total: €{{ order.grand_total }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
