@@ -194,8 +194,9 @@ def all_product_variants(request):
     }
     return render(request, 'products/product_managment.html', context)
 
-def edit_product_variant(request, pk):
-    variant = get_object_or_404(ProductVariant, pk=pk)
+
+def edit_product_variant(request, variant_id):
+    variant = get_object_or_404(ProductVariant, pk=variant_id)
 
     if request.method == 'POST':
         form = ProductVariantForm(request.POST, request.FILES, instance=variant)
@@ -213,3 +214,18 @@ def edit_product_variant(request, pk):
         'variant': variant,
     }
     return render(request, 'products/edit_product_variant.html', context)
+
+
+def delete_product_variant(request, variant_id):
+    if not request.user.is_superuser:
+        messages.error(request, "You are not authorized to delete product variants.")
+        return redirect('products')
+
+    variant = get_object_or_404(ProductVariant, pk=variant_id)
+
+    if request.method == 'POST':
+        variant.delete()
+        messages.success(request, "Product Variant deleted successfully.")
+        return redirect('all_product_variants')
+
+    return redirect('all_product_variants')
