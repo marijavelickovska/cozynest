@@ -193,3 +193,23 @@ def all_product_variants(request):
         'template_tab': template_tab
     }
     return render(request, 'products/product_managment.html', context)
+
+def edit_product_variant(request, pk):
+    variant = get_object_or_404(ProductVariant, pk=pk)
+
+    if request.method == 'POST':
+        form = ProductVariantForm(request.POST, request.FILES, instance=variant)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Product Variant updated successfully.")
+            return redirect('all_product_variants')
+        else:
+            messages.error(request, "Update failed. Please check the form.")
+    else:
+        form = ProductVariantForm(instance=variant)
+
+    context = {
+        'form': form,
+        'variant': variant,
+    }
+    return render(request, 'products/edit_product_variant.html', context)
