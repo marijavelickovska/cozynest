@@ -11,10 +11,10 @@
     <div class="col-12">
       <ul class="nav nav-tabs flex-column flex-sm-row">
         <li class="nav-item flex-fill">
-          <a class="nav-link text-center {% if tab == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}">Add Product</a>
+          <a class="nav-link text-center {% if template_tab == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}">Add Product</a>
         </li>
         <li class="nav-item flex-fill">
-          <a class="nav-link text-center {% if tab == 'add_product_variant' %}active{% endif %}" href="{% url 'add_product_variant' %}" >Add Product Variant</a>
+          <a class="nav-link text-center {% if template_tab == 'add_product_variant' %}active{% endif %}" href="{% url 'add_product_variant' %}" >Add Product Variant</a>
         </li>
       </ul>
     </div>
