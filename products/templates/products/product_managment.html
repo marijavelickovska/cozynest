@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container my-2">
+  <div class="row">
+    <div class="col-12">
+      <ul class="nav nav-tabs flex-column flex-sm-row">
+        <li class="nav-item flex-fill">
+          <a class="nav-link text-center {% if tab == 'add_product' %}active{% endif %}" href="{% url 'add_product' %}">Add Product</a>
+        </li>
+        <li class="nav-item flex-fill">
+          <a class="nav-link text-center" href="#">Add Product Variant</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {% if tab == 'add_product' %}
+  {% include 'products/add_product.html' %}
+  <!--{% elif tab == 'add_product_variant' %}
+  {% include 'products/add_product_variant.html' %}-->
+  {% endif %}
+
+</div>
+{% endblock %}
