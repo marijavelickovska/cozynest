@@ -167,3 +167,18 @@ def edit_product(request, product_id):
         'product': product
     }
     return render(request, 'products/edit_product.html', context)
+
+
+def delete_product(request, product_id):
+    if not request.user.is_superuser:
+        messages.error(request, "You are not authorized to delete products.")
+        return redirect('products')
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == "POST":
+        product.delete()
+        messages.success(request, "Product deleted successfully.")
+        return redirect('products')
+
+    return redirect(reverse('products'))

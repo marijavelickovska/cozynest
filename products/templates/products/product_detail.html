@@ -27,8 +27,8 @@
                 <p class="mb-0 fw-bold fs-4">{{ product.name }}</p>
                 {% if request.user.is_superuser %}
                 <small class="ml-3">
-                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
-
+                    <a class="text-decoration-none" href="{% url 'edit_product' product.id %}">Edit</a> |
+                    <a class="text-danger text-decoration-none" href="{% url 'delete_product' product.id %}">Delete</a>
                 </small>
                 {% endif %}
                 <p class="lead mb-0 fw-bold">€{{ product.base_price }}</p>
