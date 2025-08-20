@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.http import JsonResponse
 from .models import Product, Category, Size, Color
 from .forms import ProductForm, ProductVariantForm
 import json
@@ -112,6 +113,13 @@ def add_product(request):
     }
 
     return render(request, 'products/product_managment.html', context)
+
+
+def get_sizes_for_product(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    sizes = product.category.sizes.all()
+    data = [{'id': s.id, 'name': s.name} for s in sizes]
+    return JsonResponse({'sizes': data})
 
 
 def add_product_variant(request):

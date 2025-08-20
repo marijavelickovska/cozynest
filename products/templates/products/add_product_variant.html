@@ -12,3 +12,29 @@
         </div>
     </div>
 </div>
+
+{% block postloadjs %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const productSelect = document.getElementById('id_product');
+    const sizeSelect = document.getElementById('id_size');
+
+    productSelect.addEventListener('change', function() {
+        const productId = this.value;
+        if (!productId) return;
+
+        fetch(`/products/get_sizes/${productId}/`)
+            .then(response => response.json())
+            .then(data => {
+                sizeSelect.innerHTML = '';
+                data.sizes.forEach(size => {
+                    const option = document.createElement('option');
+                    option.value = size.id;
+                    option.textContent = size.name;
+                    sizeSelect.appendChild(option);
+                });
+            });
+    });
+});
+</script>
+{% endblock %}
