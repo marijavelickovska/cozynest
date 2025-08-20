@@ -1,3 +1,4 @@
+from django.db.models import ProtectedError
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
@@ -223,9 +224,13 @@ def delete_product_variant(request, variant_id):
 
     variant = get_object_or_404(ProductVariant, pk=variant_id)
 
-    if request.method == 'POST':
-        variant.delete()
-        messages.success(request, "Product Variant deleted successfully.")
+    if request.method != 'POST':
         return redirect('all_product_variants')
+
+    try:
+        variant.delete()
+        messages.success(request, f"Product Variant '{variant.product.name}' deleted successfully.")
+    except ProtectedError:
+        messages.error(request, f"Cannot delete '{variant.product.name}' because it is used in existing orders.")
 
     return redirect('all_product_variants')
