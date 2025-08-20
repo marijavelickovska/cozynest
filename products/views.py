@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.http import JsonResponse
-from .models import Product, Category, Size, Color
+from .models import Product, ProductVariant, Category, Size, Color
 from .forms import ProductForm, ProductVariantForm
 import json
 
@@ -182,3 +182,14 @@ def delete_product(request, product_id):
         return redirect('products')
 
     return redirect(reverse('products'))
+
+
+def all_product_variants(request):
+    template_tab = 'all_product_variants'
+
+    variants = ProductVariant.objects.select_related('product', 'size', 'color').all()
+    context = {
+        'variants': variants,
+        'template_tab': template_tab
+    }
+    return render(request, 'products/product_managment.html', context)

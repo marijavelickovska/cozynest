@@ -1,0 +1,68 @@
+{% load static %}
+
+<div class="container">
+    <div class="row my-5">
+        <div class="col-12">
+            <h2 class="text-muted mb-5 text-center">All Product Variants</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Product</th>
+                            <th>Size</th>
+                            <th>Color</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            {% if request.user.is_superuser %}
+                            <th class="text-center">Actions</th>
+                            {% endif %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for variant in variants %}
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    {% if variant.image and variant.image.url %}
+                                    <img src="{{ variant.image.url }}" alt="Variant Image" class="img-thumbnail me-2"
+                                        style="width: 50px; height: 50px; object-fit: cover;">
+                                    {% else %}
+                                    <img src="{% static 'images/placeholder.png' %}" alt="Variant Image" class="img-thumbnail me-2"
+                                        style="width: 50px; height: 50px; object-fit: cover;">
+                                    {% endif %}
+                                    <span>{{ variant.product.name }}</span>
+                                </div>
+                            </td>
+                            <td>{{ variant.size.name }}</td>
+                            <td>
+                                {{ variant.color.name }}
+                            </td>
+                            <td>€{{ variant.price }}</td>
+                            <td>{{ variant.stock }}</td>
+
+                            {% if request.user.is_superuser %}
+                            <td class="text-center">
+                                <a href=""
+                                    class="btn btn-sm btn-outline-primary me-1">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </a>
+                                <a href=""
+                                    class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i> Delete
+                                </a>
+                            </td>
+                            {% endif %}
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" class="text-center text-muted py-4">
+                                No product variants available.
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
