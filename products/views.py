@@ -142,3 +142,28 @@ def add_product_variant(request):
     }
 
     return render(request, 'products/product_managment.html', context)
+
+
+def edit_product(request, product_id):
+    if not request.user.is_superuser:
+        messages.error(request, "You are not authorized to edit products.")
+        return redirect('products')
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Product updated successfully.")
+            return redirect('products')
+        else:
+            messages.error(request, "Failed to update product. Please check the form.")
+    else:
+        form = ProductForm(instance=product)
+
+    context = {
+        'form': form,
+        'product': product
+    }
+    return render(request, 'products/edit_product.html', context)
