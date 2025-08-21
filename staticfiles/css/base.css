@@ -248,13 +248,9 @@ footer .copyright:hover {
 
 /* About Us */
 .company_image {
-  height: 50vh;
+  height: 20vh;
   background: url("../images/company.jpg") no-repeat center center;
   background-size: cover;
-}
-
-.about-us-title {
-  font-family: var(--primary-font);
 }
 
 /* Products */
@@ -370,11 +366,6 @@ footer .copyright:hover {
   .navbar-brand {
     font-size: 1.5rem;
   }
-
-  /* Contact us */
-  .company_image {
-    height: 20vh;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -386,5 +377,10 @@ footer .copyright:hover {
 
   .footer-links {
     margin: 0 3rem;
+  }
+
+  /* Contact us */
+  .company_image {
+    height: 40vh;
   }
 }

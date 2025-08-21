@@ -37,3 +37,9 @@ def contact_us(request):
         form = ContactMessageForm()
 
     return render(request, 'home/contact_us.html', {"form": form})
+
+
+def careers(request):
+    """ A view to return the careers page """
+
+    return render(request, 'home/careers.html')
