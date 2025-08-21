@@ -1,5 +1,6 @@
 from django.db.models import ProtectedError
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
 from django.http import JsonResponse
@@ -9,6 +10,9 @@ import json
 
 
 def all_products(request):
+    """
+    Display all products with optional filtering, sorting, and search.
+    """
     products = Product.objects.all()
     query = None
     category = None
@@ -44,10 +48,16 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request,
+                    "You didn't enter any search criteria!"
+                )
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = (
+                Q(name__icontains=query) |
+                Q(description__icontains=query)
+            )
             products = products.filter(queries)
 
     context = {
@@ -62,11 +72,17 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual product details """
+    """
+    A view to show individual product details
+    """
 
     product = get_object_or_404(Product, pk=product_id)
     variants = product.variants.all()
-    sizes = product.category.sizes.all() if product.category else Size.objects.none()
+    sizes = (
+        product.category.sizes.all()
+        if product.category
+        else Size.objects.none()
+    )
     colors = Color.objects.filter(productvariant__product=product).distinct()
 
     available_sizes = set(v.size_id for v in variants if v.stock > 0)
@@ -95,7 +111,11 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+@login_required
 def add_product(request):
+    """
+    Handle adding a new product via ProductForm.
+    """
     template_tab = 'add_product'
 
     if request.method == "POST":
@@ -105,7 +125,10 @@ def add_product(request):
             messages.success(request, "Product added successfully")
             return redirect('add_product')
         else:
-            messages.error(request, "Add product failed. Please ensure the form is valid.")
+            messages.error(
+                request,
+                "Add product failed. Please ensure the form is valid."
+            )
     else:
         form = ProductForm()
 
@@ -118,13 +141,21 @@ def add_product(request):
 
 
 def get_sizes_for_product(request, product_id):
+    """
+    Return JSON with sizes for a product's category.
+    """
     product = get_object_or_404(Product, pk=product_id)
     sizes = product.category.sizes.all()
     data = [{'id': s.id, 'name': s.name} for s in sizes]
     return JsonResponse({'sizes': data})
 
 
+@login_required
 def add_product_variant(request):
+    """
+    Handle adding a new product variant via a form
+    and display success/error messages.
+    """
     template_tab = 'add_product_variant'
 
     if request.method == "POST":
@@ -134,7 +165,10 @@ def add_product_variant(request):
             messages.success(request, "Product Variant added successfully")
             return redirect('add_product_variant')
         else:
-            messages.error(request, "Add product variant failed. Please ensure the form is valid.")
+            messages.error(
+                request,
+                "Add product variant failed. Please ensure the form is valid."
+            )
     else:
         form = ProductVariantForm()
 
@@ -146,7 +180,12 @@ def add_product_variant(request):
     return render(request, 'products/product_managment.html', context)
 
 
+@login_required
 def edit_product(request, product_id):
+    """
+    Allow superusers to edit an existing product,
+    and show success/error messages.
+    """
     if not request.user.is_superuser:
         messages.error(request, "You are not authorized to edit products.")
         return redirect('products')
@@ -160,7 +199,10 @@ def edit_product(request, product_id):
             messages.success(request, "Product updated successfully.")
             return redirect('products')
         else:
-            messages.error(request, "Failed to update product. Please check the form.")
+            messages.error(
+                request,
+                "Failed to update product. Please check the form."
+            )
     else:
         form = ProductForm(instance=product)
 
@@ -171,7 +213,11 @@ def edit_product(request, product_id):
     return render(request, 'products/edit_product.html', context)
 
 
+@login_required
 def delete_product(request, product_id):
+    """
+    Allow superusers to delete a product and show a success message.
+    """
     if not request.user.is_superuser:
         messages.error(request, "You are not authorized to delete products.")
         return redirect('products')
@@ -186,10 +232,18 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
 def all_product_variants(request):
+    """
+    Display all product variants with related product, size and color info.
+    """
     template_tab = 'all_product_variants'
 
-    variants = ProductVariant.objects.select_related('product', 'size', 'color').all()
+    variants = (
+        ProductVariant.objects
+        .select_related('product', 'size', 'color')
+        .all()
+    )
     context = {
         'variants': variants,
         'template_tab': template_tab
@@ -197,14 +251,24 @@ def all_product_variants(request):
     return render(request, 'products/product_managment.html', context)
 
 
+@login_required
 def edit_product_variant(request, variant_id):
+    """
+    Edit an existing ProductVariant. Displays a form and handles updates.
+    """
     variant = get_object_or_404(ProductVariant, pk=variant_id)
 
     if request.method == 'POST':
-        form = ProductVariantForm(request.POST, request.FILES, instance=variant)
+        form = ProductVariantForm(
+            request.POST,
+            request.FILES,
+            instance=variant
+        )
         if form.is_valid():
             form.save()
-            messages.success(request, f"Product Variant '{variant.product.name}' updated successfully.")
+            messages.success(request, f"Product Variant \
+                '{variant.product.name}' updated successfully."
+            )
             return redirect('all_product_variants')
         else:
             messages.error(request, "Update failed. Please check the form.")
@@ -218,9 +282,17 @@ def edit_product_variant(request, variant_id):
     return render(request, 'products/edit_product_variant.html', context)
 
 
+@login_required
 def delete_product_variant(request, variant_id):
+    """
+    Deletes a product variant if the user is a superuser.
+    Handles protected variants and shows success or error messages.
+    """
     if not request.user.is_superuser:
-        messages.error(request, "You are not authorized to delete product variants.")
+        messages.error(
+            request,
+            "You are not authorized to delete product variants."
+        )
         return redirect('products')
 
     variant = get_object_or_404(ProductVariant, pk=variant_id)
@@ -230,8 +302,15 @@ def delete_product_variant(request, variant_id):
 
     try:
         variant.delete()
-        messages.success(request, f"Product Variant '{variant.product.name}' deleted successfully.")
+        messages.success(
+            request,
+            f"Product Variant '{variant.product.name}' deleted successfully."
+        )
     except ProtectedError:
-        messages.error(request, f"Cannot delete '{variant.product.name}' because it is used in existing orders.")
+        messages.error(
+            request,
+            ("Cannot delete '"
+                f"{variant.product.name}', used in existing orders.")
+        )
 
     return redirect('all_product_variants')

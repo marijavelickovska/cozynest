@@ -18,6 +18,12 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 def checkout(request):
+    """
+    Handles the checkout process: displays the order form,
+    processes submitted orders, creates order line items from the shopping bag,
+    updates totals, and initializes Stripe payment intent.
+    Redirects to success page on successful order placement.
+    """
     bag = bag_contents(request)
 
     if request.method == 'POST':
@@ -56,14 +62,19 @@ def checkout(request):
             order.update_totals()
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number])
+            )
         else:
             messages.error(request, "There was an error with your form. \
                 Please double check your information.")
     else:
         bag = bag_contents(request)
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(
+                request,
+                "There's nothing in your bag at the moment"
+            )
             return redirect(reverse('products'))
 
         grand_total = bag.get('grand_total', 0)
@@ -84,7 +95,7 @@ def checkout(request):
                     'town_or_city': profile.default_town_or_city,
                     'postcode': profile.default_postcode,
                     'county': profile.default_county,
-                    'country': profile.default_country,    
+                    'country': profile.default_country,
                 })
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
@@ -102,7 +113,10 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handle successful checkouts.
+    Associates the order with the user profile if logged in, clears the bag,
+    optionally saves user info and shows a success message.
+    Display the checkout success page.
     """
     order = get_object_or_404(Order, order_number=order_number)
     save_info = request.session.get('save_info')
@@ -143,7 +157,10 @@ def checkout_success(request, order_number):
 
 
 def send_confirmation_email(order):
-    """Send the user a confirmation email"""
+    """
+    Send the user a confirmation email.
+    Renders email subject and body templates and sends the email.
+    """
     cust_email = order.email
     subject = render_to_string(
         'checkout/confirmation_emails/confirmation_email_subject.txt',

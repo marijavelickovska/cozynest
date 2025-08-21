@@ -31,7 +31,10 @@ def contact_us(request):
         form = ContactMessageForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Thank you for your message! We will get back to you soon.")
+            messages.success(
+                request,
+                ("Thank you for your message! We will get back to you soon.")
+            )
             return redirect("contact_us")
     else:
         form = ContactMessageForm()
