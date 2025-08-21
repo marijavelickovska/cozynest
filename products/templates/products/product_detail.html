@@ -95,36 +95,65 @@
 {{ block.super }}
 <script type="text/javascript" src="{% static 'products/js/product_detail.js' %}"></script>
 <script>
-    /**
-     * Dynamically updates the available colors when a size is selected,
-     * based on the size-to-color mapping passed from the backend.
-     * Disables the color dropdown until a valid size is chosen.
-     */
     document.addEventListener("DOMContentLoaded", function () {
-        const sizeSelect = document.getElementById("size-select");
-        const colorSelect = document.getElementById("color-select");
+    const sizeSelect = document.getElementById("size-select");
+    const colorSelect = document.getElementById("color-select");
+    const quantityInput = document.getElementById("quantity-input");
+    const buttonMinus = document.getElementById("button-minus");
+    const buttonPlus = document.getElementById("button-plus");
 
-        const sizeColorMap = JSON.parse(`{{ size_color_map_json|escapejs }}`);
+    const sizeColorStockMap = JSON.parse(`{{ size_color_map_json|escapejs }}`);
 
-        colorSelect.disabled = true;
+    function populateColors() {
+        const selectedSize = sizeSelect.value;
+        colorSelect.innerHTML = '<option value="">Select color</option>';
+        quantityInput.value = 1;
+        quantityInput.max = 1;
 
-        sizeSelect.addEventListener("change", function () {
-            const selectedSize = String(this.value);
-            colorSelect.innerHTML = '<option value="" disabled selected>Select color</option>';
+        if (!selectedSize || !sizeColorStockMap[selectedSize]) {
+            colorSelect.disabled = true;
+            return;
+        }
 
-            if (sizeColorMap[selectedSize]) {
-                sizeColorMap[selectedSize].forEach(color => {
-                    const opt = document.createElement("option");
-                    opt.value = color.id;
-                    opt.textContent = color.name;
-                    colorSelect.appendChild(opt);
-                });
-                colorSelect.disabled = false;
-            } else {
-                colorSelect.disabled = true;
-            }
+        sizeColorStockMap[selectedSize].forEach(item => {
+            const option = document.createElement('option');
+            option.value = item.id;
+            option.textContent = item.name;
+            option.dataset.stock = item.stock;
+            colorSelect.appendChild(option);
         });
+
+        colorSelect.disabled = false;
+        updateQuantity();
+    }
+
+    function updateQuantity() {
+        const selectedOption = colorSelect.selectedOptions[0];
+        if (selectedOption) {
+            const stock = parseInt(selectedOption.dataset.stock);
+            quantityInput.max = stock;
+            if (parseInt(quantityInput.value) > stock) {
+                quantityInput.value = stock;
+            }
+        } else {
+            quantityInput.max = 1;
+            quantityInput.value = 1;
+        }
+    }
+
+    sizeSelect.addEventListener('change', populateColors);
+    colorSelect.addEventListener('change', updateQuantity);
+
+    // Копчиња за + и -
+    buttonMinus.addEventListener('click', () => {
+        quantityInput.value = Math.max(1, parseInt(quantityInput.value) - 1);
     });
+    buttonPlus.addEventListener('click', () => {
+        quantityInput.value = Math.min(parseInt(quantityInput.max), parseInt(quantityInput.value) + 1);
+    });
+
+    populateColors();
+});
 </script>
 
 {% endblock %}

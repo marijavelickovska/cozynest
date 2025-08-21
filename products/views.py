@@ -78,7 +78,8 @@ def product_detail(request, product_id):
             key = str(variant.size_id)
             size_color_map.setdefault(key, []).append({
                 "id": variant.color.id,
-                "name": variant.color.name
+                "name": variant.color.name,
+                "stock": variant.stock
             })
 
     context = {
