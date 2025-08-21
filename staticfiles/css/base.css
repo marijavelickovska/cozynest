@@ -246,6 +246,17 @@ footer .copyright:hover {
   color: var(--gold-color) !important;
 }
 
+/* About Us */
+.company_image {
+  height: 50vh;
+  background: url("../images/company.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.about-us-title {
+  font-family: var(--primary-font);
+}
+
 /* Products */
 .card {
   width: 18rem;
@@ -339,6 +350,8 @@ footer .copyright:hover {
   }
 }
 
+
+
 @media (min-width: 768px) {
   /* Navbar */
   .navbar-center-md {
@@ -356,6 +369,11 @@ footer .copyright:hover {
   /* Navbar */
   .navbar-brand {
     font-size: 1.5rem;
+  }
+
+  /* Contact us */
+  .company_image {
+    height: 20vh;
   }
 }
 

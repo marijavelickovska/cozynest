@@ -15,6 +15,12 @@ def about_us(request):
     return render(request, 'home/about_us.html')
 
 
+def our_team(request):
+    """ A view to return the our team page """
+
+    return render(request, 'home/our_team.html')
+
+
 def contact_us(request):
     """
     View for handling Contact Us form submissions.

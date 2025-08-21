@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row my-md-5">
+        <div class="col-12 col-md-3 order-2 order-md-1 mt-5">
+            <div class="company_image"></div>
+            <div class="contact-info my-3">
+                <p><strong>Phone:</strong> +123 456 789</p>
+                <hr>
+                <p><strong>Email:</strong> cozynest@company.com</p>
+                <hr>
+                <p><strong>Address:</strong> 123 Main Street</p>
+                <hr>
+                <p><strong>City:</strong> Rostock</p>
+                <hr>
+                <p><strong>Country:</strong> Germany</p>
+                <hr>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 offset-md-2 order-1 order-md-2">
+            <div class="row">
+                <h1 class="text-center about-us-title">Our Team</h1>
+                <hr class="my-4 my-md-5">
+                <div class="col-12 col-md-6">
+                    <img src="{% static 'images/team-1.jpg' %}" class="d-block w-100" alt="Our Team">
+                </div>
+                <div class="col-12 col-md-6">
+                    <p class="mt-5">
+                        At CozyNest, we believe that great products come from great people. Behind every soft sheet,
+                        warm blanket, and cozy pajama, there is a dedicated team working with passion and care.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <p class="mt-5">Founded as a family business in 2010, our team has grown into a group of talented designers,
+                        craftsmen, and customer care specialists who share one mission: to make every home a little
+                        cozier.</p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img src="{% static 'images/team-2.jpg' %}" class="d-block w-100" alt="Our Team">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="{% static 'images/team-3.jpg' %}" class="d-block w-100" alt="Our Team">
+                </div>
+                <div class="col-12 col-md-6">
+                    <p class="mt-5">
+                        From selecting the finest fabrics to creating timeless designs and providing friendly support,
+                        our people are at the heart of everything we do. Each member of our team brings unique expertise
+                        - but together, we are united by our love for quality, comfort, and style.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center mt-5 mb-md-5">
+                    <p class="fst-italic fs-4 text-muted">We are more than just a company - we are a family, and we treat every customer like part of it.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "home/footer.html" %}
+{% endblock %}
