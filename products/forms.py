@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, ProductVariant
+from .models import Product, ProductVariant, Size
 
 
 class ProductForm(forms.ModelForm):
@@ -30,6 +30,7 @@ class ProductVariantForm(forms.ModelForm):
         fields = ['product', 'size', 'color', 'price', 'stock', 'image']
 
     def __init__(self, *args, **kwargs):
+        variant = kwargs.get('instance', None)
         super().__init__(*args, **kwargs)
 
         self.fields['price'].widget.attrs.update({
@@ -41,3 +42,9 @@ class ProductVariantForm(forms.ModelForm):
             'placeholder': 'Available stock',
             'min': '0'
         })
+
+        if variant and variant.product and variant.product.category:
+                category = variant.product.category
+                self.fields['size'].queryset = Size.objects.filter(categories=category)
+        else:
+            self.fields['size'].queryset = Size.objects.all()

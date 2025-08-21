@@ -203,7 +203,7 @@ def edit_product_variant(request, variant_id):
         form = ProductVariantForm(request.POST, request.FILES, instance=variant)
         if form.is_valid():
             form.save()
-            messages.success(request, "Product Variant updated successfully.")
+            messages.success(request, f"Product Variant '{variant.product.name}' updated successfully.")
             return redirect('all_product_variants')
         else:
             messages.error(request, "Update failed. Please check the form.")
