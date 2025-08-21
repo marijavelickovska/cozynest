@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 
 {% block content %}
 <div class="container">
-    <div class="row my-5">
-        <div class="col-12 col-md-3">
+    <div class="row my-4 my-md-5">
+        <div class="col-12 col-md-3 order-2 order-md-1 mt-5">
             <div class="company_image"></div>
             <div class="contact-info my-3">
                 <p><strong>Phone:</strong> +123 456 789</p>
@@ -20,10 +21,20 @@
                 <hr>
             </div>
         </div>
-        <div class="col-12 col-md-7 offset-md-2">
+        <div class="col-12 col-md-6 offset-md-2 order-1 order-md-2">
             <h1 class="text-center about-us-title">Contact Us</h1>
-            <hr class="my-5">
-            
+            <hr class="my-4 my-md-5">
+            <div>
+                <p class="text-center mb-3">We are committed to excellent customer care. Reach out to us anytime, and
+                    our team will provide a
+                    prompt response, usually within two hours.</p>
+                <form method="post" class="my-4">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-dark ms-5 ms-md-0 mt-3 px-5">Send Message</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
