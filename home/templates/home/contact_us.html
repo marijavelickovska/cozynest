@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row my-5">
+        <div class="col-12 col-md-3">
+            <div class="company_image"></div>
+            <div class="contact-info my-3">
+                <p><strong>Phone:</strong> +123 456 789</p>
+                <hr>
+                <p><strong>Email:</strong> cozynest@company.com</p>
+                <hr>
+                <p><strong>Address:</strong> 123 Main Street</p>
+                <hr>
+                <p><strong>City:</strong> Rostock</p>
+                <hr>
+                <p><strong>Country:</strong> Germany</p>
+                <hr>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 offset-md-2">
+            <h1 class="text-center about-us-title">Contact Us</h1>
+            <hr class="my-5">
+            
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "home/footer.html" %}
+{% endblock %}
