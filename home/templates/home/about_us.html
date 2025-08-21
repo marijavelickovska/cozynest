@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row my-5">
+        <div class="col-12 col-md-3">
+            <div class="company_image"></div>
+            <div class="contact-info my-3">
+                <p><strong>Phone:</strong> +123 456 789</p>
+                <hr>
+                <p><strong>Email:</strong> cozynest@company.com</p>
+                <hr>
+                <p><strong>Address:</strong> 123 Main Street</p>
+                <hr>
+                <p><strong>City:</strong> Rostock</p>
+                <hr>
+                <p><strong>Country:</strong> Germany</p>
+                <hr>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 offset-md-2">
+            <h1 class="text-center about-us-title">About Us</h1>
+            <hr class="my-5">
+            <p>
+                Founded in 2010 in the beautiful city of Rostock, CozyNest started as a small family business with a
+                simple mission: to bring warmth, comfort, and style into every bedroom. Over the years, we have grown
+                into a trusted name in premium bedding, offering high-quality products that combine softness,
+                durability, and elegant design.
+            </p>
+            <p>
+                At CozyNest, we believe that your bedroom should be a sanctuary - a place where you can relax, recharge,
+                and feel truly cozy. Our collection includes soft cotton bedding, cotton duvet covers in all sizes,
+                decorative pillow covers, toddler bedding sets, warm blankets, and cozy cotton pajamas - everything
+                designed to make your home feel welcoming and comfortable.
+            </p>
+            <p>
+                We are proud to export our products worldwide, sharing the comfort and quality of CozyNest with homes
+                across the globe. As a family-run company, we value attention to detail, personal service, and creating
+                products that bring joy to our customers every day.
+            </p>
+            <p>
+                Whether you are refreshing your bedroom, looking for the perfect gift, or creating a cozy corner for
+                your little one, CozyNest is here to make your home a little warmer and a lot more comfortable.
+            </p>
+            <p class="fst-italic text-center my-5 fs-2 text-muted">Designing comfort, defining home.</p>
+            <p class="text-center my-5">We are always here for you - feel free to <a class="text-decoration-none" href="#">reach out to us</a> anytime using the contact form.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "home/footer.html" %}
+{% endblock %}

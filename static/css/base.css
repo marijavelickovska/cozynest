@@ -246,6 +246,17 @@ footer .copyright:hover {
   color: var(--gold-color) !important;
 }
 
+/* About Us */
+.company_image {
+  height: 50vh;
+  background: url("../images/company.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.about-us-title {
+  font-family: var(--primary-font);
+}
+
 /* Products */
 .card {
   width: 18rem;
