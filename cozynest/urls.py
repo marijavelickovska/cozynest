@@ -23,6 +23,7 @@ from products import urls as products_urls
 from bag import urls as bag_urls
 from profiles import urls as profile_urls
 from checkout import urls as checkout_urls
+from .views import handler404
 
 
 urlpatterns = [
@@ -35,3 +36,4 @@ urlpatterns = [
     path('profile/', include(profile_urls)),
     path('', include(home_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+handler404 = 'cozynest.views.handler404'

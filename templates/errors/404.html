@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row my-5 d-flex justify-content-center">
+        <div class="col-12">
+            <h1 class="primary-font text-danger my-3">404</h1>
+            <p>Oops! Page not found!</p>
+            <p>Looks like you got lost between the sheets</p>
+            <div class="mt-5 mb-2 d-flex flex-column flex-md-row gap-2">
+                <a href="{% url 'home' %}" class="btn btn-dark mt-2 text-decoration-none">
+                    Go back to Homepage
+                </a>
+                <a href="{% url 'products' %}" class="btn btn-dark mt-2 text-decoration-none">
+                    See our Collections
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "home/footer.html" %}
+{% endblock %}
