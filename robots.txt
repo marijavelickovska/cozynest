@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://cozy-nest-d80515c202ab.herokuapp.com//sitemap.xml
