@@ -1,4 +1,4 @@
-from decimal import Decimal
+from decimal import Decimal, ROUND_HALF_UP
 from django.conf import settings
 from products.models import ProductVariant
 from .models import BagLineItem
@@ -9,7 +9,9 @@ def bag_contents(request):
     total_price = Decimal('0.00')
 
     if request.user.is_authenticated:
-        bag_items = BagLineItem.objects.filter(user=request.user)
+        bag_items = BagLineItem.objects.filter(
+            user=request.user
+        ).order_by('id')
         for item in bag_items:
             total_quantity += item.quantity
             total_price += item.quantity * item.product_variant.price
@@ -29,20 +31,29 @@ def bag_contents(request):
             })
 
     if total_price < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = (total_price * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE)) / Decimal('100')
-        amount_remaining_for_free_delivery = settings.FREE_DELIVERY_THRESHOLD - total_price
+        delivery = (
+            total_price
+            * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE)
+            / Decimal('100')
+        ).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
+        amount_remaining_for_free_delivery = (
+            settings.FREE_DELIVERY_THRESHOLD - total_price
+        ).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
     else:
-        delivery = 0
-        amount_remaining_for_free_delivery = 0
+        delivery = Decimal('0.00')
+        amount_remaining_for_free_delivery = Decimal('0.00')
 
-    grand_total = delivery + total_price
+    grand_total = (
+        total_price + delivery
+    ).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
 
     context = {
         'bag_items': bag_items,
         'total_quantity': total_quantity,
         'total_price': total_price,
         'delivery': delivery,
-        'amount_remaining_for_free_delivery': amount_remaining_for_free_delivery,
+        'amount_remaining_for_free_delivery':
+            amount_remaining_for_free_delivery,
         'grand_total': grand_total,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
     }
