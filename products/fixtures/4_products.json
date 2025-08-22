@@ -61,7 +61,7 @@
     "fields": {
       "name": "Classic Cotton Pajamas",
       "category": 6,
-      "description": "Description for classic cotton pajamas.",
+      "description": "Description for kids animal pyjamas.",
       "base_price": "78.99",
       "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645496/classic_cotton_pajamas_c76po4.jpg",
       "rating": 3.8,
@@ -611,6 +611,20 @@
       "base_price": "39.99",
       "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1754645520/wool_blanket_set_mq4nkx.jpg",
       "rating": 4.2,
+      "created_on": "2025-08-01T10:00:00Z",
+      "updated_on": "2025-08-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 45,
+    "fields": {
+      "name": "Cotton Boy Pajamas",
+      "category": 7,
+      "description": "Description for cotton kids pyjamas.",
+      "base_price": "18.99",
+      "image": "https://res.cloudinary.com/dqgvb7nud/image/upload/v1755689077/hzxradon80duyv0sft3j.jpg",
+      "rating": 4.8,
       "created_on": "2025-08-01T10:00:00Z",
       "updated_on": "2025-08-01T10:00:00Z"
     }

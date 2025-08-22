@@ -4,10 +4,10 @@
     "pk": 1,
     "fields": {
       "product": 1,
-      "size": 3,
+      "size": 15,
       "color": 4,
       "price": "79.99",
-      "stock": 10,
+      "stock": 15,
       "image": ""
     }
   },
@@ -16,7 +16,7 @@
     "pk": 2,
     "fields": {
       "product": 21,
-      "size": 4,
+      "size": 5,
       "color": 2,
       "price": "45.99",
       "stock": 10,
@@ -28,7 +28,7 @@
     "pk": 3,
     "fields": {
       "product": 5,
-      "size": 12,
+      "size": 11,
       "color": 1,
       "price": "39.99",
       "stock": 10,
@@ -40,10 +40,10 @@
     "pk": 4,
     "fields": {
       "product": 3,
-      "size": 1,
+      "size": 2,
       "color": 6,
       "price": "19.99",
-      "stock": 10,
+      "stock": 42,
       "image": ""
     }
   },
@@ -52,10 +52,10 @@
     "pk": 5,
     "fields": {
       "product": 30,
-      "size": 6,
+      "size": 5,
       "color": 3,
       "price": "29.99",
-      "stock": 10,
+      "stock": 57,
       "image": ""
     }
   },
@@ -64,7 +64,7 @@
     "pk": 6,
     "fields": {
       "product": 13,
-      "size": 9,
+      "size": 8,
       "color": 7,
       "price": "25.99",
       "stock": 10,
@@ -76,10 +76,10 @@
     "pk": 7,
     "fields": {
       "product": 22,
-      "size": 16,
+      "size": 17,
       "color": 8,
       "price": "44.90",
-      "stock": 10,
+      "stock": 12,
       "image": ""
     }
   },
@@ -88,10 +88,10 @@
     "pk": 8,
     "fields": {
       "product": 12,
-      "size": 8,
+      "size": 9,
       "color": 2,
       "price": "52.99",
-      "stock": 10,
+      "stock": 25,
       "image": ""
     }
   },
@@ -100,10 +100,10 @@
     "pk": 9,
     "fields": {
       "product": 2,
-      "size": 2,
+      "size": 3,
       "color": 5,
       "price": "24.99",
-      "stock": 10,
+      "stock": 36,
       "image": ""
     }
   },
@@ -112,10 +112,10 @@
     "pk": 10,
     "fields": {
       "product": 32,
-      "size": 13,
+      "size": 12,
       "color": 2,
       "price": "43.90",
-      "stock": 10,
+      "stock": 15,
       "image": ""
     }
   },
@@ -125,7 +125,7 @@
     "fields": {
       "product": 23,
       "size": 8,
-      "color": 1,
+      "color": 3,
       "price": "42.90",
       "stock": 10,
       "image": ""
@@ -136,10 +136,10 @@
     "pk": 12,
     "fields": {
       "product": 7,
-      "size": 3,
+      "size": 2,
       "color": 6,
       "price": "24.99",
-      "stock": 10,
+      "stock": 47,
       "image": ""
     }
   },
@@ -148,10 +148,10 @@
     "pk": 13,
     "fields": {
       "product": 14,
-      "size": 11,
+      "size": 13,
       "color": 3,
       "price": "36.90",
-      "stock": 10,
+      "stock": 22,
       "image": ""
     }
   },
@@ -160,10 +160,10 @@
     "pk": 14,
     "fields": {
       "product": 10,
-      "size": 9,
+      "size": 7,
       "color": 2,
       "price": "68.99",
-      "stock": 10,
+      "stock": 62,
       "image": ""
     }
   },
@@ -172,10 +172,10 @@
     "pk": 15,
     "fields": {
       "product": 31,
-      "size": 3,
+      "size": 2,
       "color": 7,
       "price": "32.59",
-      "stock": 10,
+      "stock": 28,
       "image": ""
     }
   },
@@ -184,10 +184,10 @@
     "pk": 16,
     "fields": {
       "product": 37,
-      "size": 4,
+      "size": 5,
       "color": 6,
       "price": "27.99",
-      "stock": 10,
+      "stock": 33,
       "image": ""
     }
   },
@@ -196,10 +196,10 @@
     "pk": 17,
     "fields": {
       "product": 24,
-      "size": 7,
+      "size": 8,
       "color": 5,
       "price": "43.90",
-      "stock": 10,
+      "stock": 68,
       "image": ""
     }
   },
@@ -208,10 +208,10 @@
     "pk": 18,
     "fields": {
       "product": 11,
-      "size": 7,
+      "size": 8,
       "color": 8,
       "price": "28.99",
-      "stock": 10,
+      "stock": 32,
       "image": ""
     }
   },
@@ -220,10 +220,10 @@
     "pk": 19,
     "fields": {
       "product": 15,
-      "size": 1,
+      "size": 2,
       "color": 3,
       "price": "36.59",
-      "stock": 10,
+      "stock": 85,
       "image": ""
     }
   },
@@ -232,10 +232,10 @@
     "pk": 20,
     "fields": {
       "product": 36,
-      "size": 1,
+      "size": 3,
       "color": 2,
       "price": "28.99",
-      "stock": 10,
+      "stock": 45,
       "image": ""
     }
   },
@@ -244,10 +244,10 @@
     "pk": 21,
     "fields": {
       "product": 6,
-      "size": 8,
+      "size": 7,
       "color": 7,
       "price": "75.90",
-      "stock": 10,
+      "stock": 40,
       "image": ""
     }
   },
@@ -256,10 +256,10 @@
     "pk": 22,
     "fields": {
       "product": 18,
-      "size": 3,
+      "size": 1,
       "color": 1,
       "price": "55.99",
-      "stock": 10,
+      "stock": 50,
       "image": ""
     }
   },
@@ -268,10 +268,10 @@
     "pk": 23,
     "fields": {
       "product": 38,
-      "size": 10,
+      "size": 12,
       "color": 4,
       "price": "59.49",
-      "stock": 10,
+      "stock": 30,
       "image": ""
     }
   },
@@ -280,10 +280,10 @@
     "pk": 24,
     "fields": {
       "product": 26,
-      "size": 2,
+      "size": 3,
       "color": 2,
       "price": "29.99",
-      "stock": 10,
+      "stock": 40,
       "image": ""
     }
   },
@@ -292,7 +292,7 @@
     "pk": 25,
     "fields": {
       "product": 9,
-      "size": 2,
+      "size": 1,
       "color": 6,
       "price": "25.99",
       "stock": 10,
@@ -304,7 +304,7 @@
     "pk": 26,
     "fields": {
       "product": 4,
-      "size": 1,
+      "size": 3,
       "color": 3,
       "price": "54.99",
       "stock": 15,
@@ -316,10 +316,10 @@
     "pk": 27,
     "fields": {
       "product": 17,
-      "size": 6,
+      "size": 4,
       "color": 1,
       "price": "45.00",
-      "stock": 8,
+      "stock": 28,
       "image": ""
     }
   },
@@ -328,7 +328,7 @@
     "pk": 28,
     "fields": {
       "product": 19,
-      "size": 10,
+      "size": 11,
       "color": 4,
       "price": "39.99",
       "stock": 12,
@@ -340,10 +340,10 @@
     "pk": 29,
     "fields": {
       "product": 29,
-      "size": 2,
+      "size": 3,
       "color": 2,
       "price": "65.50",
-      "stock": 7,
+      "stock": 67,
       "image": ""
     }
   },
@@ -352,7 +352,7 @@
     "pk": 30,
     "fields": {
       "product": 8,
-      "size": 9,
+      "size": 7,
       "color": 5,
       "price": "70.00",
       "stock": 20,
@@ -364,10 +364,10 @@
     "pk": 31,
     "fields": {
       "product": 25,
-      "size": 13,
+      "size": 11,
       "color": 1,
       "price": "50.00",
-      "stock": 5,
+      "stock": 55,
       "image": ""
     }
   },
@@ -376,7 +376,7 @@
     "pk": 32,
     "fields": {
       "product": 35,
-      "size": 5,
+      "size": 4,
       "color": 6,
       "price": "42.99",
       "stock": 14,
@@ -388,10 +388,10 @@
     "pk": 33,
     "fields": {
       "product": 16,
-      "size": 14,
+      "size": 16,
       "color": 7,
       "price": "59.00",
-      "stock": 9,
+      "stock": 49,
       "image": ""
     }
   },
@@ -400,10 +400,10 @@
     "pk": 34,
     "fields": {
       "product": 20,
-      "size": 11,
+      "size": 10,
       "color": 3,
       "price": "47.50",
-      "stock": 6,
+      "stock": 36,
       "image": ""
     }
   },
@@ -412,10 +412,10 @@
     "pk": 35,
     "fields": {
       "product": 28,
-      "size": 15,
+      "size": 17,
       "color": 5,
       "price": "51.25",
-      "stock": 13,
+      "stock": 23,
       "image": ""
     }
   },
@@ -424,10 +424,10 @@
     "pk": 36,
     "fields": {
       "product": 27,
-      "size": 6,
+      "size": 4,
       "color": 2,
       "price": "55.00",
-      "stock": 11,
+      "stock": 41,
       "image": ""
     }
   },
@@ -436,10 +436,10 @@
     "pk": 37,
     "fields": {
       "product": 33,
-      "size": 7,
+      "size": 8,
       "color": 8,
       "price": "60.00",
-      "stock": 10,
+      "stock": 50,
       "image": ""
     }
   },
@@ -448,10 +448,10 @@
     "pk": 38,
     "fields": {
       "product": 34,
-      "size": 12,
+      "size": 11,
       "color": 6,
       "price": "49.90",
-      "stock": 4,
+      "stock": 34,
       "image": ""
     }
   },
@@ -460,10 +460,10 @@
     "pk": 39,
     "fields": {
       "product": 40,
-      "size": 17,
+      "size": 15,
       "color": 4,
       "price": "44.99",
-      "stock": 6,
+      "stock": 56,
       "image": ""
     }
   },
@@ -472,10 +472,10 @@
     "pk": 40,
     "fields": {
       "product": 39,
-      "size": 5,
+      "size": 4,
       "color": 1,
       "price": "38.00",
-      "stock": 3,
+      "stock": 43,
       "image": ""
     }
   },
@@ -484,10 +484,10 @@
     "pk": 41,
     "fields": {
       "product": 6,
-      "size": 8,
+      "size": 7,
       "color": 3,
       "price": "64.99",
-      "stock": 10,
+      "stock": 30,
       "image": ""
     }
   },
@@ -496,10 +496,10 @@
     "pk": 42,
     "fields": {
       "product": 3,
-      "size": 2,
+      "size": 3,
       "color": 3,
       "price": "55.55",
-      "stock": 7,
+      "stock": 27,
       "image": ""
     }
   },
@@ -508,10 +508,10 @@
     "pk": 43,
     "fields": {
       "product": 22,
-      "size": 10,
+      "size": 11,
       "color": 7,
       "price": "43.00",
-      "stock": 8,
+      "stock": 48,
       "image": ""
     }
   },
@@ -520,10 +520,10 @@
     "pk": 44,
     "fields": {
       "product": 10,
-      "size": 6,
+      "size": 5,
       "color": 4,
       "price": "67.00",
-      "stock": 15,
+      "stock": 25,
       "image": ""
     }
   },
@@ -532,10 +532,10 @@
     "pk": 45,
     "fields": {
       "product": 5,
-      "size": 3,
+      "size": 2,
       "color": 6,
       "price": "59.90",
-      "stock": 10,
+      "stock": 60,
       "image": ""
     }
   },
@@ -544,10 +544,10 @@
     "pk": 46,
     "fields": {
       "product": 13,
-      "size": 7,
+      "size": 8,
       "color": 2,
       "price": "61.00",
-      "stock": 6,
+      "stock": 46,
       "image": ""
     }
   },
@@ -556,10 +556,10 @@
     "pk": 47,
     "fields": {
       "product": 11,
-      "size": 4,
+      "size": 6,
       "color": 7,
       "price": "56.00",
-      "stock": 4,
+      "stock": 44,
       "image": ""
     }
   },
@@ -568,10 +568,10 @@
     "pk": 48,
     "fields": {
       "product": 18,
-      "size": 1,
+      "size": 3,
       "color": 8,
       "price": "62.00",
-      "stock": 5,
+      "stock": 35,
       "image": ""
     }
   },
@@ -580,10 +580,10 @@
     "pk": 49,
     "fields": {
       "product": 21,
-      "size": 11,
+      "size": 12,
       "color": 5,
       "price": "48.00",
-      "stock": 9,
+      "stock": 39,
       "image": ""
     }
   },
@@ -592,10 +592,646 @@
     "pk": 50,
     "fields": {
       "product": 14,
-      "size": 16,
+      "size": 17,
       "color": 3,
       "price": "52.00",
+      "stock": 50,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 51,
+    "fields": {
+      "product": 1,
+      "size": 8,
+      "color": 4,
+      "price": "79.99",
+      "stock": 15,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 52,
+    "fields": {
+      "product": 21,
+      "size": 6,
+      "color": 2,
+      "price": "45.99",
       "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 53,
+    "fields": {
+      "product": 5,
+      "size": 7,
+      "color": 1,
+      "price": "39.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 54,
+    "fields": {
+      "product": 3,
+      "size": 3,
+      "color": 7,
+      "price": "19.99",
+      "stock": 42,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 55,
+    "fields": {
+      "product": 30,
+      "size": 5,
+      "color": 4,
+      "price": "29.99",
+      "stock": 57,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 56,
+    "fields": {
+      "product": 13,
+      "size": 7,
+      "color": 6,
+      "price": "25.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk":57,
+    "fields": {
+      "product": 22,
+      "size": 14,
+      "color": 2,
+      "price": "44.90",
+      "stock": 12,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 58,
+    "fields": {
+      "product": 12,
+      "size": 9,
+      "color": 7,
+      "price": "52.99",
+      "stock": 25,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 59,
+    "fields": {
+      "product": 2,
+      "size": 3,
+      "color": 4,
+      "price": "24.99",
+      "stock": 36,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 60,
+    "fields": {
+      "product": 32,
+      "size": 11,
+      "color": 1,
+      "price": "43.90",
+      "stock": 15,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 61,
+    "fields": {
+      "product": 23,
+      "size": 9,
+      "color": 2,
+      "price": "42.90",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 62,
+    "fields": {
+      "product": 7,
+      "size": 1,
+      "color": 5,
+      "price": "24.99",
+      "stock": 47,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 63,
+    "fields": {
+      "product": 14,
+      "size": 12,
+      "color": 4,
+      "price": "36.90",
+      "stock": 22,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 64,
+    "fields": {
+      "product": 10,
+      "size": 8,
+      "color": 3,
+      "price": "68.99",
+      "stock": 62,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 65,
+    "fields": {
+      "product": 31,
+      "size": 2,
+      "color": 5,
+      "price": "32.59",
+      "stock": 28,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 66,
+    "fields": {
+      "product": 37,
+      "size": 5,
+      "color": 7,
+      "price": "27.99",
+      "stock": 33,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 67,
+    "fields": {
+      "product": 24,
+      "size": 8,
+      "color": 4,
+      "price": "43.90",
+      "stock": 68,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 68,
+    "fields": {
+      "product": 11,
+      "size": 8,
+      "color": 1,
+      "price": "28.99",
+      "stock": 32,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 69,
+    "fields": {
+      "product": 15,
+      "size": 2,
+      "color": 4,
+      "price": "36.59",
+      "stock": 85,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 70,
+    "fields": {
+      "product": 36,
+      "size": 3,
+      "color": 3,
+      "price": "28.99",
+      "stock": 45,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 71,
+    "fields": {
+      "product": 6,
+      "size": 9,
+      "color": 2,
+      "price": "75.90",
+      "stock": 40,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 72,
+    "fields": {
+      "product": 18,
+      "size": 2,
+      "color": 4,
+      "price": "55.99",
+      "stock": 50,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 73,
+    "fields": {
+      "product": 38,
+      "size": 11,
+      "color": 3,
+      "price": "59.49",
+      "stock": 30,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 74,
+    "fields": {
+      "product": 26,
+      "size": 1,
+      "color": 7,
+      "price": "29.99",
+      "stock": 40,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 75,
+    "fields": {
+      "product": 9,
+      "size": 3,
+      "color": 8,
+      "price": "25.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 76,
+    "fields": {
+      "product": 4,
+      "size": 2,
+      "color": 5,
+      "price": "54.99",
+      "stock": 15,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 77,
+    "fields": {
+      "product": 17,
+      "size": 5,
+      "color": 2,
+      "price": "45.00",
+      "stock": 28,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 78,
+    "fields": {
+      "product": 19,
+      "size": 11,
+      "color": 3,
+      "price": "39.99",
+      "stock": 12,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 79,
+    "fields": {
+      "product": 29,
+      "size": 3,
+      "color": 4,
+      "price": "65.50",
+      "stock": 67,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 80,
+    "fields": {
+      "product": 8,
+      "size": 8,
+      "color": 6,
+      "price": "70.00",
+      "stock": 20,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 81,
+    "fields": {
+      "product": 25,
+      "size": 12,
+      "color": 7,
+      "price": "50.00",
+      "stock": 55,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 82,
+    "fields": {
+      "product": 35,
+      "size": 4,
+      "color": 3,
+      "price": "42.99",
+      "stock": 14,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 83,
+    "fields": {
+      "product": 16,
+      "size": 15,
+      "color": 2,
+      "price": "59.00",
+      "stock": 49,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 84,
+    "fields": {
+      "product": 20,
+      "size": 10,
+      "color": 5,
+      "price": "47.50",
+      "stock": 36,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 85,
+    "fields": {
+      "product": 28,
+      "size": 17,
+      "color": 4,
+      "price": "51.25",
+      "stock": 23,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 86,
+    "fields": {
+      "product": 27,
+      "size": 5,
+      "color": 7,
+      "price": "55.00",
+      "stock": 41,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 87,
+    "fields": {
+      "product": 33,
+      "size": 8,
+      "color": 6,
+      "price": "60.00",
+      "stock": 50,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 88,
+    "fields": {
+      "product": 34,
+      "size": 11,
+      "color": 1,
+      "price": "49.90",
+      "stock": 34,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 89,
+    "fields": {
+      "product": 40,
+      "size": 16,
+      "color": 5,
+      "price": "44.99",
+      "stock": 56,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 90,
+    "fields": {
+      "product": 39,
+      "size": 4,
+      "color": 3,
+      "price": "38.00",
+      "stock": 43,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 91,
+    "fields": {
+      "product": 6,
+      "size": 8,
+      "color": 4,
+      "price": "64.99",
+      "stock": 30,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 92,
+    "fields": {
+      "product": 3,
+      "size": 1,
+      "color": 4,
+      "price": "55.55",
+      "stock": 27,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 93,
+    "fields": {
+      "product": 22,
+      "size": 12,
+      "color": 8,
+      "price": "43.00",
+      "stock": 48,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 94,
+    "fields": {
+      "product": 10,
+      "size": 5,
+      "color": 6,
+      "price": "67.00",
+      "stock": 25,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 95,
+    "fields": {
+      "product": 5,
+      "size": 2,
+      "color": 1,
+      "price": "59.90",
+      "stock": 60,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 96,
+    "fields": {
+      "product": 13,
+      "size": 9,
+      "color": 7,
+      "price": "61.00",
+      "stock": 46,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 97,
+    "fields": {
+      "product": 11,
+      "size": 5,
+      "color": 8,
+      "price": "56.00",
+      "stock": 44,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 98,
+    "fields": {
+      "product": 18,
+      "size": 2,
+      "color": 2,
+      "price": "62.00",
+      "stock": 35,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 99,
+    "fields": {
+      "product": 21,
+      "size": 10,
+      "color": 4,
+      "price": "48.00",
+      "stock": 39,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 100,
+    "fields": {
+      "product": 14,
+      "size": 15,
+      "color": 2,
+      "price": "52.00",
+      "stock": 50,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 101,
+    "fields": {
+      "product": 45,
+      "size": 15,
+      "color": 2,
+      "price": "18.99",
+      "stock": 10,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 102,
+    "fields": {
+      "product": 45,
+      "size": 14,
+      "color": 3,
+      "price": "18.99",
+      "stock": 15,
+      "image": ""
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 103,
+    "fields": {
+      "product": 45,
+      "size": 15,
+      "color": 6,
+      "price": "18.99",
+      "stock": 11,
       "image": ""
     }
   }
