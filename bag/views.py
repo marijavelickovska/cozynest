@@ -62,7 +62,7 @@ def add_to_bag(request, product_id):
     return redirect('product_detail', product_id=product_id)
 
 
-def edit_product(request, variant_id):
+def edit_bag_item(request, variant_id):
     """
     Update the quantity of a product variant in the user's bag.
     Handles both authenticated users (database) and anonymous users (session).
@@ -89,7 +89,7 @@ def edit_product(request, variant_id):
     return redirect("view_bag")
 
 
-def delete_product_variant(request, variant_id):
+def delete_bag_item(request, variant_id):
     """
     Remove a product variant from the user's bag (session or database)
     and show a success message.
