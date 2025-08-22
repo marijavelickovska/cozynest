@@ -93,7 +93,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript" src="{% static 'products/js/product_detail.js' %}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
     const sizeSelect = document.getElementById("size-select");
@@ -146,10 +145,10 @@
 
     // Копчиња за + и -
     buttonMinus.addEventListener('click', () => {
-        quantityInput.value = Math.max(1, parseInt(quantityInput.value) - 1);
+    quantityInput.value = Math.max(1, Number(quantityInput.value) - 1);
     });
     buttonPlus.addEventListener('click', () => {
-        quantityInput.value = Math.min(parseInt(quantityInput.max), parseInt(quantityInput.value) + 1);
+        quantityInput.value = Math.min(Number(quantityInput.max), Number(quantityInput.value) + 1);
     });
 
     populateColors();
