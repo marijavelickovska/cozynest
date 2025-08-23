@@ -42,6 +42,15 @@ a.btn-outline-dark:hover i.fas {
 	white-space: nowrap;
 }
 
+.page-link {
+  color: #b08336 !important;
+  border: 1px solid #b08336 !important;
+}
+.page-link:hover {
+  background-color: #b08336 !important;
+  color: white !important;
+}
+
 @media (min-width: 768px) {
   img.custom-size {
     max-width: 500px;
@@ -57,7 +66,7 @@ a.btn-outline-dark:hover i.fas {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   .btn-add-to-bag,
   .btn-keep-shopping {
     width: 80%;
