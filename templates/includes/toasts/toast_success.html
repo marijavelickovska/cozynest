@@ -34,12 +34,12 @@
                 <strong>
                     <p class="mt-3 mb-1 text-black">
                         Total{% if amount_remaining_for_free_delivery > 0 %} (Exc. delivery){% endif %}:
-                        <span class="float-end">${{ total_price|floatformat:2 }}</span>
+                        <span class="float-end">€{{ total_price|floatformat:2 }}</span>
                     </p>
                 </strong>
                 {% if amount_remaining_for_free_delivery > 0 %}
                 <p class="my-1 p-1 bg-warning text-black text-center">
-                    Spend <strong>${{ amount_remaining_for_free_delivery }}</strong> more to get free next day delivery!
+                    Spend <strong>€{{ amount_remaining_for_free_delivery }}</strong> more to get free next day delivery!
                 </p>
                 {% endif %}
                 <div class="text-center">
