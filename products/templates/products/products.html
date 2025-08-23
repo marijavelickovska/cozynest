@@ -5,17 +5,17 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="py-3">Products</h2>
+        <div class="col text-center mt-2 mt-md-3">
+            <h2 class="py-md-3">Products</h2>
             {% if category_obj %}
             <a href="{% url 'products' %}?category={{ c.name }}" class="category-btn btn btn-dark px-4 rounded-0">
                 <span>{{ category_obj.friendly_name }}</span>
             </a>
             {% endif %}
-            <hr class="w-50 mb-1 mx-auto">
+            <hr class="w-50 my-3 mx-auto">
         </div>
     </div>
-    <div class="row my-4">
+    <div class="row my-1 my-md-4">
         <div class="col-12 col-md-8 col-lg-9 order-last order-md-1 d-flex justify-content-start my-2">
             <p class="text-muted">
                 {% if search_term or current_categories or current_sorting != 'None_None' %}
@@ -46,9 +46,9 @@
         </div>
     </div>
     {% if products %}
-    <div class="row g-4 mb-5">
+    <div class="row g-4">
         {% for product in products %}
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-md-4 d-flex justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
             <div class="card h-100 border-0 rounded-0">
                 <a href="{% url 'product_detail' product.id %}">
                     <img src="{{ product.image.url }}" class="card-img-top rounded-0" alt="{{ product.name }}">
@@ -77,6 +77,26 @@
                 </div>
             </div>
         </div>
+        {% if forloop.counter|divisibleby:1 %}
+            <div class="col-12 d-sm-none mb-2">
+                <hr>
+            </div>
+        {% endif %}                        
+        {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-2">
+                <hr>
+            </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:3 %}
+            <div class="col-12 d-none d-lg-block d-xl-none mb-4">
+                <hr>
+            </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:4 %}
+            <div class="col-12 d-none d-xl-block mb-4">
+                <hr>
+            </div>
+        {% endif %}
         {% endfor %}
     </div>
     {% else %}

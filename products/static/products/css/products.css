@@ -57,7 +57,7 @@ a.btn-outline-dark:hover i.fas {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   .btn-add-to-bag,
   .btn-keep-shopping {
     width: 80%;
