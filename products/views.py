@@ -1,6 +1,7 @@
 from django.db.models import ProtectedError
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 from django.db.models import Q
 from django.http import JsonResponse
@@ -60,8 +61,19 @@ def all_products(request):
             )
             products = products.filter(queries)
 
+    # pagination
+    paginator = Paginator(products, 16)
+    page = request.GET.get('page')
+
+    try:
+        paginated_products = paginator.page(page)
+    except PageNotAnInteger:
+        paginated_products = paginator.page(1)
+    except EmptyPage:
+        paginated_products = paginator.page(paginator.num_pages)
+
     context = {
-        'products': products,
+        'products': paginated_products,
         'search_term': query,
         'current_category': category,
         'category_obj': category_obj,
