@@ -9,3 +9,11 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.email}"
+    
+
+class Newsletter(models.Model):
+    email = models.EmailField(unique=True, null=False, blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
