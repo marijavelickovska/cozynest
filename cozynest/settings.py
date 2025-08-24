@@ -102,6 +102,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 'bag.context_processors.bag_contents',
+                "home.context_processors.newsletter_form",
             ],
         },
     },
