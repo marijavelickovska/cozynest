@@ -1,5 +1,7 @@
 from django import forms
-from .models import ContactMessage
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Field
+from .models import ContactMessage, Newsletter
 
 
 class ContactMessageForm(forms.ModelForm):
@@ -18,3 +20,25 @@ class ContactMessageForm(forms.ModelForm):
                 'maxlength': 1000
             }),
         }
+
+
+class NewsletterForm(forms.ModelForm):
+    """
+    Form for users to subscribe to the newsletter.
+    Only requires a valid, unique email address.
+    """
+    class Meta:
+        model = Newsletter
+        fields = ['email']
+        widgets = {
+            'email': forms.EmailInput(
+                attrs={
+                    'placeholder': 'Email Address',
+                    'class': 'form-control',
+                }
+            ),
+        }
+
+    labels = {
+        'email': '',
+    }

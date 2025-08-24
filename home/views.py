@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import ContactMessageForm
+from .forms import ContactMessageForm, NewsletterForm
 
 
 def home(request):
@@ -46,3 +46,18 @@ def careers(request):
     """ A view to return the careers page """
 
     return render(request, 'home/careers.html')
+
+
+def newsletter_signup(request):
+    if request.method == "POST":
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you for subscribing to our newsletter!")
+            return redirect(request.META.get("HTTP_REFERER", "home"))
+        else:
+            messages.error(request, "This email is already subscribed or invalid.")
+    else:
+        form = NewsletterForm()
+
+    return redirect(request.META.get("HTTP_REFERER", "home"))
