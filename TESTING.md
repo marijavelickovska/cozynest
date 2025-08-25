@@ -3,150 +3,64 @@
 > [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
-⚠️ INSTRUCTIONS ⚠️
-
-In the following sections, you need to convince the assessors that you have conducted enough manual testing to legitimately believe that the site works well. Essentially, in this part, you should go over all of your project's features, and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-⚠️ --- END --- ⚠️
-
 ## Code Validation
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use the space below to discuss code validation for all of your own code files (*where applicable*). You are not required to validate external libraries/frameworks.
-
-**MANDATORY**: You must provide a screenshot for each file you validate.
-
-**PRO TIP**: Where possible, always validate the live URL pages/files, not your local code using copy/paste. There could be subtle/hidden differences.
-
-⚠️ --- END --- ⚠️
-
 ### HTML
-
-⚠️ INSTRUCTIONS ⚠️
-
-1. [*recommended*] If you are using the live deployed site URLs, validate using this link: https://validator.w3.org/#validate_by_uri
-2. Otherwise, if you are copying/pasting your HTML code manually, use this link: https://validator.w3.org/#validate_by_input
-
-It's recommended to validate the live pages (all of them) using the deployed URL. This will give you a custom URL as well, which you can use below on your testing documentation. It makes it easier to return back to a page for validating it again in the future. The URL will look something like this:
-
-- https://validator.w3.org/nu/?doc=https://marijavelickovska.github.io/cozynest/index.html
-
-⚠️ --- END --- ⚠️
-
-🛑 IMPORTANT 🛑
-
-RE: Python/Jinja syntax in HTML
-
-Python projects that use Jinja syntax, such as `{% for loops %}`, `{% url 'home' %}`, and `{{ variable|filter }}` will not validate properly if you're copying/pasting into the HTML validator.
-
-In order to properly validate these types of files, it's recommended to [validate by uri](https://validator.w3.org/#validate_by_uri) from the deployed Heroku pages.
-
-Unfortunately, pages that require a user to be "logged-in" and authenticated (CRUD functionality) will not work using this method, due to the fact that the HTML Validator (W3C) doesn't have access to login to an account on your project. In order to properly validate HTML pages with Jinja syntax for authenticated pages, follow these steps:
-
-- Navigate to the deployed pages which require authentication.
-- Right-click anywhere on the page, and select **View Page Source** (usually `CTRL+U` or `⌘+U` on Mac).
-- This will display the entire "compiled" code, without any Jinja syntax.
-- Copy everything, and use the [validate by input](https://validator.w3.org/#validate_by_input) method.
-- Repeat this process for every page that requires a user to be logged-in/authenticated (e.g.: CRUD functionality).
-
-🛑 ---- END --- 🛑
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| bag | [bag.html](https://github.com/marijavelickovska/cozynest/blob/main/bag/templates/bag/bag.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-bag-bag.png) | ⚠️ Notes (if applicable) |
-| checkout | [checkout.html](https://github.com/marijavelickovska/cozynest/blob/main/checkout/templates/checkout/checkout.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-checkout-checkout.png) | ⚠️ Notes (if applicable) |
-| checkout | [checkout_success.html](https://github.com/marijavelickovska/cozynest/blob/main/checkout/templates/checkout/checkout_success.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-checkout-checkout_success.png) | ⚠️ Notes (if applicable) |
-| home | [about_us.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/about_us.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-home-about_us.png) | ⚠️ Notes (if applicable) |
-| home | [careers.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/careers.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-home-careers.png) | ⚠️ Notes (if applicable) |
-| home | [contact_us.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/contact_us.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-home-contact_us.png) | ⚠️ Notes (if applicable) |
-| home | [footer.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/footer.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-home-footer.png) | ⚠️ Notes (if applicable) |
-| home | [home.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/home.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-home-home.png) | ⚠️ Notes (if applicable) |
-| home | [our_team.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/our_team.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-home-our_team.png) | ⚠️ Notes (if applicable) |
-| products | [add_product.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/add_product.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-products-add_product.png) | ⚠️ Notes (if applicable) |
-| products | [add_product_variant.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/add_product_variant.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-products-add_product_variant.png) | ⚠️ Notes (if applicable) |
-| products | [all_product_variants.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/all_product_variants.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-products-all_product_variants.png) | ⚠️ Notes (if applicable) |
-| products | [edit_product.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/edit_product.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-products-edit_product.png) | ⚠️ Notes (if applicable) |
-| products | [edit_product_variant.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/edit_product_variant.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-products-edit_product_variant.png) | ⚠️ Notes (if applicable) |
-| products | [product_detail.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/product_detail.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-products-product_detail.png) | ⚠️ Notes (if applicable) |
-| products | [product_managment.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/product_managment.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-products-product_managment.png) | ⚠️ Notes (if applicable) |
-| products | [products.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/products.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-products-products.png) | ⚠️ Notes (if applicable) |
-| profiles | [delivery_information.html](https://github.com/marijavelickovska/cozynest/blob/main/profiles/templates/profiles/delivery_information.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-profiles-delivery_information.png) | ⚠️ Notes (if applicable) |
-| profiles | [order_detail.html](https://github.com/marijavelickovska/cozynest/blob/main/profiles/templates/profiles/order_detail.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-profiles-order_detail.png) | ⚠️ Notes (if applicable) |
-| profiles | [order_history.html](https://github.com/marijavelickovska/cozynest/blob/main/profiles/templates/profiles/order_history.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-profiles-order_history.png) | ⚠️ Notes (if applicable) |
-| profiles | [profile.html](https://github.com/marijavelickovska/cozynest/blob/main/profiles/templates/profiles/profile.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-profiles-profile.png) | ⚠️ Notes (if applicable) |
-| profiles | [profile_base.html](https://github.com/marijavelickovska/cozynest/blob/main/profiles/templates/profiles/profile_base.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-profiles-profile_base.png) | ⚠️ Notes (if applicable) |
-| templates | [404.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/errors/404.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-404.png) | ⚠️ Notes (if applicable) |
-| templates | [test_403_csrf.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/tests/test_403_csrf.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-test_403_csrf.png) | ⚠️ Notes (if applicable) |
-| templates | [email_confirm.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/email_confirm.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-email_confirm.png) | ⚠️ Notes (if applicable) |
-| templates | [login.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/login.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-login.png) | ⚠️ Notes (if applicable) |
-| templates | [logout.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/logout.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-logout.png) | ⚠️ Notes (if applicable) |
-| templates | [password_reset.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/password_reset.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-password_reset.png) | ⚠️ Notes (if applicable) |
-| templates | [password_reset_done.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/password_reset_done.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-password_reset_done.png) | ⚠️ Notes (if applicable) |
-| templates | [password_reset_from_key.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/password_reset_from_key.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-password_reset_from_key.png) | ⚠️ Notes (if applicable) |
-| templates | [password_reset_from_key_done.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/password_reset_from_key_done.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-password_reset_from_key_done.png) | ⚠️ Notes (if applicable) |
-| templates | [signup.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/signup.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-signup.png) | ⚠️ Notes (if applicable) |
-| templates | [verification_sent.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/verification_sent.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-verification_sent.png) | ⚠️ Notes (if applicable) |
+| bag | [bag.html](https://github.com/marijavelickovska/cozynest/blob/main/bag/templates/bag/bag.html) | [Link](https://validator.w3.org/nu/?doc=https://cozy-nest-d80515c202ab.herokuapp.com/bag/&out=html) | ![screenshot](documentation/validation/html-bag-bag.png) | |
+| checkout | [checkout.html](https://github.com/marijavelickovska/cozynest/blob/main/checkout/templates/checkout/checkout.html) || ![screenshot](documentation/validation/html-checkout-checkout.png) | |
+| checkout | [checkout_success.html](https://github.com/marijavelickovska/cozynest/blob/main/checkout/templates/checkout/checkout_success.html) | | ![screenshot](documentation/validation/html-checkout-checkout_success.png) | |
+| home | [about_us.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/about_us.html) | [Link](https://validator.w3.org/nu/?doc=https://cozy-nest-d80515c202ab.herokuapp.com/about_us&out=html) | ![screenshot](documentation/validation/html-home-about_us.png) | |
+| home | [careers.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/careers.html) | [Link](https://validator.w3.org/nu/?doc=https://cozy-nest-d80515c202ab.herokuapp.com/careers&out=html) | ![screenshot](documentation/validation/html-home-careers.png) | |
+| home | [contact_us.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/contact_us.html) | [Link](https://validator.w3.org/nu/?doc=https://cozy-nest-d80515c202ab.herokuapp.com/contact_us&out=html) | ![screenshot](documentation/validation/html-home-contact_us.png) | |
+| home | [footer.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/footer.html) | | ![screenshot](documentation/validation/html-home-footer.png) | |
+| home | [home.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/home.html) | [Link](https://validator.w3.org/nu/?doc=https://cozy-nest-d80515c202ab.herokuapp.com/&out=html) | ![screenshot](documentation/validation/html-home-home.png) | Validating HTML with a semantic `<section>` element, the validator warns about lacking a header `h2-h6`. This is acceptable. |
+| home | [our_team.html](https://github.com/marijavelickovska/cozynest/blob/main/home/templates/home/our_team.html) | [Link](https://validator.w3.org/nu/?doc=https://cozy-nest-d80515c202ab.herokuapp.com/our_team&out=html) | ![screenshot](documentation/validation/html-home-our_team.png) | |
+| products | [add_product.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/add_product.html) | [Link] (if applicable) | ![screenshot](documentation/validation/html-products-add_product.png) | |
+| products | [add_product_variant.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/add_product_variant.html) | | ![screenshot](documentation/validation/html-products-add_product_variant.png) |  |
+| products | [all_product_variants.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/all_product_variants.html) | | ![screenshot](documentation/validation/html-products-all_product_variants.png) | |
+| products | [edit_product.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/edit_product.html) | | ![screenshot](documentation/validation/html-products-edit_product.png) | |
+| products | [edit_product_variant.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/edit_product_variant.html) |  | ![screenshot](documentation/validation/html-products-edit_product_variant.png) | |
+| products | [product_detail.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/product_detail.html) | | ![screenshot](documentation/validation/html-products-product_detail.png) | |
+| products | [product_managment.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/product_managment.html) | | ![screenshot](documentation/validation/html-products-product_managment.png) | |
+| products | [products.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/products.html) | [Link](https://validator.w3.org/nu/?doc=https://cozy-nest-d80515c202ab.herokuapp.com/products/?sort=price&direction=asc&out=html) | ![screenshot](documentation/validation/html-products-products.png) ||
+| profiles | [delivery_information.html](https://github.com/marijavelickovska/cozynest/blob/main/profiles/templates/profiles/delivery_information.html) | [Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcozy-nest-d80515c202ab.herokuapp.com%2Faccounts%2Flogin%2F%3Fnext%3D%2Fprofile%2Fdelivery_information) | ![screenshot](documentation/validation/html-profiles-delivery_information.png) | |
+| profiles | [order_detail.html](https://github.com/marijavelickovska/cozynest/blob/main/profiles/templates/profiles/order_detail.html) | [Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcozy-nest-d80515c202ab.herokuapp.com%2Faccounts%2Flogin%2F%3Fnext%3D%2Fprofile%2Forder_detail%2FB471B657B9E448B1A28CB23CD6F42FD2%2F) | ![screenshot](documentation/validation/html-profiles-order_detail.png) | |
+| profiles | [order_history.html](https://github.com/marijavelickovska/cozynest/blob/main/profiles/templates/profiles/order_history.html) | [Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcozy-nest-d80515c202ab.herokuapp.com%2Faccounts%2Flogin%2F%3Fnext%3D%2Fprofile%2Forder_history) | ![screenshot](documentation/validation/html-profiles-order_history.png) | |
+| profiles | [profile.html](https://github.com/marijavelickovska/cozynest/blob/main/profiles/templates/profiles/profile.html) | | ![screenshot](documentation/validation/html-profiles-profile.png) | |
+| templates | [404.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/errors/404.html) |  | ![screenshot](documentation/validation/html-templates-404.png) |  | ![screenshot](documentation/validation/html-templates-email_confirm.png) | |
+| templates | [login.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/login.html) | [Link](https://validator.w3.org/nu/?doc=https://cozy-nest-d80515c202ab.herokuapp.com/accounts/login/&out=html) | ![screenshot](documentation/validation/html-templates-login.png) | |
+| templates | [logout.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/logout.html) | [Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcozy-nest-d80515c202ab.herokuapp.com%2F)| ![screenshot](documentation/validation/html-templates-logout.png) | |
+| templates | [signup.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/account/signup.html) | [Link](https://validator.w3.org/nu/?doc=https://cozy-nest-d80515c202ab.herokuapp.com/accounts/signup/&out=html) | ![screenshot](documentation/validation/html-templates-signup.png) | |
 
 
 ### CSS
-
-⚠️ INSTRUCTIONS ⚠️
-
-1. [*recommended*] If you are using the live deployed site, use this link: https://jigsaw.w3.org/css-validator/#validate_by_uri
-2. If you are copying/pasting your CSS code, use this link: https://jigsaw.w3.org/css-validator/#validate_by_input
-
-It's recommended to validate the live site for your primary CSS file on the deployed URL. This will give you a custom URL as well, which you can use below on your testing documentation. It makes it easier to return back to a page for validating it again in the future. The URL will look something like this:
-
-- https://jigsaw.w3.org/css-validator/validator?uri=https://cozy-nest-d80515c202ab.herokuapp.com
-
-If you have additional/multiple CSS files, then individual "[validation by input](https://jigsaw.w3.org/css-validator/#validate_by_input)" is recommended for the extra CSS files.
-
-**IMPORTANT**: Third-Party tools
-
-If you're using external libraries/frameworks (e.g: Bootstrap, Materialize, Font Awesome, etc.), then sometimes the tool will attempt to also validate these, even though it's not part of your own actual code that you wrote. You are not required to validate the external libraries or frameworks!
-
-⚠️ --- END --- ⚠️
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| checkout | [checkout.css](https://github.com/marijavelickovska/cozynest/blob/main/checkout/static/checkout/css/checkout.css) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/css-checkout-checkout.png) | ⚠️ Notes (if applicable) |
-| products | [products.css](https://github.com/marijavelickovska/cozynest/blob/main/products/static/products/css/products.css) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/css-products-products.png) | ⚠️ Notes (if applicable) |
-| profiles | [profile.css](https://github.com/marijavelickovska/cozynest/blob/main/profiles/static/profiles/css/profile.css) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/css-profiles-profile.png) | ⚠️ Notes (if applicable) |
-| static | [base.css](https://github.com/marijavelickovska/cozynest/blob/main/static/css/base.css) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/css-static-base.png) | ⚠️ Notes (if applicable) |
+| products | [products.css](https://github.com/marijavelickovska/cozynest/blob/main/products/static/products/css/products.css) | | ![screenshot](documentation/validation/css-products-products.png) | |
+| profiles | [profile.css](https://github.com/marijavelickovska/cozynest/blob/main/profiles/static/profiles/css/profile.css) | | ![screenshot](documentation/validation/css-profiles-profile.png) | |
+| static | [base.css](https://github.com/marijavelickovska/cozynest/blob/main/static/css/base.css) | | ![screenshot](documentation/validation/css-static-base.png) | |
 
 
 ### JavaScript
-
-⚠️ INSTRUCTIONS ⚠️
-
-If using modern JavaScript (ES6) methods, then make sure to include the following line at the very top of every single JavaScript file in your project (this should remain in your files for submission as well):
-
-`/* jshint esversion: 11 */`
-
-If you are also including jQuery (`$`), then the updated format will be:
-
-`/* jshint esversion: 11, jquery: true */`
-
-This allows the JShint validator to recognize modern ES6 methods, such as: `let`, `const`, `template literals`, `arrow functions (=>)`, etc.
-
-**IMPORTANT**: External resources
-
-Sometimes we'll write JavaScript that imports variables from other files, such as "an array of questions" from `questions.js`, which are used within the main `script.js` file elsewhere. If that's the case, the JShint validation tool doesn't know how to recognize "unused variables" that would normally be imported locally when running your own project. These warnings are acceptable, so showcase on your screenshot(s).
-
-The same thing applies when using external libraries such as Stripe, Leaflet, Bootstrap, Materialize, etc. To instantiate these components, we need to use their respective declarator. Again, the JShint validation tool would flag these as "undefined/unused variables". These warnings are acceptable, so showcase on your screenshot(s).
-
-⚠️ --- END --- ⚠️
 
 I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| static | [script.js](https://github.com/marijavelickovska/cozynest/blob/main/static/js/script.js) |  | ![screenshot](documentation/validation/js-static-script.png) | ⚠️ Notes (if applicable) |
+| templates | [base.html](https://github.com/marijavelickovska/cozynest/blob/main/templates/base.html) |  | ![screenshot](documentation/validation/js-template-base.png) | Validator shows warnings related to Bootstrap usage. These warnings are acceptable. |
+| products | [products.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/products.html) |  | ![screenshot](documentation/validation/js-products-products.png) | |
+| products | [product_detail.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/product_detail.html) |  | ![screenshot](documentation/validation/js-products-product_detail.png) | |
+| products | [add_product_variant.html](https://github.com/marijavelickovska/cozynest/blob/main/products/templates/products/add_product_variant.html) |  | ![screenshot](documentation/validation/js-products-add_product_variant.png) | |
+| bag | [bag.html](https://github.com/marijavelickovska/cozynest/blob/main/bag/templates/bag/bag.html) |  | ![screenshot](documentation/validation/js-bag-bag.png) | JSHint shows "unused variable" warnings for `max` and `min` in incrementQty/decrementQty functions because they are only called from HTML attributes. This is a false positive; code is correct and works as intended. |
+| checkout | [checkout.html](https://github.com/marijavelickovska/cozynest/blob/main/checkout/templates/checkout/checkout.html) |  | ![screenshot](documentation/validation/js-checkout-checkout.png) | Validator shows warnings related to Stripe usage. These warnings are acceptable. |
 
 
 ### Python
@@ -206,42 +120,41 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| bag | [admin.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/admin.py) | ![screenshot](documentation/validation/py-bag-admin.png) | ⚠️ Notes (if applicable) |
-| bag | [context_processors.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/context_processors.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/context_processors.py) | ![screenshot](documentation/validation/py-bag-context_processors.png) | ⚠️ Notes (if applicable) |
-| bag | [models.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/models.py) | ![screenshot](documentation/validation/py-bag-models.png) | ⚠️ Notes (if applicable) |
-| bag | [bag_tools.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/templatetags/bag_tools.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/templatetags/bag_tools.py) | ![screenshot](documentation/validation/py-bag-bag_tools.png) | ⚠️ Notes (if applicable) |
-| bag | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/urls.py) | ![screenshot](documentation/validation/py-bag-urls.png) | ⚠️ Notes (if applicable) |
-| bag | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/views.py) | ![screenshot](documentation/validation/py-bag-views.png) | ⚠️ Notes (if applicable) |
-| checkout | [admin.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/admin.py) | ![screenshot](documentation/validation/py-checkout-admin.png) | ⚠️ Notes (if applicable) |
-| checkout | [forms.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/forms.py) | ![screenshot](documentation/validation/py-checkout-forms.png) | ⚠️ Notes (if applicable) |
-| checkout | [models.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/models.py) | ![screenshot](documentation/validation/py-checkout-models.png) | ⚠️ Notes (if applicable) |
-| checkout | [signals.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/signals.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/signals.py) | ![screenshot](documentation/validation/py-checkout-signals.png) | ⚠️ Notes (if applicable) |
-| checkout | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/urls.py) | ![screenshot](documentation/validation/py-checkout-urls.png) | ⚠️ Notes (if applicable) |
-| checkout | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/views.py) | ![screenshot](documentation/validation/py-checkout-views.png) | ⚠️ Notes (if applicable) |
-| cozynest | [settings.py](https://github.com/marijavelickovska/cozynest/blob/main/cozynest/settings.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/cozynest/settings.py) | ![screenshot](documentation/validation/py-cozynest-settings.png) | ⚠️ Notes (if applicable) |
-| cozynest | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/cozynest/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/cozynest/urls.py) | ![screenshot](documentation/validation/py-cozynest-urls.png) | ⚠️ Notes (if applicable) |
-| cozynest | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/cozynest/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/cozynest/views.py) | ![screenshot](documentation/validation/py-cozynest-views.png) | ⚠️ Notes (if applicable) |
-| home | [admin.py](https://github.com/marijavelickovska/cozynest/blob/main/home/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/admin.py) | ![screenshot](documentation/validation/py-home-admin.png) | ⚠️ Notes (if applicable) |
-| home | [context_processors.py](https://github.com/marijavelickovska/cozynest/blob/main/home/context_processors.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/context_processors.py) | ![screenshot](documentation/validation/py-home-context_processors.png) | ⚠️ Notes (if applicable) |
-| home | [forms.py](https://github.com/marijavelickovska/cozynest/blob/main/home/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/forms.py) | ![screenshot](documentation/validation/py-home-forms.png) | ⚠️ Notes (if applicable) |
-| home | [models.py](https://github.com/marijavelickovska/cozynest/blob/main/home/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/models.py) | ![screenshot](documentation/validation/py-home-models.png) | ⚠️ Notes (if applicable) |
-| home | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/home/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/urls.py) | ![screenshot](documentation/validation/py-home-urls.png) | ⚠️ Notes (if applicable) |
-| home | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/home/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/views.py) | ![screenshot](documentation/validation/py-home-views.png) | ⚠️ Notes (if applicable) |
-|  | [manage.py](https://github.com/marijavelickovska/cozynest/blob/main/manage.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/manage.py) | ![screenshot](documentation/validation/py--manage.png) | ⚠️ Notes (if applicable) |
-| products | [admin.py](https://github.com/marijavelickovska/cozynest/blob/main/products/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/admin.py) | ![screenshot](documentation/validation/py-products-admin.png) | ⚠️ Notes (if applicable) |
-| products | [forms.py](https://github.com/marijavelickovska/cozynest/blob/main/products/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/forms.py) | ![screenshot](documentation/validation/py-products-forms.png) | ⚠️ Notes (if applicable) |
-| products | [models.py](https://github.com/marijavelickovska/cozynest/blob/main/products/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/models.py) | ![screenshot](documentation/validation/py-products-models.png) | ⚠️ Notes (if applicable) |
-| products | [test_forms.py](https://github.com/marijavelickovska/cozynest/blob/main/products/tests/test_forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/tests/test_forms.py) | ![screenshot](documentation/validation/py-products-test_forms.png) | ⚠️ Notes (if applicable) |
-| products | [test_views.py](https://github.com/marijavelickovska/cozynest/blob/main/products/tests/test_views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/tests/test_views.py) | ![screenshot](documentation/validation/py-products-test_views.png) | ⚠️ Notes (if applicable) |
-| products | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/products/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/urls.py) | ![screenshot](documentation/validation/py-products-urls.png) | ⚠️ Notes (if applicable) |
-| products | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/products/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/views.py) | ![screenshot](documentation/validation/py-products-views.png) | ⚠️ Notes (if applicable) |
-| profiles | [admin.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/admin.py) | ![screenshot](documentation/validation/py-profiles-admin.png) | ⚠️ Notes (if applicable) |
-| profiles | [forms.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/forms.py) | ![screenshot](documentation/validation/py-profiles-forms.png) | ⚠️ Notes (if applicable) |
-| profiles | [models.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/models.py) | ![screenshot](documentation/validation/py-profiles-models.png) | ⚠️ Notes (if applicable) |
-| profiles | [signals.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/signals.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/signals.py) | ![screenshot](documentation/validation/py-profiles-signals.png) | ⚠️ Notes (if applicable) |
-| profiles | [test_views.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/tests/test_views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/tests/test_views.py) | ![screenshot](documentation/validation/py-profiles-test_views.png) | ⚠️ Notes (if applicable) |
-| profiles | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/urls.py) | ![screenshot](documentation/validation/py-profiles-urls.png) | ⚠️ Notes (if applicable) |
-| profiles | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/views.py) | ![screenshot](documentation/validation/py-profiles-views.png) | ⚠️ Notes (if applicable) |
+| bag | [admin.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https:/https://raw.githubusercontent.com/marijavelickovska/cozynest/refs/heads/main/bag/admin.py) | ![screenshot](documentation/validation/py-bag-admin.png) |  |
+| bag | [context_processors.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/context_processors.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/context_processors.py) | ![screenshot](documentation/validation/py-bag-context_processors.png) |  |
+| bag | [models.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/models.py) | ![screenshot](documentation/validation/py-bag-models.png) |  |
+| bag | [bag_tools.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/templatetags/bag_tools.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/templatetags/bag_tools.py) | ![screenshot](documentation/validation/py-bag-bag_tools.png) |  |
+| bag | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/urls.py) | ![screenshot](documentation/validation/py-bag-urls.png) |  |
+| bag | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/bag/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/bag/views.py) | ![screenshot](documentation/validation/py-bag-views.png) |  |
+| checkout | [admin.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/admin.py) | ![screenshot](documentation/validation/py-checkout-admin.png) |  |
+| checkout | [forms.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/forms.py) | ![screenshot](documentation/validation/py-checkout-forms.png) |  |
+| checkout | [models.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/models.py) | ![screenshot](documentation/validation/py-checkout-models.png) |  |
+| checkout | [signals.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/signals.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/signals.py) | ![screenshot](documentation/validation/py-checkout-signals.png) |  |
+| checkout | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/urls.py) | ![screenshot](documentation/validation/py-checkout-urls.png) |  |
+| checkout | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/checkout/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/checkout/views.py) | ![screenshot](documentation/validation/py-checkout-views.png) |  |
+| cozynest | [settings.py](https://github.com/marijavelickovska/cozynest/blob/main/cozynest/settings.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/cozynest/settings.py) | ![screenshot](documentation/validation/py-cozynest-settings.png) |  |
+| cozynest | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/cozynest/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/cozynest/urls.py) | ![screenshot](documentation/validation/py-cozynest-urls.png) |  |
+| cozynest | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/cozynest/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/cozynest/views.py) | ![screenshot](documentation/validation/py-cozynest-views.png) |  |
+| home | [admin.py](https://github.com/marijavelickovska/cozynest/blob/main/home/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/admin.py) | ![screenshot](documentation/validation/py-home-admin.png) |  |
+| home | [context_processors.py](https://github.com/marijavelickovska/cozynest/blob/main/home/context_processors.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/context_processors.py) | ![screenshot](documentation/validation/py-home-context_processors.png) |  |
+| home | [forms.py](https://github.com/marijavelickovska/cozynest/blob/main/home/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/forms.py) | ![screenshot](documentation/validation/py-home-forms.png) |  |
+| home | [models.py](https://github.com/marijavelickovska/cozynest/blob/main/home/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/models.py) | ![screenshot](documentation/validation/py-home-models.png) |  |
+| home | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/home/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/urls.py) | ![screenshot](documentation/validation/py-home-urls.png) |  |
+| home | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/home/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/home/views.py) | ![screenshot](documentation/validation/py-home-views.png) |  |
+|  | [manage.py](https://github.com/marijavelickovska/cozynest/blob/main/manage.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/manage.py) | ![screenshot](documentation/validation/py--manage.png) |  |
+| products | [admin.py](https://github.com/marijavelickovska/cozynest/blob/main/products/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/admin.py) | ![screenshot](documentation/validation/py-products-admin.png) |  |
+| products | [forms.py](https://github.com/marijavelickovska/cozynest/blob/main/products/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/forms.py) | ![screenshot](documentation/validation/py-products-forms.png) |  |
+| products | [models.py](https://github.com/marijavelickovska/cozynest/blob/main/products/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/models.py) | ![screenshot](documentation/validation/py-products-models.png) |  |
+| products | [test_forms.py](https://github.com/marijavelickovska/cozynest/blob/main/products/tests/test_forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/tests/test_forms.py) | ![screenshot](documentation/validation/py-products-test_forms.png) |  |
+| products | [test_views.py](https://github.com/marijavelickovska/cozynest/blob/main/products/tests/test_views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/tests/test_views.py) | ![screenshot](documentation/validation/py-products-test_views.png) |  |
+| products | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/products/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/urls.py) | ![screenshot](documentation/validation/py-products-urls.png) |  |
+| products | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/products/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/products/views.py) | ![screenshot](documentation/validation/py-products-views.png) |  |
+| profiles | [forms.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/forms.py) | ![screenshot](documentation/validation/py-profiles-forms.png) |  |
+| profiles | [models.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/models.py) | ![screenshot](documentation/validation/py-profiles-models.png) |  |
+| profiles | [signals.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/signals.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/signals.py) | ![screenshot](documentation/validation/py-profiles-signals.png) |  |
+| profiles | [test_views.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/tests/test_views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/tests/test_views.py) | ![screenshot](documentation/validation/py-profiles-test_views.png) |  |
+| profiles | [urls.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/urls.py) | ![screenshot](documentation/validation/py-profiles-urls.png) |  |
+| profiles | [views.py](https://github.com/marijavelickovska/cozynest/blob/main/profiles/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/marijavelickovska/cozynest/main/profiles/views.py) | ![screenshot](documentation/validation/py-profiles-views.png) |  |
 
 
 ## Responsiveness

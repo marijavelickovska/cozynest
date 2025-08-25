@@ -8,7 +8,7 @@ urlpatterns = [
     path('order_history', views.profile, name='order_history'),
     path(
         "order_detail/<str:order_number>/",
-        views.order_detail, 
+        views.order_detail,
         name="order_detail"
     ),
 ]

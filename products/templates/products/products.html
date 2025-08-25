@@ -141,8 +141,9 @@
 {% block postloadjs %}
 {{ block.super }}
 <script>
+    /* jshint esversion: 11 */
     document.getElementById('sort-selector').addEventListener('change', function () {
-        let selectedVal = this.value
+        let selectedVal = this.value;
         let currentUrl = new URL(window.location);
 
         if (selectedVal !== "reset") {

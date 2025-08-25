@@ -46,7 +46,7 @@ class Product(models.Model):
     rating = models.DecimalField(
         max_digits=6,
         decimal_places=2,
-        null=True, 
+        null=True,
         blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

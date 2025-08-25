@@ -205,6 +205,7 @@
 
     {% block postloadjs %}
     <script>
+        /* jshint esversion: 11 */
         document.getElementById('mobile-search-toggle').addEventListener('click', function () {
             const input = document.getElementById('mobile-search-input');
             input.style.display = (input.style.display === 'block') ? 'none' : 'block';

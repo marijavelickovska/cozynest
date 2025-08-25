@@ -94,6 +94,7 @@
 {% block postloadjs %}
 {{ block.super }}
 <script>
+    /* jshint esversion: 11 */
     document.addEventListener("DOMContentLoaded", function () {
     const sizeSelect = document.getElementById("size-select");
     const colorSelect = document.getElementById("color-select");
@@ -143,7 +144,6 @@
     sizeSelect.addEventListener('change', populateColors);
     colorSelect.addEventListener('change', updateQuantity);
 
-    // Копчиња за + и -
     buttonMinus.addEventListener('click', () => {
     quantityInput.value = Math.max(1, Number(quantityInput.value) - 1);
     });

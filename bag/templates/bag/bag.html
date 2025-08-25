@@ -154,6 +154,7 @@
 
 {% block postloadjs %}
 <script>
+    /* jshint esversion: 11 */
     function incrementQty(btn) {
         const input = btn.parentElement.querySelector('input');
         const max = parseInt(input.max);

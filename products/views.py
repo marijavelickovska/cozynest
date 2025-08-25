@@ -278,8 +278,9 @@ def edit_product_variant(request, variant_id):
         )
         if form.is_valid():
             form.save()
-            messages.success(request, f"Product Variant \
-                '{variant.product.name}' updated successfully."
+            messages.success(
+                request,
+                f"Product Variant '{variant.product.name}' updated."
             )
             return redirect('all_product_variants')
         else:
