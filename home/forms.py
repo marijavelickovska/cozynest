@@ -33,6 +33,7 @@ class NewsletterForm(forms.ModelForm):
                 attrs={
                     'placeholder': 'Email Address',
                     'class': 'form-control',
+                    'id': 'id_newsletter_email',
                 }
             ),
         }
