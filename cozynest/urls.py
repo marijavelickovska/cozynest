@@ -36,4 +36,4 @@ urlpatterns = [
     path('profile/', include(profile_urls)),
     path('', include(home_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-handler404 = 'cozynest.views.handler404'
+handler404 = 'cozynest.views.handler404'  # noqa: F811

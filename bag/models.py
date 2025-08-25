@@ -4,8 +4,14 @@ from products.models import ProductVariant
 
 
 class BagLineItem(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    product_variant = models.ForeignKey(ProductVariant, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    product_variant = models.ForeignKey(
+        ProductVariant,
+        on_delete=models.CASCADE
+    )
     quantity = models.PositiveIntegerField(default=1)
     added_on = models.DateTimeField(auto_now_add=True)
 

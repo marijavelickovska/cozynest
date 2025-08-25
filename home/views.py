@@ -53,10 +53,16 @@ def newsletter_signup(request):
         form = NewsletterForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Thank you for subscribing to our newsletter!")
+            messages.success(
+                request,
+                "Thank you for subscribing to our newsletter!"
+            )
             return redirect(request.META.get("HTTP_REFERER", "home"))
         else:
-            messages.error(request, "This email is already subscribed or invalid.")
+            messages.error(
+                request,
+                "This email is already subscribed or invalid."
+            )
     else:
         form = NewsletterForm()
 

@@ -13,7 +13,9 @@ class UserUpdateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if self.instance:
-            self.fields['full_name'].initial = f"{self.instance.first_name} {self.instance.last_name}"
+            self.fields['full_name'].initial = (
+                f"{self.instance.first_name} {self.instance.last_name}"
+            )
 
     def save(self, commit=True):
         user = super().save(commit=False)
@@ -55,5 +57,7 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
+            self.fields[field].widget.attrs['class'] = (
+                'border-black rounded-0 profile-form-input'
+            )
             self.fields[field].label = False

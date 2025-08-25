@@ -24,10 +24,8 @@ def update_order_on_save(sender, instance, created, **kwargs):
     Update order totals and adjust stock
     when a line item is created or updated.
     """
-    # Update totals after save
     instance.order.update_totals()
 
-    # Adjust stock
     if created:
         instance.product_variant.reduce_stock(instance.quantity)
     else:

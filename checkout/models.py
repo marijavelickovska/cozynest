@@ -13,8 +13,13 @@ class Order(models.Model):
     Stores all order-related info for a user purchase.
     """
     order_number = models.CharField(max_length=32, unique=True, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='orders')
+    user_profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='orders'
+    )
     full_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=254)
     phone_number = models.CharField(max_length=20, blank=True)
@@ -26,9 +31,21 @@ class Order(models.Model):
     county = models.CharField(max_length=80, blank=True)
 
     date = models.DateTimeField(auto_now_add=True)
-    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, default=0)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    delivery_cost = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        default=0
+    )
+    order_total = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=0
+    )
+    grand_total = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=0
+    )
 
     def _generate_order_number(self):
         """Generate a random, unique order number using UUID."""
@@ -40,7 +57,10 @@ class Order(models.Model):
             total=Sum('lineitem_total')
         )['total'] or Decimal('0.00')
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = (self.order_total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE)) / Decimal('100')
+            self.delivery_cost = (
+                self.order_total
+                * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE)
+            ) / Decimal('100')
         else:
             self.delivery_cost = 0
         self.grand_total = self.order_total + self.delivery_cost
@@ -61,7 +81,11 @@ class OrderLineItem(models.Model):
     Individual product line items within an order.
     """
     order = models.ForeignKey(
-        Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'
+        Order,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='lineitems'
     )
     product_variant = models.ForeignKey(
         ProductVariant, null=False, blank=False, on_delete=models.PROTECT

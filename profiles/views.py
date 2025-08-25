@@ -24,7 +24,9 @@ def profile(request):
                 form.save()
                 messages.success(request, "Profile updated successfully")
             else:
-                messages.error(request, "Update failed. Please ensure the form is valid.")
+                messages.error(
+                    request, "Update failed. Please ensure the form is valid."
+                )
         else:
             form = UserUpdateForm(instance=user)
 
@@ -33,9 +35,13 @@ def profile(request):
             form = UserProfileForm(request.POST, instance=profile)
             if form.is_valid():
                 form.save()
-                messages.success(request, "Delivery informations updated successfully")
+                messages.success(
+                    request, "Delivery informations updated successfully"
+                )
             else:
-                messages.error(request, "Update failed. Please ensure the form is valid.")
+                messages.error(
+                    request, "Update failed. Please ensure the form is valid."
+                )
         else:  # GET request
             form = UserProfileForm(instance=profile)
 

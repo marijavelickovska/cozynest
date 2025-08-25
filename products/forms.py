@@ -44,7 +44,8 @@ class ProductVariantForm(forms.ModelForm):
         })
 
         if variant and variant.product and variant.product.category:
-                category = variant.product.category
-                self.fields['size'].queryset = Size.objects.filter(categories=category)
+            category = variant.product.category
+            sizes = Size.objects.filter(categories=category)
+            self.fields['size'].queryset = sizes
         else:
             self.fields['size'].queryset = Size.objects.all()

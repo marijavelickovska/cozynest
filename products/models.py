@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
@@ -35,11 +34,20 @@ class Color(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        Category,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    )
     description = models.TextField(blank=True)
     base_price = models.DecimalField(max_digits=8, decimal_places=2)
     image = CloudinaryField('image')
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=True, 
+        blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
@@ -51,7 +59,11 @@ class Product(models.Model):
 
 
 class ProductVariant(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='variants')
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name='variants'
+    )
     size = models.ForeignKey(Size, on_delete=models.PROTECT)
     color = models.ForeignKey(Color, on_delete=models.PROTECT)
     price = models.DecimalField(max_digits=8, decimal_places=2)
@@ -68,7 +80,7 @@ class ProductVariant(models.Model):
     def reduce_stock(self, quantity):
         """Reduce stock when item is purchased."""
         if quantity > self.stock:
-            return False  # Not enough stock available.
+            return False
         self.stock -= quantity
         self.save()
 

@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django_summernote.admin import SummernoteModelAdmin
 from .models import BagLineItem
 
 
@@ -11,5 +10,10 @@ class BagLineItemAdmin(admin.ModelAdmin):
     Enables searching by user and product variant.
     """
     list_display = ('user', 'product_variant', 'quantity', 'added_on')
-    search_fields = ('user__username', 'product_variant__product__name', 'product_variant__color__name', 'product_variant__size__name')
+    search_fields = (
+        'user__username',
+        'product_variant__product__name',
+        'product_variant__color__name',
+        'product_variant__size__name'
+    )
     list_filter = ('added_on',)
