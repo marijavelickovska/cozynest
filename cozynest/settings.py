@@ -132,7 +132,7 @@ if 'test' in sys.argv:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa 
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator", # noqa
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",  # noqa
@@ -193,7 +193,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 
-#Stripe
+# Stripe
 STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLISHABLE_KEY", "")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "")
