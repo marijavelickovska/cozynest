@@ -137,42 +137,32 @@ I've tested my deployed project to check for responsiveness issues.
 
 ## Browser Compatibility
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site on various browsers. Consider testing at least 3 different browsers, if available on your system. You DO NOT need to use all of the browsers below, just pick any 3 (minimum).
-
-Recommended browsers to consider:
-- [Chrome](https://www.google.com/chrome)
-- [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
-- [Edge](https://www.microsoft.com/edge)
-- [Safari](https://support.apple.com/downloads/safari)
-- [Brave](https://brave.com/download)
-- [Opera](https://www.opera.com/download)
-
-**IMPORTANT**: You must provide screenshots of the browsers you've tested, to "prove" that you've actually tested them.
-
-Please note, there are services out there that can test multiple browser compatibilities at the same time. Some of these are paid services, but some are free. If you use these, you must provide a link to the source used for attribution, and multiple screenshots of the results.
-
-⚠️ --- END --- ⚠️
-
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-| Page | Chrome | Firefox | Safari | Notes |
+| Page | Chrome | Firefox | Edge | Notes |
 | --- | --- | --- | --- | --- |
-| Register | ![screenshot](documentation/browsers/chrome-register.png) | ![screenshot](documentation/browsers/firefox-register.png) | ![screenshot](documentation/browsers/safari-register.png) | Works as expected |
-| Login | ![screenshot](documentation/browsers/chrome-login.png) | ![screenshot](documentation/browsers/firefox-login.png) | ![screenshot](documentation/browsers/safari-login.png) | Works as expected |
-| Profile | ![screenshot](documentation/browsers/chrome-profile.png) | ![screenshot](documentation/browsers/firefox-profile.png) | ![screenshot](documentation/browsers/safari-profile.png) | Works as expected |
-| Home | ![screenshot](documentation/browsers/chrome-home.png) | ![screenshot](documentation/browsers/firefox-home.png) | ![screenshot](documentation/browsers/safari-home.png) | Works as expected |
-| Products | ![screenshot](documentation/browsers/chrome-products.png) | ![screenshot](documentation/browsers/firefox-products.png) | ![screenshot](documentation/browsers/safari-products.png) | Works as expected |
-| Product Details | ![screenshot](documentation/browsers/chrome-product-details.png) | ![screenshot](documentation/browsers/firefox-product-details.png) | ![screenshot](documentation/browsers/safari-product-details.png) | Works as expected |
-| Bag | ![screenshot](documentation/browsers/chrome-bag.png) | ![screenshot](documentation/browsers/firefox-bag.png) | ![screenshot](documentation/browsers/safari-bag.png) | Works as expected |
-| Checkout | ![screenshot](documentation/browsers/chrome-checkout.png) | ![screenshot](documentation/browsers/firefox-checkout.png) | ![screenshot](documentation/browsers/safari-checkout.png) | Works as expected |
-| Checkout Success | ![screenshot](documentation/browsers/chrome-checkout-success.png) | ![screenshot](documentation/browsers/firefox-checkout-success.png) | ![screenshot](documentation/browsers/safari-checkout-success.png) | Works as expected |
-| Add Product | ![screenshot](documentation/browsers/chrome-add-product.png) | ![screenshot](documentation/browsers/firefox-add-product.png) | ![screenshot](documentation/browsers/safari-add-product.png) | Works as expected |
-| Edit Product | ![screenshot](documentation/browsers/chrome-edit-product.png) | ![screenshot](documentation/browsers/firefox-edit-product.png) | ![screenshot](documentation/browsers/safari-edit-product.png) | Works as expected |
-| Newsletter | ![screenshot](documentation/browsers/chrome-newsletter.png) | ![screenshot](documentation/browsers/firefox-newsletter.png) | ![screenshot](documentation/browsers/safari-newsletter.png) | Works as expected |
-| Contact | ![screenshot](documentation/browsers/chrome-contact.png) | ![screenshot](documentation/browsers/firefox-contact.png) | ![screenshot](documentation/browsers/safari-contact.png) | Works as expected |
-| 404 | ![screenshot](documentation/browsers/chrome-404.png) | ![screenshot](documentation/browsers/firefox-404.png) | ![screenshot](documentation/browsers/safari-404.png) | Works as expected |
+| Home | ![screenshot](documentation/browsers/chrome-home.png) | ![screenshot](documentation/browsers/firefox-home.png) | ![screenshot](documentation/browsers/edge-home.jpeg) | Works as expected |
+| About Us | ![screenshot](documentation/browsers/chrome-about_us.png) | ![screenshot](documentation/browsers/firefox-about_us.png) | ![screenshot](documentation/browsers/edge-about_us.jpeg) | Works as expected |
+| Our Team | ![screenshot](documentation/browsers/chrome-our_team.png) | ![screenshot](documentation/browsers/firefox-our_team.png) | ![screenshot](documentation/browsers/edge-our_team.jpeg) | Works as expected |
+| Contact Us | ![screenshot](documentation/browsers/chrome-contact_us.png) | ![screenshot](documentation/browsers/firefox-contact_us.png) | ![screenshot](documentation/browsers/edge-contact_us.jpeg) | Works as expected |
+| Careers | ![screenshot](documentation/browsers/chrome-careers.png) | ![screenshot](documentation/browsers/firefox-careers.png) | ![screenshot](documentation/browsers/edge-careers.jpeg) | Works as expected |
+| Register | ![screenshot](documentation/browsers/chrome-register.png) | ![screenshot](documentation/browsers/firefox-register.png) | ![screenshot](documentation/browsers/edge-register.jpeg) | Works as expected |
+| Login | ![screenshot](documentation/browsers/chrome-login.png) | ![screenshot](documentation/browsers/firefox-login.png) | ![screenshot](documentation/browsers/edge-login.jpeg) | Works as expected |
+| Products | ![screenshot](documentation/browsers/chrome-products.png) | ![screenshot](documentation/browsers/firefox-products.png) | ![screenshot](documentation/browsers/edge-products.jpeg) | Works as expected |
+| Product Details | ![screenshot](documentation/browsers/chrome-product_details.png) | ![screenshot](documentation/browsers/firefox-product_details.png) | ![screenshot](documentation/browsers/edge-product_details.jpeg) | Works as expected |
+| Bag | ![screenshot](documentation/browsers/chrome-bag.png) | ![screenshot](documentation/browsers/firefox-bag.png) | ![screenshot](documentation/browsers/edge-bag.jpeg) | Works as expected |
+| Checkout | ![screenshot](documentation/browsers/chrome-checkout.png) | ![screenshot](documentation/browsers/firefox-checkout.png) | ![screenshot](documentation/browsers/edge-checkout.jpeg) | Works as expected |
+| Checkout Success | ![screenshot](documentation/browsers/chrome-checkout_success.png) | ![screenshot](documentation/browsers/firefox-checkout_success.png) | ![screenshot](documentation/browsers/edge-checkout_success.jpeg) | Works as expected |
+| Profile | ![screenshot](documentation/browsers/chrome-profile.png) | ![screenshot](documentation/browsers/firefox-profile.png) | ![screenshot](documentation/browsers/edge-profile.jpeg) | Works as expected |
+| Profile - Delivery Information | ![screenshot](documentation/browsers/chrome-delivery_information.png) | ![screenshot](documentation/browsers/firefox-delivery_information.png) | ![screenshot](documentation/browsers/edge-delivery_information.jpeg) | Works as expected |
+| Profile - Order History | ![screenshot](documentation/browsers/chrome-order_history.png) | ![screenshot](documentation/browsers/firefox-order_history.png) | ![screenshot](documentation/browsers/edge-order_history.jpeg) | Works as expected |
+| Profile - Order Detail | ![screenshot](documentation/browsers/chrome-order_detail.png) | ![screenshot](documentation/browsers/firefox-order_detail.png) | ![screenshot](documentation/browsers/edge-order_detail.jpeg) | Works as expected |
+| Product Managment - Add Product | ![screenshot](documentation/browsers/chrome-add_product.png) | ![screenshot](documentation/browsers/firefox-add_product.png) | ![screenshot](documentation/browsers/edge-add_product.jpeg) | Works as expected |
+| Product Managment - Add Product Variant | ![screenshot](documentation/browsers/chrome-add_product_variant.png) | ![screenshot](documentation/browsers/firefox-add_product_variant.png) | ![screenshot](documentation/browsers/edge-add_product_variant.jpeg) | Works as expected |
+| Product Managment - All Product Variants | ![screenshot](documentation/browsers/chrome-all_product_variants.png) | ![screenshot](documentation/browsers/firefox-all_product_variants.png) | ![screenshot](documentation/browsers/edge-all_product_variants.jpeg) | Works as expected |
+| Product Managment - Edit Product | ![screenshot](documentation/browsers/chrome-edit_product.png) | ![screenshot](documentation/browsers/firefox-edit_product.png) | ![screenshot](documentation/browsers/edge-edit_product.jpeg) | Works as expected |
+| Product Managment - Edit Product Variant | ![screenshot](documentation/browsers/chrome-edit_product_variant.png) | ![screenshot](documentation/browsers/firefox-edit_product_variant.png) | ![screenshot](documentation/browsers/edge-edit_product_variant.jpeg) | Works as expected |
+| 404 | ![screenshot](documentation/browsers/chrome-404.png) | ![screenshot](documentation/browsers/firefox-404.png) | ![screenshot](documentation/browsers/edge-404.jpeg) | Works as expected |
 
 ## Lighthouse Audit
 
