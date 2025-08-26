@@ -166,33 +166,31 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ## Lighthouse Audit
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports. Avoid testing the local version (Gitpod/VSCode/etc.), as this can have knock-on effects for performance. If you don't have "Lighthouse" in your Developer Tools, it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Unless your project is a single-page application (SPA), you should test Lighthouse Audit results for all of your pages, for both *mobile* and *desktop*.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-⚠️ --- END --- ⚠️
-
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
 
 | Page | Mobile | Desktop |
 | --- | --- | --- |
+| Home | ![screenshot](documentation/lighthouse/mobile-home.png) | ![screenshot](documentation/lighthouse/desktop-home.png) |
+| About Us | ![screenshot](documentation/lighthouse/mobile-about_us.png) | ![screenshot](documentation/lighthouse/desktop-about_us.png) |
+| Our Team | ![screenshot](documentation/lighthouse/mobile-our_team.png) | ![screenshot](documentation/lighthouse/desktop-our_team.png) |
+| Contact Us | ![screenshot](documentation/lighthouse/mobile-contact_us.png) | ![screenshot](documentation/lighthouse/desktop-contact_us.png) |
+| Careers | ![screenshot](documentation/lighthouse/mobile-careers.png) | ![screenshot](documentation/lighthouse/desktop-careers.png) |
 | Register | ![screenshot](documentation/lighthouse/mobile-register.png) | ![screenshot](documentation/lighthouse/desktop-register.png) |
 | Login | ![screenshot](documentation/lighthouse/mobile-login.png) | ![screenshot](documentation/lighthouse/desktop-login.png) |
-| Profile | ![screenshot](documentation/lighthouse/mobile-profile.png) | ![screenshot](documentation/lighthouse/desktop-profile.png) |
-| Home | ![screenshot](documentation/lighthouse/mobile-home.png) | ![screenshot](documentation/lighthouse/desktop-home.png) |
 | Products | ![screenshot](documentation/lighthouse/mobile-products.png) | ![screenshot](documentation/lighthouse/desktop-products.png) |
-| Product Details | ![screenshot](documentation/lighthouse/mobile-product-details.png) | ![screenshot](documentation/lighthouse/desktop-product-details.png) |
+| Product Details | ![screenshot](documentation/lighthouse/mobile-product_details.png) | ![screenshot](documentation/lighthouse/desktop-product_details.png) |
 | Bag | ![screenshot](documentation/lighthouse/mobile-bag.png) | ![screenshot](documentation/lighthouse/desktop-bag.png) |
 | Checkout | ![screenshot](documentation/lighthouse/mobile-checkout.png) | ![screenshot](documentation/lighthouse/desktop-checkout.png) |
-| Checkout Success | ![screenshot](documentation/lighthouse/mobile-checkout-success.png) | ![screenshot](documentation/lighthouse/desktop-checkout-success.png) |
-| Add Product | ![screenshot](documentation/lighthouse/mobile-add-product.png) | ![screenshot](documentation/lighthouse/desktop-add-product.png) |
-| Edit Product | ![screenshot](documentation/lighthouse/mobile-edit-product.png) | ![screenshot](documentation/lighthouse/desktop-edit-product.png) |
-| Newsletter | ![screenshot](documentation/lighthouse/mobile-newsletter.png) | ![screenshot](documentation/lighthouse/desktop-newsletter.png) |
-| Contact | ![screenshot](documentation/lighthouse/mobile-contact.png) | ![screenshot](documentation/lighthouse/desktop-contact.png) |
+| Checkout Success | ![screenshot](documentation/lighthouse/mobile-checkout_success.png) | ![screenshot](documentation/lighthouse/desktop-checkout_success.png) |
+| Profile | ![screenshot](documentation/lighthouse/mobile-profile.png) | ![screenshot](documentation/lighthouse/desktop-profile.png) |
+| Profile - Delivery Information | ![screenshot](documentation/lighthouse/mobile-delivery_information.png) | ![screenshot](documentation/lighthouse/desktop-delivery_information.png) |
+| Profile - Order History | ![screenshot](documentation/lighthouse/mobile-order_history.png) | ![screenshot](documentation/lighthouse/desktop-order_history.png) |
+| Profile - Order Detail| ![screenshot](documentation/lighthouse/mobile-order_detail.png) | ![screenshot](documentation/lighthouse/desktop-order_detail.png) |
+| Product Managment - Add Product | ![screenshot](documentation/lighthouse/mobile-add_product.png) | ![screenshot](documentation/lighthouse/desktop-add_product.png) |
+| Product Managment - Add Product Variant| ![screenshot](documentation/lighthouse/mobile-add_product_variant.png) | ![screenshot](documentation/lighthouse/desktop-add_product_variant.png) |
+| Product Managment - All Product Variants | ![screenshot](documentation/lighthouse/mobile-all_product_variants.png) | ![screenshot](documentation/lighthouse/desktop-all_product_variants.png) |
+| Product Managment - Edit Product | ![screenshot](documentation/lighthouse/mobile-edit_product.png) | ![screenshot](documentation/lighthouse/desktop-edit_product.png) |
+| Product Managment - Edit Product Variant | ![screenshot](documentation/lighthouse/mobile-edit_product_variant.png) | ![screenshot](documentation/lighthouse/desktop-edit_product_variant.png) |
 | 404 | ![screenshot](documentation/lighthouse/mobile-404.png) | ![screenshot](documentation/lighthouse/desktop-404.png) |
 
 ## Defensive Programming
