@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="row my-5">
-        <div class="col-12 col-md-6 offset-md-3">
+        <div class="col-12 col-md-8 offset-md-2">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
@@ -23,10 +23,17 @@
                 {{ form.price|as_crispy_field }}
                 {{ form.stock|as_crispy_field }}
 
-                {% if variant.image %}
+                {% if form.instance.image %}
                 <div class="mb-3">
                     <label>Current image:</label><br>
-                    <img src="{{ variant.image.url }}" alt="{{ variant.product.name }}" style="max-height:100px;">
+                    <img src="{{ form.instance.image.url }}" alt="{{ form.instance.name }}" style="max-height:100px;">
+                </div>
+                {% else %}
+                <div class="mb-3">
+                    <label>Current image:</label><br>
+                    <img src="{% static 'images/placeholder.png' %}" alt="Variant Image"
+                        class="img-thumbnail me-3 img-fluid"
+                        style="max-width: 100px; height: auto; object-fit: cover;">
                 </div>
                 {% endif %}
 

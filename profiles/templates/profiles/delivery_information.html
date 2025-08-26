@@ -3,7 +3,7 @@
 {% block profile_content %}
 <div class="container">
   <div class="row my-5">
-    <div class="col-12 col-md-6 offset-md-3">
+    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
       <h3 class="text-muted mb-5">Default Delivery Information</h3>
       <form class="mt-3" action="{% url 'delivery_information' %}" method="POST">
         {% csrf_token %}
