@@ -121,7 +121,7 @@ body {
   font-family: var(--secondary-font);
   border: 2px solid var(--gold-color);
   box-shadow: 0 3px 10px var(--gold-color);
-  padding: 0.5 2.5rem;
+  padding: 0.5rem 2.5rem;
   letter-spacing: 1px;
   font-weight: bolder;
 }
@@ -311,7 +311,7 @@ footer .copyright:hover {
   /* Home */
   #hero-image {
     height: 70vh;
-    background-position: bottom bottom;
+    background-position: center bottom;
   }
 
   .shop-now-overlay {

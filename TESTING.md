@@ -108,41 +108,31 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Responsiveness
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site on various device sizes.
-
-The minimum requirement is to test the following 3 sizes:
-
-- Mobile
-- Tablet
-- Desktop
-
-**IMPORTANT**: You must provide screenshots of your results, to "prove" that you've actually tested them.
-
-Using the [amiresponsive](http://ami.responsivedesign.is) mockup images (*or similar*) does not meet the requirements. Consider using some of the built-in device sizes from the Developer Tools.
-
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well. It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-⚠️ --- END --- ⚠️
-
 I've tested my deployed project to check for responsiveness issues.
 
 | Page | Mobile | Tablet | Desktop | Notes |
 | --- | --- | --- | --- | --- |
+| Home | ![screenshot](documentation/responsiveness/mobile-home.png) | ![screenshot](documentation/responsiveness/tablet-home.png) | ![screenshot](documentation/responsiveness/desktop-home.png) | Works as expected |
+| About Us | ![screenshot](documentation/responsiveness/mobile-about_us.png) | ![screenshot](documentation/responsiveness/tablet-about_us.png) | ![screenshot](documentation/responsiveness/desktop-about_us.png) | Works as expected |
+| Our Team | ![screenshot](documentation/responsiveness/mobile-our_team.png) | ![screenshot](documentation/responsiveness/tablet-our_team.png) | ![screenshot](documentation/responsiveness/desktop-our_team.png) | Works as expected |
+| Contact Us | ![screenshot](documentation/responsiveness/mobile-contact_us.png) | ![screenshot](documentation/responsiveness/tablet-contact_us.png) | ![screenshot](documentation/responsiveness/desktop-contact_us.png) | Works as expected |
+| Careers | ![screenshot](documentation/responsiveness/mobile-careers.png) | ![screenshot](documentation/responsiveness/tablet-careers.png) | ![screenshot](documentation/responsiveness/desktop-careers.png) | Works as expected |
 | Register | ![screenshot](documentation/responsiveness/mobile-register.png) | ![screenshot](documentation/responsiveness/tablet-register.png) | ![screenshot](documentation/responsiveness/desktop-register.png) | Works as expected |
 | Login | ![screenshot](documentation/responsiveness/mobile-login.png) | ![screenshot](documentation/responsiveness/tablet-login.png) | ![screenshot](documentation/responsiveness/desktop-login.png) | Works as expected |
-| Profile | ![screenshot](documentation/responsiveness/mobile-profile.png) | ![screenshot](documentation/responsiveness/tablet-profile.png) | ![screenshot](documentation/responsiveness/desktop-profile.png) | Works as expected |
-| Home | ![screenshot](documentation/responsiveness/mobile-home.png) | ![screenshot](documentation/responsiveness/tablet-home.png) | ![screenshot](documentation/responsiveness/desktop-home.png) | Works as expected |
 | Products | ![screenshot](documentation/responsiveness/mobile-products.png) | ![screenshot](documentation/responsiveness/tablet-products.png) | ![screenshot](documentation/responsiveness/desktop-products.png) | Works as expected |
-| Product Details | ![screenshot](documentation/responsiveness/mobile-product-details.png) | ![screenshot](documentation/responsiveness/tablet-product-details.png) | ![screenshot](documentation/responsiveness/desktop-product-details.png) | Works as expected |
+| Product Details | ![screenshot](documentation/responsiveness/mobile-product_details.png) | ![screenshot](documentation/responsiveness/tablet-product_details.png) | ![screenshot](documentation/responsiveness/desktop-product_details.png) | Works as expected |
 | Bag | ![screenshot](documentation/responsiveness/mobile-bag.png) | ![screenshot](documentation/responsiveness/tablet-bag.png) | ![screenshot](documentation/responsiveness/desktop-bag.png) | Works as expected |
 | Checkout | ![screenshot](documentation/responsiveness/mobile-checkout.png) | ![screenshot](documentation/responsiveness/tablet-checkout.png) | ![screenshot](documentation/responsiveness/desktop-checkout.png) | Works as expected |
-| Checkout Success | ![screenshot](documentation/responsiveness/mobile-checkout-success.png) | ![screenshot](documentation/responsiveness/tablet-checkout-success.png) | ![screenshot](documentation/responsiveness/desktop-checkout-success.png) | Works as expected |
-| Add Product | ![screenshot](documentation/responsiveness/mobile-add-product.png) | ![screenshot](documentation/responsiveness/tablet-add-product.png) | ![screenshot](documentation/responsiveness/desktop-add-product.png) | Works as expected |
-| Edit Product | ![screenshot](documentation/responsiveness/mobile-edit-product.png) | ![screenshot](documentation/responsiveness/tablet-edit-product.png) | ![screenshot](documentation/responsiveness/desktop-edit-product.png) | Works as expected |
-| Newsletter | ![screenshot](documentation/responsiveness/mobile-newsletter.png) | ![screenshot](documentation/responsiveness/tablet-newsletter.png) | ![screenshot](documentation/responsiveness/desktop-newsletter.png) | Works as expected |
-| Contact | ![screenshot](documentation/responsiveness/mobile-contact.png) | ![screenshot](documentation/responsiveness/tablet-contact.png) | ![screenshot](documentation/responsiveness/desktop-contact.png) | Works as expected |
+| Checkout Success | ![screenshot](documentation/responsiveness/mobile-checkout_success.png) | ![screenshot](documentation/responsiveness/tablet-checkout_success.png) | ![screenshot](documentation/responsiveness/desktop-checkout_success.png) | Works as expected |
+| Profile | ![screenshot](documentation/responsiveness/mobile-profile.png) | ![screenshot](documentation/responsiveness/tablet-profile.png) | ![screenshot](documentation/responsiveness/desktop-profile.png) | Works as expected |
+| Profile - Delivery Information | ![screenshot](documentation/responsiveness/mobile-delivery_information.png) | ![screenshot](documentation/responsiveness/tablet-delivery_information.png) | ![screenshot](documentation/responsiveness/desktop-delivery_information.png) | Works as expected |
+| Profile - Order History | ![screenshot](documentation/responsiveness/mobile-order_history.png) | ![screenshot](documentation/responsiveness/tablet-order_history.png) | ![screenshot](documentation/responsiveness/desktop-order_history.png) | Works as expected |
+| Profile - Order Detail | ![screenshot](documentation/responsiveness/mobile-order_detail.png) | ![screenshot](documentation/responsiveness/tablet-order_detail.png) | ![screenshot](documentation/responsiveness/desktop-order_detail.png) | Works as expected |
+| Product Managment - Add Product | ![screenshot](documentation/responsiveness/mobile-add_product.png) | ![screenshot](documentation/responsiveness/tablet-add_product.png) | ![screenshot](documentation/responsiveness/desktop-add_product.png) | Works as expected |
+| Product Managment - Add Product Variant | ![screenshot](documentation/responsiveness/mobile-add_product_variant.png) | ![screenshot](documentation/responsiveness/tablet-add_product_variant.png) | ![screenshot](documentation/responsiveness/desktop-add_product_variant.png) | Works as expected |
+| Product Managment - All Product Variants | ![screenshot](documentation/responsiveness/mobile-all_product_variants.png) | ![screenshot](documentation/responsiveness/tablet-all_product_variants.png) | ![screenshot](documentation/responsiveness/desktop-all_product_variants.png) | Works as expected |
+| Product Managment - Edit Product | ![screenshot](documentation/responsiveness/mobile-edit_product.png) | ![screenshot](documentation/responsiveness/tablet-edit_product.png) | ![screenshot](documentation/responsiveness/desktop-edit_product.png) | Works as expected |
+| Product Managment - Edit Product Variant | ![screenshot](documentation/responsiveness/mobile-edit_product_variant.png) | ![screenshot](documentation/responsiveness/tablet-edit_product_variant.png) | ![screenshot](documentation/responsiveness/desktop-edit_product_variant.png) | Works as expected |
 | 404 | ![screenshot](documentation/responsiveness/mobile-404.png) | ![screenshot](documentation/responsiveness/tablet-404.png) | ![screenshot](documentation/responsiveness/desktop-404.png) | Works as expected |
 
 ## Browser Compatibility
