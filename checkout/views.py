@@ -145,6 +145,11 @@ def checkout_success(request, order_number):
         if 'bag' in request.session:
             del request.session['bag']
 
+    try:
+        send_confirmation_email(order)
+    except Exception as e:
+        messages.error(request, f"Could not send confirmation email: {e}")
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
