@@ -135,6 +135,7 @@ I've tested my deployed project to check for responsiveness issues.
 | Product Managment - Edit Product Variant | ![screenshot](documentation/responsiveness/mobile-edit_product_variant.png) | ![screenshot](documentation/responsiveness/tablet-edit_product_variant.png) | ![screenshot](documentation/responsiveness/desktop-edit_product_variant.png) | Works as expected |
 | 404 | ![screenshot](documentation/responsiveness/mobile-404.png) | ![screenshot](documentation/responsiveness/tablet-404.png) | ![screenshot](documentation/responsiveness/desktop-404.png) | Works as expected |
 
+
 ## Browser Compatibility
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
@@ -164,6 +165,7 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Product Managment - Edit Product Variant | ![screenshot](documentation/browsers/chrome-edit_product_variant.png) | ![screenshot](documentation/browsers/firefox-edit_product_variant.png) | ![screenshot](documentation/browsers/edge-edit_product_variant.jpeg) | Works as expected |
 | 404 | ![screenshot](documentation/browsers/chrome-404.png) | ![screenshot](documentation/browsers/firefox-404.png) | ![screenshot](documentation/browsers/edge-404.jpeg) | Works as expected |
 
+
 ## Lighthouse Audit
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
@@ -192,6 +194,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Product Managment - Edit Product | ![screenshot](documentation/lighthouse/mobile-edit_product.png) | ![screenshot](documentation/lighthouse/desktop-edit_product.png) |
 | Product Managment - Edit Product Variant | ![screenshot](documentation/lighthouse/mobile-edit_product_variant.png) | ![screenshot](documentation/lighthouse/desktop-edit_product_variant.png) |
 | 404 | ![screenshot](documentation/lighthouse/mobile-404.png) | ![screenshot](documentation/lighthouse/desktop-404.png) |
+
 
 ## Defensive Programming
 
@@ -224,6 +227,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | Contact Page | Feature is expected to allow users to send messages through the contact form. | Filled out the contact form as a user, submitted a message. | Message was successfully sent and confirmation was displayed. | ![screenshot](documentation/defensive/contact_form.png) |
 | 404 Error Page | Feature is expected to display a 404 error page for non-existent pages. | Navigated to an invalid URL (e.g., `/test`). | A custom 404 error page was displayed as expected. | ![screenshot](documentation/defensive/404.png) |
 
+
 ## User Story Testing
 
 | Target | Expectation | Outcome | Screenshot |
@@ -243,6 +247,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a user | I want to receive messages for all my actions | so that I am informed about important events like login, adding/removing products from the cart, updating quantities, successful orders, and profile changes. | ![screenshot](documentation/features/feature13.png) |
 | As a user | I want to see a success page and receive a confirmation email after completing an order | so that I know my order was successfully placed and can reference it with the order number. | ![screenshot](documentation/features/feature14.png) |
 | As a owner |  I want to add new products, edit existing ones, and delete products | so that I can keep the online store’s catalog up to date. | ![screenshot](documentation/features/feature15.png) |
+
 
 ## Automated Testing
 
@@ -275,29 +280,8 @@ Below are the results from the full coverage report on my application that I've 
 
 ![screenshot](documentation/automation/html-coverage.png)
 
-#### Unit Test Issues
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this section to list any known issues you ran into while writing your Python unit tests. Remember to include screenshots (where possible), and a solution to the issue (if known). This can be used for both "fixed" and "unresolved" issues. Remove this sub-section entirely if you somehow didn't run into any issues while working with your tests.
-
-⚠️ --- END --- ⚠️
 
 ## Bugs
-
-⚠️ INSTRUCTIONS ⚠️
-
-Nobody likes bugs,... except the assessors! Projects seem more suspicious if a student doesn't properly track their bugs. If you're about to submit your project without any bugs listed below, you should ask yourself why you're doing this course in the first place, if you're able to build this entire application without running into any bugs. The best thing you can do for any project is to document your bugs! Not only does it show the true stages of development, but think of it as breadcrumbs for yourself in the future, should you encounter the same/similar bug again, it acts as a gentle reminder on what you did to fix the bug.
-
-If/when you encounter bugs during the development stages of your project, you should document them here, ideally with a screenshot explaining what the issue was, and what you did to fix the bug.
-
-Alternatively, an improved way to manage bugs is to use the built-in **[Issues](https://www.github.com/marijavelickovska/cozynest/issues)** tracker on your GitHub repository. This can be found at the top of your repository, the tab called "Issues".
-
-If using the Issues tracker for bug management, you can simplify the documentation process for testing. Issues allow you to directly paste screenshots into the issue page without having to first save the screenshot locally. You can add labels to your issues (e.g. `bug`), assign yourself as the owner, and add comments/updates as you progress with fixing the issue(s). Once you've solved the issue/bug, you should then "Close" it.
-
-When showcasing your bug tracking for assessment, you can use the following examples below.
-
-⚠️ --- END --- ⚠️
 
 ### Fixed Bugs
 
@@ -311,14 +295,6 @@ All previously closed/fixed bugs can be tracked [here](https://www.github.com/ma
 
 ### Unfixed Bugs
 
-⚠️ INSTRUCTIONS ⚠️
-
-You will need to mention any unfixed bugs and why they are not fixed upon submission of your project. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. Where possible, you must fix all outstanding bugs, unless outside of your control.
-
-If you've identified any unfixed bugs, no matter how small, be sure to list them here! It's better to be honest and list them, because if it's not documented and an assessor finds the issue, they need to know whether or not you're aware of them as well, and why you've not corrected/fixed them.
-
-⚠️ --- END --- ⚠️
-
 [![GitHub issue custom search](https://img.shields.io/github/issues-search/marijavelickovska/cozynest?query=is%3Aissue%2Bis%3Aopen%2Blabel%3Abug&label=Unfixed%20Bugs&color=red)](https://www.github.com/marijavelickovska/cozynest/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
 
 Any remaining open issues can be tracked [here](https://www.github.com/marijavelickovska/cozynest/issues?q=is%3Aissue+is%3Aopen+label%3Abug).
@@ -326,15 +302,6 @@ Any remaining open issues can be tracked [here](https://www.github.com/marijavel
 ![screenshot](documentation/bugs/gh-issues-open.png)
 
 ### Known Issues
-
-| Issue | Screenshot |
-| --- | --- |
-| On devices smaller than 375px, the page starts to have horizontal `overflow-x` scrolling. | ![screenshot](documentation/issues/overflow.png) |
-| When validating HTML with a semantic `<section>` element, the validator warns about lacking a header `h2-h6`. This is acceptable. | ![screenshot](documentation/issues/section-header.png) |
-| Validation errors on "signup.html" coming from the Django Allauth package. | ![screenshot](documentation/issues/allauth.png) |
-| With a known order-number, users can brute-force "checkout_success.html" and see potentially sensitive information. | ![screenshot](documentation/issues/checkout-success.png) |
-| If a product is in your bag/cart, but then gets deleted from the database, it throws errors from the session storage memory. | ![screenshot](documentation/issues/session-storage.png) |
-| The `-`/`+` quantity buttons work well on "product_details.html", but not on "bag.html". | ![screenshot](documentation/issues/quantity-buttons.png) |
 
 > [!IMPORTANT]  
 > There are no remaining bugs that I am aware of, though, even after thorough testing, I cannot rule out the possibility.
