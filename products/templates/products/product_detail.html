@@ -101,7 +101,15 @@
                 </div>
 
                 <div class="modal-body">
-                    Are you sure you want to delete <strong>{{ product.name }}</strong>?
+                    Are you sure you want to delete <strong>{{ product.name }}</strong>?<br>
+                    {% if variants.count > 0 %}
+                    This will also delete {{ variants.count }} variants.<br>
+                    <ul>
+                        {% for variant in variants %}
+                        <li>{{ variant }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                     This action cannot be undone.
                 </div>
 
