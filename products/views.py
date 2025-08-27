@@ -107,6 +107,7 @@ def product_detail(request, product_id):
             size_color_map.setdefault(key, []).append({
                 "id": variant.color.id,
                 "name": variant.color.name,
+                "price": str(variant.price),
                 "stock": variant.stock
             })
 

@@ -32,7 +32,7 @@
                         data-bs-target="#deleteProductModal">Delete</a>
                 </small>
                 {% endif %}
-                <p class="lead mb-0 fw-bold">€{{ product.base_price }}</p>
+                <p class="lead mb-0 fw-bold">€<span id="variant-price">{{ product.base_price }}</span></p>
                 <p class="small mt-1 mb-0 text-muted">
                     <i class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
                 </p>
@@ -149,11 +149,23 @@
                 option.value = item.id;
                 option.textContent = item.name;
                 option.dataset.stock = item.stock;
+                option.dataset.price = item.price;
                 colorSelect.appendChild(option);
             });
 
             colorSelect.disabled = false;
             updateQuantity();
+        }
+
+        function updatePrice() {
+            const selectedOption = colorSelect.selectedOptions[0];
+            const priceDisplay = document.getElementById('variant-price');
+
+            if (selectedOption && selectedOption.dataset.price) {
+                priceDisplay.textContent = selectedOption.dataset.price;
+            } else {
+                priceDisplay.textContent = '{{ product.base_price }}';
+            }
         }
 
         function updateQuantity() {
@@ -171,7 +183,10 @@
         }
 
         sizeSelect.addEventListener('change', populateColors);
-        colorSelect.addEventListener('change', updateQuantity);
+        colorSelect.addEventListener('change', () => {
+            updateQuantity();
+            updatePrice();
+        });
 
         buttonMinus.addEventListener('click', () => {
             quantityInput.value = Math.max(1, Number(quantityInput.value) - 1);
@@ -181,6 +196,7 @@
         });
 
         populateColors();
+        updatePrice();
     });
 </script>
 
