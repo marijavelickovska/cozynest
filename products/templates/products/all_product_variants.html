@@ -34,7 +34,11 @@
                                         class="img-thumbnail me-2 img-fluid"
                                         style="max-width: 50px; height: auto; object-fit: cover;">
                                     {% endif %}
-                                    <span>{{ variant.product.name }}</span>
+                                    <span>
+                                         <a class="text-decoration-none text-dark" href="{% url 'product_detail' variant.product.id %}">
+                                            {{ variant.product.name }}
+                                        </a>
+                                    </span>
                                 </div>
                             </td>
                             <td>{{ variant.size.name }}</td>
@@ -101,15 +105,19 @@
                     <div class="card-body d-flex">
                         {% if variant.image and variant.image.url %}
                         <img src="{{ variant.image.url }}" alt="Variant Image"
-                            class="img-thumbnail me-3 img-fluid"
+                            class="me-3 img-fluid"
                             style="max-width: 60px; height: auto; object-fit: cover;">
                         {% else %}
                         <img src="{% static 'images/placeholder.png' %}" alt="Variant Image"
-                            class="img-thumbnail me-3 img-fluid"
+                            class="me-3 img-fluid"
                             style="max-width: 60px; height: auto; object-fit: cover;">
                         {% endif %}
                         <div>
-                            <h6 class="mb-1">{{ variant.product.name }}</h6>
+                            <h6 class="mb-1 fs-6">
+                                <a class="text-decoration-none text-dark" href="{% url 'product_detail' variant.product.id %}">
+                                    {{ variant.product.name }}
+                                </a>
+                            </h6>
                             <p class="mb-1">
                                 <small><strong>Size:</strong> {{ variant.size.name }}</small><br>
                                 <small><strong>Color:</strong> {{ variant.color.name }}</small><br>
