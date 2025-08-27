@@ -253,15 +253,11 @@ I have conducted a series of automated tests on my application.
 
 ### Python (Unit Testing)
 
-⚠️ INSTRUCTIONS ⚠️
+I have used Django's built-in unit testing framework to test the application functionality. In order to run the tests, I ran the following commands in the terminal each time:
 
-Adjust the code below (file names, function names, etc.) to match your own project files/folders. Use these notes loosely when documenting your own Python Unit tests, and remove/adjust where applicable.
-
-⚠️ SAMPLE ⚠️
-
-I have used Django's built-in unit testing framework to test the application functionality. In order to run the tests, I ran the following command in the terminal each time:
-
-- `python3 manage.py test name-of-app`
+- `python manage.py test products.tests.test_forms`
+- `python manage.py test products.tests.test_views`
+- `python manage.py test profiles.tests.test_views`
 
 To create the coverage report, I would then run the following commands:
 

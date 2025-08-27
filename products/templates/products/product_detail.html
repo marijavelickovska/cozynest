@@ -32,7 +32,10 @@
                         data-bs-target="#deleteProductModal">Delete</a>
                 </small>
                 {% endif %}
-                <p class="lead mb-0 fw-bold">€<span id="variant-price">{{ product.base_price }}</span></p>
+                <p class="lead mb-0 fw-bold">
+                    €<span id="variant-price">{{ product.base_price }}</span>
+                    <small class="text-muted fw-normal" style="font-size: 0.8rem;"> (Price updates based on selected size)</small>
+                </p>
                 <p class="small mt-1 mb-0 text-muted">
                     <i class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
                 </p>
