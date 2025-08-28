@@ -306,3 +306,10 @@ Any remaining open issues can be tracked [here](https://www.github.com/marijavel
 > [!IMPORTANT]  
 > There are no remaining bugs that I am aware of, though, even after thorough testing, I cannot rule out the possibility.
 
+### Other Findings
+
+> Product prices are manually set using fixtures without strict association to specific products or sizes. 
+  As a result, some prices may appear inconsistent. These values are intended only for testing purposes.
+
+> The links under "Special Offers" in the navbar currently do not lead to any products. This layout was kept for visual purposes, as it makes the navbar look nicer. Functionality for these links is planned for future implementation.
+
