@@ -4,6 +4,11 @@ from products.models import ProductVariant
 
 
 class BagLineItem(models.Model):
+    """
+    Represents a product variant and quantity added to a user's shopping bag.
+    Returns a readable string showing product variant and quantity.
+    Returns the total price for this line item (price * quantity).
+    """
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE

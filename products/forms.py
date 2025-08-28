@@ -3,11 +3,18 @@ from .models import Product, ProductVariant, Size
 
 
 class ProductForm(forms.ModelForm):
+    """
+    Form for creating or updating Product instances.
+    """
     class Meta:
         model = Product
         fields = ['name', 'category', 'description', 'base_price', 'image']
 
     def __init__(self, *args, **kwargs):
+        """
+        Customize widgets: placeholders, autofocus, rows for description,
+        and min/step for price.
+        """
         super().__init__(*args, **kwargs)
         self.fields['name'].widget.attrs.update({
             'placeholder': 'Enter product name',
@@ -25,6 +32,10 @@ class ProductForm(forms.ModelForm):
 
 
 class ProductVariantForm(forms.ModelForm):
+    """
+    Form for creating or updating ProductVariant instances.
+    Dynamically filters size choices based on product category.
+    """
     class Meta:
         model = ProductVariant
         fields = ['product', 'size', 'color', 'price', 'stock', 'image']

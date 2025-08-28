@@ -3,6 +3,11 @@ from cloudinary.models import CloudinaryField
 
 
 class Category(models.Model):
+    """
+    Represents a product category (e.g. Bedding, Sheets, Pillows).
+    Returns the category name and
+    a user-friendly display name for the category.
+    """
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -17,6 +22,10 @@ class Category(models.Model):
 
 
 class Size(models.Model):
+    """
+    Represents available product sizes (e.g. Small, Medium, Large).
+    Returns the size name.
+    """
     name = models.CharField(max_length=20, unique=True)
     categories = models.ManyToManyField('Category', related_name='sizes')
 
@@ -25,6 +34,10 @@ class Size(models.Model):
 
 
 class Color(models.Model):
+    """
+    Represents available product colors.
+    Returns the color name.
+    """
     name = models.CharField(max_length=20, unique=True)
     hex_code = models.CharField(max_length=7, blank=True, null=True)
 
@@ -33,6 +46,10 @@ class Color(models.Model):
 
 
 class Product(models.Model):
+    """
+    Represents a product with general information and base details.
+    Returns the product name.
+    """
     name = models.CharField(max_length=255)
     category = models.ForeignKey(
         Category,
@@ -59,6 +76,13 @@ class Product(models.Model):
 
 
 class ProductVariant(models.Model):
+    """
+    Represents a specific variation of a product (size and color)
+    with its own price and stock.
+    Returns a string with product name, size, and color.
+    Decrease stock when the product is purchased and
+    increase stock if an order is canceled or item removed.
+    """
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
@@ -78,13 +102,11 @@ class ProductVariant(models.Model):
         return f"{self.product.name} - {self.size.name} - {self.color.name}"
 
     def reduce_stock(self, quantity):
-        """Reduce stock when item is purchased."""
         if quantity > self.stock:
             return False
         self.stock -= quantity
         self.save()
 
     def restore_stock(self, quantity):
-        """Restore stock if order is canceled or item is removed."""
         self.stock += quantity
         self.save()

@@ -5,6 +5,21 @@ from .models import BagLineItem
 
 
 def bag_contents(request):
+    """
+    Calculate the contents of the shopping bag.
+
+    Returns a context dictionary containing:
+    - list of bag items (with product variant and quantity)
+    - total quantity of items
+    - total price of items
+    - delivery cost
+    - amount remaining for free delivery
+    - grand total including delivery
+    - free delivery threshold
+
+    Handles both authenticated users (database-stored bag)
+    and anonymous users (session-stored bag).
+    """
     total_quantity = 0
     total_price = Decimal('0.00')
 

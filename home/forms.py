@@ -3,6 +3,10 @@ from .models import ContactMessage, Newsletter
 
 
 class ContactMessageForm(forms.ModelForm):
+    """
+    Form for submitting a contact message
+    with name, email, and message content.
+    """
     class Meta:
         model = ContactMessage
         fields = ['name', 'email', 'message']

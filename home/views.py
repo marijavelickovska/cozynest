@@ -49,6 +49,13 @@ def careers(request):
 
 
 def newsletter_signup(request):
+    """
+    Handle newsletter subscription form submissions.
+    Accepts POST requests with an email to subscribe.
+    - If the form is valid, saves the subscription and shows a success message.
+    - If the form is invalid (e.g., email already subscribed), shows an error message.
+    Redirects the user back to the referring page or home page.
+    """
     if request.method == "POST":
         form = NewsletterForm(request.POST)
         if form.is_valid():

@@ -10,7 +10,8 @@ import uuid
 
 class Order(models.Model):
     """
-    Stores all order-related info for a user purchase.
+    Stores all information related to a user's purchase,
+    including totals and delivery.
     """
     order_number = models.CharField(max_length=32, unique=True, editable=False)
     user_profile = models.ForeignKey(
@@ -48,11 +49,15 @@ class Order(models.Model):
     )
 
     def _generate_order_number(self):
-        """Generate a random, unique order number using UUID."""
+        """
+        Generate a random, unique order number using UUID.
+        """
         return uuid.uuid4().hex.upper()
 
     def update_totals(self):
-        """Update order_total and grand_total."""
+        """
+        Update order_total, delivery_cost, and grand_total based on line items.
+        """
         self.order_total = self.lineitems.aggregate(
             total=Sum('lineitem_total')
         )['total'] or Decimal('0.00')
@@ -67,18 +72,23 @@ class Order(models.Model):
         self.save()
 
     def save(self, *args, **kwargs):
-        """Override save to set order number if not already set."""
+        """
+        Override save to set order number if not already set.
+        """
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
     def __str__(self):
+        """
+        Returns the order number as a string.
+        """
         return self.order_number
 
 
 class OrderLineItem(models.Model):
     """
-    Individual product line items within an order.
+    Represents an individual product variant and quantity within an order.
     """
     order = models.ForeignKey(
         Order,
@@ -96,9 +106,14 @@ class OrderLineItem(models.Model):
     )
 
     def save(self, *args, **kwargs):
-        """Set the lineitem_total before saving."""
+        """
+        Calculate lineitem_total before saving the object.
+        """
         self.lineitem_total = self.product_variant.price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):
+        """
+        Returns a readable string showing product variant and quantity.
+        """
         return f'{self.product_variant} x {self.quantity}'

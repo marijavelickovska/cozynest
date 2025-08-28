@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 
 
 class UserUpdateForm(forms.ModelForm):
+    """
+    Form for updating the built-in User model's username, email,
+    and full name (first and last name combined).
+    """
     full_name = forms.CharField(max_length=150, required=False)
 
     class Meta:
@@ -11,6 +15,10 @@ class UserUpdateForm(forms.ModelForm):
         fields = ['username', 'email']
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize form and set initial value for full_name
+        from first and last name.
+        """
         super().__init__(*args, **kwargs)
         if self.instance:
             self.fields['full_name'].initial = (
@@ -18,6 +26,10 @@ class UserUpdateForm(forms.ModelForm):
             )
 
     def save(self, commit=True):
+        """
+        Save the User instance, splitting full_name
+        into first_name and last_name.
+        """
         user = super().save(commit=False)
         full_name = self.cleaned_data.get('full_name', '')
         if full_name:
@@ -30,6 +42,9 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    Form for updating the UserProfile model, excluding the linked User field.
+    """
     class Meta:
         model = UserProfile
         exclude = ('user',)
