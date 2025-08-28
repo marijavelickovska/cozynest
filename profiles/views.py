@@ -46,7 +46,7 @@ def profile(request):
             form = UserProfileForm(instance=profile)
 
     if tab == "order_history":
-        orders = profile.orders.all()
+        orders = profile.orders.all().order_by('-date')
 
     context = {
         "form": form,
