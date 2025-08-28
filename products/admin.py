@@ -8,9 +8,11 @@ class SizeAdmin(admin.ModelAdmin):
     Admin configuration for the Size model.
     Displays size name and associated categories.
     Allows searching by size name and filtering by categories.
+    Supports adding new categories directly from the admin.
     """
     list_display = ['name', 'get_categories']
     list_filter = ['categories']
+    filter_horizontal = ['categories']
 
     def get_categories(self, obj):
         return ", ".join([c.friendly_name for c in obj.categories.all()])
